@@ -23,10 +23,16 @@ module.exports = {
       : config.dev.assetsPublicPath
   },
   resolve: {
-    extensions: ['.js', '.vue', '.json'],
+    extensions: ['.js', '.vue', '.json','css','less'],
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@': resolve('src'),
+      '@coms': resolve('src/components'),
+      '@assets': resolve('src/assets'),
+      '@views': resolve('src/views'),
+      '@public': resolve('src/public'),
+      '@api': resolve('src/apis'),
+      '@store': resolve('src/store')
     }
   },
   module: {
@@ -64,6 +70,14 @@ module.exports = {
           limit: 10000,
           name: utils.assetsPath('fonts/[name].[hash:7].[ext]')
         }
+      },
+      {
+        test: /\.less$/,
+        loader: 'style-loader!css-loader!less-loader'
+      },
+      {
+        test: /\.pug$/,
+        loader: 'pug-plain-loader'
       }
     ]
   },
