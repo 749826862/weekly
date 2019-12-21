@@ -4,8 +4,11 @@ import Vue from 'vue'
 import eventBus from '@public/eventBus.js'
 import 'echarts-gl'
 import '@public/componentRegister.js'
+import Print from '@public/print.js'   //打印库
+
 // import 'swiper/dist/css/swiper.min.css'
 // const $ = window.$
 // eventbus事件栈
 Vue.use(eventBus)
+Vue.use(Print) // 注册
 export default {}

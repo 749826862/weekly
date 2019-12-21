@@ -1,8 +1,5 @@
 <template lang="pug">
-  .home_main
-    HomeHeade
-    twoPage
-    //- zhuzhaungtu
+  .home_footer
 </template>
 <script>
 export default {
