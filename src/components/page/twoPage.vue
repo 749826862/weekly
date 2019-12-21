@@ -22,7 +22,7 @@
           span.lingt 2、各单位故障自愈实现率情况
         p 
           span 11月18日-11月24日，故障自愈实现率较高的公司分别为城区、通州、朝阳公司，故障自愈实现率较低的公司分为延庆、密云、门头沟公司。
-        zhuzhaungtu.auto(:className="'realization'")
+        zhuzhexian.auto(:className="'realization'")
         p 
           span.lingt 【相关建议】
         p 

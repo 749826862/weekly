@@ -4,7 +4,7 @@
     p 配电自动化故障自愈实现率周趋势
 </template>
 <script>
-import echarts from "echarts"
+import echarts from "echarts";
 export default {
   props: {
     value: {
@@ -13,10 +13,10 @@ export default {
         return {};
       }
     },
-    className:{
-      type:String,
-      default:()=>{
-        return ""
+    className: {
+      type: String,
+      default: () => {
+        return "";
       }
     }
   },
@@ -24,68 +24,176 @@ export default {
     return {};
   },
   created() {},
-  mounted(){
-    this.initChart()
+  mounted() {
+    this.initChart();
   },
   methods: {
-    initChart(){
-      this.setChart().then(option => {
-        console.log(document.querySelector('.'+this.className),888)
-        let myChart = echarts.init(document.querySelector('.'+this.className))
-        myChart.setOption(option)
+    initChart() {
+      this.setChart().then(
+        option => {
+          console.log(document.querySelector("." + this.className), 888);
+          let myChart = echarts.init(
+            document.querySelector("." + this.className)
+          );
+          myChart.setOption(option);
 
-        window.addEventListener("resize",()=>{
-          myChart.resize()
-        })
-      },(error)=>{
-        console.log(error)
-      })
+          window.addEventListener("resize", () => {
+            myChart.resize();
+          });
+        },
+        error => {
+          console.log(error);
+        }
+      );
     },
     setChart() {
       return new Promise((resolve, reject) => {
         let option = {
-          color: ["#3398DB"],
+          backgroundColor: "#fff",
           tooltip: {
             trigger: "axis",
             axisPointer: {
-              // 坐标轴指示器，坐标轴触发有效
-              type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
+              type: "shadow",
+              textStyle: {
+                color: "#fff"
+              }
             }
           },
           grid: {
-            left: "3%",
-            right: "4%",
-            bottom: "3%",
-            containLabel: true
+            borderWidth: 0,
+            top: 10,
+            bottom: 30,
+            textStyle: {
+              color: "#fff"
+            }
           },
+          legend: {
+            top: "5%",
+            textStyle: {
+              color: "#90979c"
+            },
+            data: ["女", "男", "平均"]
+          },
+
+          calculable: true,
           xAxis: [
             {
               type: "category",
-              data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+              axisLine: {
+                lineStyle: {
+                  color: "#000"
+                }
+              },
+              splitLine: {
+                show: false
+              },
               axisTick: {
-                alignWithLabel: true
-              }
+                show: false
+              },
+              splitArea: {
+                show: false
+              },
+              axisLabel: {
+                interval: 0
+              },
+              data: [
+                "1月份",
+                "2月份",
+                "3月份",
+                "4月份",
+                "5月份",
+                "6月份",
+                "7月份",
+                "8月份"
+              ]
             }
           ],
           yAxis: [
             {
-              type: "value"
+              type: "value",
+              splitLine: {
+                show: false
+              },
+              axisLine: {
+                lineStyle: {
+                  color: "#000"
+                }
+              },
+              axisTick: {
+                show: false
+              },
+              axisLabel: {
+                interval: 0
+              },
+              splitArea: {
+                show: false
+              }
             }
           ],
           series: [
             {
-              name: "直接访问",
+              name: "女",
               type: "bar",
-              barWidth: "30%",
-              label: {
+              stack: "总量",
+              barMaxWidth: 35,
+              barGap: "10%",
+              itemStyle: {
                 normal: {
-                  show: true,
-                  position: "top",
-                  formatter: "{c}",
-                  color: "#000"
+                  color: "#e15759",
+                  label: {
+                    show: true,
+                    textStyle: {
+                      color: "#fff"
+                    },
+                    position: "insideTop",
+                    formatter: function(p) {
+                      return p.value > 0 ? p.value : "";
+                    }
+                  }
                 }
               },
-              data: [10, 52, 200, 334, 390, 330, 220]
+              data: [709, 1917, 2455, 2610, 1719, 1433, 1544, 3285]
+            },
+
+            {
+              name: "男",
+              type: "bar",
+              stack: "总量",
+              itemStyle: {
+                normal: {
+                  color: "#4e79a7",
+                  barBorderRadius: 0,
+                  label: {
+                    show: true,
+                    position: "top",
+                    formatter: function(p) {
+                      return p.value > 0 ? p.value : "";
+                    }
+                  }
+                }
+              },
+              data: [327, 1776, 507, 1200, 800, 482, 204, 1390]
+            },
+            {
+              name: "总数",
+              type: "line",
+              stack: "总量",
+              symbolSize: 10,
+              symbol: "circle",
+              itemStyle: {
+                normal: {
+                  color: "#008080",
+                  barBorderRadius: 0,
+                  label: {
+                    show: true,
+                    position: "top",
+                    formatter: function(p) {
+                      return p.value > 0 ? p.value : "";
+                    }
+                  }
+                }
+              },
+              data: [1036, 3693, 2962, 3810, 2519, 1915, 1748, 4675]
             }
           ]
         };
@@ -98,17 +206,17 @@ export default {
 };
 </script>
 <style lang='less' scoped>
-.chartMain{
+.chartMain {
   width: 800px;
   height: 300px;
   padding-bottom: 20px;
   border: 1px solid #ccc;
 }
-.zhuzhuangtu{
+.zhuzhuangtu {
   width: 100%;
   height: 99%;
 }
-p{
+p {
   text-align: center;
 }
 </style>
