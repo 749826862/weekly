@@ -1,47 +1,30 @@
-body{
-  // background: #000;
-}
-
-// 文档标题
-.word_title{
+.word_title {
   font-size: 50px;
   font-weight: 500;
   color: #008080;
 }
-
-// 一级标题
-.word_title_1{
+.word_title_1 {
   font-family: "黑体";
   font-size: 20px;
 }
-
-// 二级标题
-.word_title_2{
+.word_title_2 {
   font-family: "楷体";
   font-size: 20px;
 }
-
-// 三级标题
-.word_title_3{
+.word_title_3 {
   font-family: "仿宋";
   font-size: 18px;
 }
-
-// 四级标题
-.word_title_4{
+.word_title_4 {
   font-family: "仿宋";
   font-size: 18px;
 }
-
-// 文字内容
-.word_content{
+.word_content {
   font-family: "仿宋";
   font-size: 18px;
   color: #000;
 }
-
-// 子级括号加粗
-.word_lingt{
+.word_lingt {
   color: #000;
   font-weight: bold;
   font-family: "仿宋";

@@ -104,7 +104,7 @@ export default {
 </script>
 <style lang='less' scoped>
 .chartMain{
-  width: 800px;
+  width: 100%;
   height: 300px;
   padding-bottom: 20px;
   border: 1px solid #ccc;

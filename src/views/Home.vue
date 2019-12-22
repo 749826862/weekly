@@ -14,4 +14,7 @@ export default {
 };
 </script>
 <style lang='less' scoped>
+.home_main{
+  padding: 0 60px;
+}
 </style>

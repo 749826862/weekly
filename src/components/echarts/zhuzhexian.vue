@@ -61,8 +61,9 @@ export default {
           },
           grid: {
             borderWidth: 0,
-            top: 10,
+            top: 20,
             bottom: 30,
+            left:70,
             textStyle: {
               color: "#fff"
             }
@@ -207,10 +208,11 @@ export default {
 </script>
 <style lang='less' scoped>
 .chartMain {
-  width: 800px;
+  width: 100%;
   height: 300px;
   padding-bottom: 20px;
   border: 1px solid #ccc;
+  box-sizing: border-box;
 }
 .zhuzhuangtu {
   width: 100%;
