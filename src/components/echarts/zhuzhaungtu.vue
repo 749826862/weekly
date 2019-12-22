@@ -108,9 +108,10 @@ export default {
   height: 300px;
   padding-bottom: 20px;
   border: 1px solid #ccc;
+  // margin-bottom: 20px;
 }
 .zhuzhuangtu,.canvasImg{
-  width: 100%;
+  width: 90%;
   height: 99%;
 }
 p{

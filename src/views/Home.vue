@@ -1,6 +1,7 @@
 <template lang="pug">
   .home_main
     HomeHeade
+    onePage
     twoPage
     //- zhuzhaungtu
 </template>

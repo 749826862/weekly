@@ -63,7 +63,7 @@ export default {
             borderWidth: 0,
             top: 20,
             bottom: 30,
-            left:70,
+            left:60,
             textStyle: {
               color: "#fff"
             }
