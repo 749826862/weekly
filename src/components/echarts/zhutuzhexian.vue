@@ -144,7 +144,7 @@ export default {
                 normal: {
                   color: "#e15759",
                   label: {
-                    show: false,
+                    show: true,
                     textStyle: {
                       color: "#fff"
                     },
@@ -208,7 +208,7 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 150px;
+  height: 300px;
   // flex: 1;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;

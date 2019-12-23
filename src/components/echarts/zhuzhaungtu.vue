@@ -58,10 +58,16 @@ export default {
             }
           },
           grid: {
-            left: "3%",
+            left: "4%",
             right: "4%",
-            bottom: "3%",
+            bottom: "12%",
             containLabel: true
+          },
+          legend: {
+            bottom: "2%",
+            textStyle: {
+              color: "#90979c"
+            }
           },
           xAxis: [
             {
@@ -79,7 +85,7 @@ export default {
           ],
           series: [
             {
-              name: "直接访问",
+              name: "故障自愈实现率(%)",
               type: "bar",
               barWidth: "30%",
               label: {
@@ -106,8 +112,9 @@ export default {
 .chartMain{
   width: 100%;
   height: 300px;
-  padding-bottom: 20px;
+  // padding-bottom: 20px;
   border: 1px solid #ccc;
+  position: relative;
   // margin-bottom: 20px;
 }
 .zhuzhuangtu,.canvasImg{
@@ -116,5 +123,9 @@ export default {
 }
 p{
   text-align: center;
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translate(-50%);
 }
 </style>
