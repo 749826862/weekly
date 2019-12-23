@@ -115,7 +115,7 @@ export default {
     // border-collapse:collapse;
     th {
       font-weight: bold;
-      background: #ccc;
+      background-color: #ccc!important;
       padding: 10px 7px;
       font-size: 16px;
     }
