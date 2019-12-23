@@ -2,7 +2,7 @@
   .chartMain
     div.zhuzhuangtu(:class="className")
     p(v-if="isTitle") 配电自动化故障自愈实现率周趋势
-    p.titleLeft 配变台区数(台)
+    //- p.titleLeft 配变台区数(台)
 </template>
 <script>
 import echarts from "echarts";
@@ -67,7 +67,7 @@ export default {
           grid: {
             borderWidth: 0,
             top: 20,
-            bottom: 5,
+            bottom: 45,
             left:100,
             textStyle: {
               color: "#fff"
@@ -76,7 +76,6 @@ export default {
           legend: {
             top: "5%",
             left:"15%",
-            orient:"vertical",
             itemWidth:10,
             itemHeight:10,
             borderRadius:0,
@@ -85,11 +84,10 @@ export default {
             },
             data: ["女", "男", "平均"]
           },
-
           calculable: true,
           xAxis: [
             {
-              show:false,
+              show:true,
               type: "category",
               axisLine: {
                 lineStyle: {
@@ -106,9 +104,12 @@ export default {
                 show: false
               },
               axisLabel: {
-                interval: 0
+                interval: 0,
+                formatter:function(value){
+                    return value.split("").join("\n")
+                }
               },
-              data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+              data: ["周一", "周二", "周三", "周四", "周五", "石景山", "周日"]
             }
           ],
           yAxis: [
@@ -131,6 +132,30 @@ export default {
               splitArea: {
                 show: false
               }
+            },
+            {
+              type: "value",
+              min:0,
+              max:100,
+              splitLine: {
+                show: false
+              },
+              position: "right",
+              axisLine: {
+                lineStyle: {
+                  color: "#000"
+                }
+              },
+              axisTick: {
+                show: true
+              },
+              axisLabel: {
+                interval: 0,
+                formatter: "{value} %", //右侧Y轴文字显示
+              },
+              splitArea: {
+                show: false
+              }
             }
           ],
           series: [
@@ -138,13 +163,14 @@ export default {
               name: "女",
               type: "bar",
               stack: "总量",
-              barMaxWidth: 25,
+              yAxisIndex: 0,
+              barMaxWidth: 15,
               barGap: "10%",
               itemStyle: {
                 normal: {
-                  color: "#e15759",
+                  color: "#4e79a7",
                   label: {
-                    show: true,
+                    show: false,
                     textStyle: {
                       color: "#fff"
                     },
@@ -161,10 +187,11 @@ export default {
             {
               name: "男",
               type: "bar",
+              yAxisIndex: 0,
               stack: "总量",
               itemStyle: {
                 normal: {
-                  color: "#4e79a7",
+                  color: "#e15759",
                   barBorderRadius: 0,
                   label: {
                     show: false,
@@ -177,23 +204,23 @@ export default {
             {
               name: "总数",
               type: "line",
-              stack: "总量",
               symbolSize: 10,
+              yAxisIndex: 1,
+              smooth: true, //平滑曲线显示
+              showAllSymbol: true, //显示所有图形。
               symbol: "circle",
               itemStyle: {
                 normal: {
-                  color: "#008080",
+                  color: "#9bbb59",
                   barBorderRadius: 0,
                   label: {
                     show: true,
-                    position: "top",
-                    formatter: function(p) {
-                      return p.value > 0 ? p.value : "";
-                    }
+                    color: "#000",
+                    position: "top"
                   }
                 }
               },
-              data: [1036, 3693, 2962, 3810, 2519, 1915, 1748]
+              data: [10, 93, 26, 38, 51, 15, 48]
             }
           ]
         };
