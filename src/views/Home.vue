@@ -3,6 +3,7 @@
     HomeHeade
     onePage
     twoPage
+    threePage
     //- zhuzhaungtu
 </template>
 <script>
