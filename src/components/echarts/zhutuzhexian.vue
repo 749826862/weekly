@@ -70,16 +70,17 @@ export default {
           },
           grid: {
             borderWidth: 0,
-            top: 30,
-            bottom: 70,
-            left:50,
+            top: "10%",
+            bottom: "25%",
+            left: "10%",
+            right:"10%",
             textStyle: {
               color: "#fff"
             }
           },
           legend: {
             bottom: "0%",
-            left:"15%",
+            left:"14%",
             itemWidth:30,
             itemHeight:10,
             borderRadius:0,
@@ -247,7 +248,8 @@ export default {
   position: relative;
 }
 .zhuzhuangtu {
-  width: 100%;
+  width: 90%;
+  margin:0 5px;
   height: 99%;
 }
 p {
