@@ -25,7 +25,7 @@
           span.word_title_4 2、各单位电压合格率分布情况
         p 
           span.word_content 在单位分布上,配变电压合格率较高的三家单位分别为平谷、房山、亦庄公司，配变电压合格率较低的三家单位分别为延庆、城区、密云公司。
-        zhutuzhexian.auto(:className="'qualified'")
+        zhutuzhexian.auto(:className="'qualified'" :isTitle="true")
         p 
           span.word_title_4 3、不合格配变周趋势
         p 
@@ -33,12 +33,12 @@
         p 
           span.word_content.tip ¹配变电压合格率=配变电压合格台数/在运配变总数，其中电压合格数=在运配变总数-不可监测配变数-配变电压异常数-配变数据异常数。
           span.word_content.tip ²配变低电压：配变电压低于198V，在132V-198 V之间，持续1小时;
-        zhutuzhexian.auto(:className="'noqualified'")
+        zhutufenceng.auto(:chartsOption="{className:'noqualified',isRow:true}")
         p 
           span.word_title_4 4、各单位配变电压不合格分布情况
         p 
           span.word_content 11月21日-11月27日，公司发生电压不合格配变⁵共746台，其中电压不合格配变较多的三家单位分别为城区、大兴、通州公司。
-        zhutuzhexian.auto(:className="'noqualifiedfenbu'")
+        zhutufenceng.auto(:chartsOption="{className:'noqualifiedfenbu',isRow:false}")
         p 
           span.word_title_4 5、不可监测配变周趋势
         p 
@@ -47,7 +47,7 @@
           span.word_content.tip ³配变过电压：配变电压高于235.4V，在235.4V-308V之间，持续1小时;
           span.word_content.tip ⁴配变数据异常：配变电压低于正常电压40%（132V）或电压高于正常电压40%（308V），持续1小时。
           span.word_content.tip ⁵电压不合格配变数=低电压台区数+过电压配变数+数据异常配变数;
-        zhutuzhexian.auto(:className="'jiance'")
+        zhutufengcengfour.auto(:chartsOption="{className:'gedanweibuke',isRow:true}")
         p 
           span.word_title_4 6、配变不合格治理情况
         p 

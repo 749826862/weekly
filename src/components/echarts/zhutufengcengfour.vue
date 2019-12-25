@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
-    div.zhuzhuangtu(:class="className")
-    p(v-if="isTitle") 图6 各单位配变电压合格率分布
+    div.zhuzhuangtu(:class="this.chartsOption.className")
+    p(v-if="this.chartsOption.isTitle") 图7 电压不合格配变周趋势
     //- p.titleLeft 配变台区数(台)
 </template>
 <script>
@@ -11,22 +11,22 @@ export default {
     value: {
       type: Object,
       default: () => {
-        return {};
+        return {
+          data1:[27, 32, 10, 13],
+          data2:[20, 18, 9, 24],
+          data3:[20, 18, 19, 34]
+        };
       }
     },
-    className: {
-      type: String,
-      default: () => {
-        return "";
+    chartsOption:{
+      type: Object,
+      default:()=>{
+        return {
+          className:"",
+          isTitle:true,
+          isRow:true
+        }
       }
-    },
-    isTitle: {
-      type: Boolean,
-      default: false
-    },
-    isRow:{
-      type: Boolean,
-      default: false
     }
   },
   data() {
@@ -40,9 +40,8 @@ export default {
     initChart() {
       this.setChart().then(
         option => {
-          console.log(document.querySelector("." + this.className), 888);
           let myChart = echarts.init(
-            document.querySelector("." + this.className)
+            document.querySelector("." + this.chartsOption.className)
           );
           myChart.setOption(option);
 
@@ -71,27 +70,27 @@ export default {
           grid: {
             borderWidth: 0,
             top: 30,
-            bottom: 70,
-            left:50,
+            bottom: 50,
+            left: 60,
             textStyle: {
               color: "#fff"
             }
           },
           legend: {
             bottom: "0%",
-            left:"15%",
-            itemWidth:30,
-            itemHeight:10,
-            borderRadius:0,
+            left: "20%",
+            itemWidth: 30,
+            itemHeight: 10,
+            borderRadius: 0,
             textStyle: {
               color: "#000"
             },
-            data: ["电压合格配变数(台)", "电压不合格配变数(台)", "配变电压合格率(%)"]
+            data: ["低电压异常(台)", "过电压异常(台)", "数据异常(台)"]
           },
           calculable: true,
           xAxis: [
             {
-              show:true,
+              show: true,
               type: "category",
               axisLine: {
                 lineStyle: {
@@ -110,17 +109,21 @@ export default {
               axisLabel: {
                 interval: 0,
                 formatter:(value) => {
-                  return this.isRow? value:value.split("").join("\n")
+                  return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               },
-              data: ["平谷", "房山", "门头沟", "周四", "周五", "石景山", "周日"]
+              data: ["1106", "1113", "1120", "1127"]
             }
           ],
           yAxis: [
             {
               type: "value",
               splitLine: {
-                show: true
+                show: true,
+                lineStyle: {
+                  type: "dashed",
+                  color: "#333"
+                }
               },
               axisLine: {
                 lineStyle: {
@@ -136,39 +139,15 @@ export default {
               splitArea: {
                 show: false
               }
-            },
-            {
-              type: "value",
-              min:0,
-              max:100,
-              splitLine: {
-                show: false
-              },
-              position: "right",
-              axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
-              },
-              axisTick: {
-                show: true
-              },
-              axisLabel: {
-                interval: 0,
-                formatter: "{value} %", //右侧Y轴文字显示
-              },
-              splitArea: {
-                show: false
-              }
             }
           ],
           series: [
             {
-              name: "电压合格配变数(台)",
+              name: "低电压异常(台)",
               type: "bar",
               stack: "总量",
               yAxisIndex: 0,
-              barMaxWidth: 15,
+              barMaxWidth: 25,
               barGap: "10%",
               itemStyle: {
                 normal: {
@@ -185,11 +164,10 @@ export default {
                   }
                 }
               },
-              data: [120, 132, 101, 134, 90, 230, 210]
+              data: this.value.data1
             },
-
             {
-              name: "电压不合格配变数(台)",
+              name: "过电压异常(台)",
               type: "bar",
               yAxisIndex: 0,
               stack: "总量",
@@ -199,32 +177,49 @@ export default {
                   barBorderRadius: 0,
                   label: {
                     show: false,
-                    position: "top",
+                    position: "top"
                   }
                 }
               },
-              data: [220, 182, 191, 234, 290, 330, 310]
+              data: this.value.data2
             },
             {
-              name: "配变电压合格率(%)",
-              type: "line",
-              symbolSize: 10,
-              yAxisIndex: 1,
-              smooth: true, //平滑曲线显示
-              showAllSymbol: true, //显示所有图形。
-              symbol: "circle",
+              name: "数据异常(台)",
+              type: "bar",
+              yAxisIndex: 0,
+              stack: "总量",
               itemStyle: {
                 normal: {
                   color: "#9bbb59",
                   barBorderRadius: 0,
                   label: {
-                    show: true,
-                    color: "#000",
-                    position: "top"
+                    show: false,
+                    position: "top",
+                    color:"#000"
                   }
                 }
               },
-              data: [10, 93, 26, 38, 51, 15, 48]
+              data: this.value.data3
+            },
+            {
+              name: "过电压异常(台)",
+              type: "bar",
+              yAxisIndex: 0,
+              stack: "总量",
+              itemStyle: {
+                normal: {
+                  color: "#8064a2",
+                  barBorderRadius: 0,
+                  label: {
+                    show: true,
+                    position: "top",
+                    formatter:(parms)=>{  
+                      return parms.value+this.value.data1[parms.dataIndex]+this.value.data2[parms.dataIndex]+this.value.data2[parms.dataIndex]
+                    }
+                  }
+                }
+              },
+              data: this.value.data2
             }
           ]
         };
@@ -257,12 +252,12 @@ p {
   left: 50%;
   transform: translate(-50%);
 }
-.titleLeft{
+.titleLeft {
   height: 20px;
   color: #000;
   position: absolute;
   left: -2%;
   top: 10%;
-  transform: rotate(-90deg) translate(-50%,0%);
+  transform: rotate(-90deg) translate(-50%, 0%);
 }
 </style>
