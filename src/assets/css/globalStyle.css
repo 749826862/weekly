@@ -1,3 +1,6 @@
+body {
+  -webkit-print-color-adjust: exact;
+}
 .word_title {
   font-size: 50px;
   font-weight: 500;
@@ -10,11 +13,13 @@
 .word_title_2 {
   font-family: "楷体";
   font-size: 20px;
+  text-indent: 2em;
 }
 .word_title_3 {
   font-family: "黑体";
   font-size: 18px;
   text-indent: 2em;
+  margin: 20px 0;
 }
 .word_title_4 {
   font-family: "仿宋";
@@ -26,6 +31,7 @@
   font-family: "仿宋";
   font-size: 18px;
   color: #000;
+  line-height: 45px;
 }
 .word_lingt {
   color: #000;
@@ -35,5 +41,5 @@
 }
 .auto {
   margin: 0 auto;
-  margin-bottom: 20px;
+  margin-bottom: 40px;
 }

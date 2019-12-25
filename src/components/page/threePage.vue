@@ -3,15 +3,6 @@
     //- h3.word_title_1 第一部分 重点专题监测情况
     .message
       .title_1
-        //- h4.word_title_2 二、电压合格率
-        //- p 
-        //-   span.word_lingt 【监测周期】
-        //-   span.word_content 2019年11月21日0时—11月27日24时
-        //- p 
-        //-   span.word_lingt 【监测概要】
-        //-   span.word_content 从用电信息采集系统、营销业务应用系统和PMS2.0三个业务系统中，获取周配变运行电压数据1.69亿条。对低电压、过电压、数据异常等问题开展趋势与分布特征分析，定位主要问题，挖掘问题根因，指导各单位开展配变及低压用户电压综合治理与数据治理。
-        //- p 
-        //-   span.word_lingt 【监测分析情况】
         h4.word_title_3 （二）配变发生低电压监测
         p 
           span.word_title_4 1、各单位配变低电压占比情况
@@ -102,6 +93,40 @@
         h4.word_title_3 （六）配变发生三相不平衡情况监测
         p 
           span.word_title_4 1、各单位配变三相不平衡占比情况
+        p 
+          span.word_content 11月21日-11月27日，公司配变发生三相不平衡有1125台。三相不平衡率1.30%，较上周上升0.45个百分点。
+        zhutuzhexian.auto(:className="'sanxiangbupinghen'" :isRow="true")
+        p 
+          span.word_content 11月21日-11月27日，公司配变发生三相不平衡有1125台。三相不平衡率1.30%，较上周上升0.45个百分点。
+        zhutuzhexian.auto(:className="'sanxiangbupinghenzhanbi'" :isRow="true")
+        p 
+          span.word_title_4 2、配变三相不平衡周趋势
+        p 
+          span.word_content 11月21日-11月27日,公司发生三相不平衡配变1125台，较上周数量增加491台。
+        zhutuzhexian.auto(:className="'sanxiangbupinghenqushi'" :isRow="true")
+        p 
+          span.word_title_4 3、各单位配变三相不平衡分布情况
+        p 
+          span.word_content 11月21日-11月27日，公司发生三相不平衡共1125台，其中三相不平衡配变较多的三家单位分别为顺义、通州、朝阳公司。
+        zhutuzhexian.auto(:className="'sanxiangbupinghenfenbu'" :isRow="true")
+
+        h4.word_title_3 （七）配变异动重叠发生情况监测
+        p 
+          span.word_title_4 1、配变低电压与重过载重叠发生情况
+        p 
+          span.word_content 11月21日-11月27日，公司配变发生低电压异动72台，发生重过载有214台。其中重叠发生的配变有1台，为门头沟公司“田庄路门ZB37111026变压器”。
+        bintu.auto(:chartsOption="{className:'guozaichongdiefasheng'}")
+        p 
+          span.word_title_4 2、配变低电压与三相不平衡重叠发生情况
+        p 
+          span.word_content 11月21日-11月27日，公司配变发生低电压异动72台，发生三相不平衡有1125台。其中重叠发生的配变有3台，为密云公司“密ZB027(石娥路）”、平谷公司“平ZB012水峪路柱上变压器”、延庆公司“古城路031柱上变压器”。
+        bintu.auto(:chartsOption="{className:'pinghengchongdie'}")
+        p 
+          span.word_lingt 【总结建议】
+        p 
+          span.word_content 1、截至11月27日，公司配变电压运行平稳，未发生较大幅度的波动，电压合格率完成值为96.54%。其中配变电压合格率较低的三家公司分别为延庆、城区、密云公司，相关单位应加大治理力度，提升电压合格率水平。
+        p 
+          span.word_content 2、自2018年6月份以来，组织各单位开展不合格配变、不可监测配变的治理工作，取得了一定成效，但依然存在部分配变供电电压不合格、不可监测，各单位应进一步加强治理，消除由于台账维护错误、采集数据缺失等造成的配变无法监测、电压不合格问题。
 </template>
 <script>
 export default {
