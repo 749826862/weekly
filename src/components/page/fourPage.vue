@@ -35,79 +35,101 @@
         p 
           span.word_content 11月第4周，北京地区10kV线路共9909条，可计算线路9230条，可算率93.15%，同期线损率为3.09%，比上周下降了0.04个百分点。
         mijizhutu.auto(:chartsOption="{className:'dejindiqu10kv',isRow:true}")
+        p 
+          span.word_content 11月第4周，延庆公司10kV线路同期线损率比上周下降了1.01个百分点，其他单位保持相对稳定。
+        zhutuzhexianone.auto(:chartsOption="{className:'10Kvwanchengqingkuang',isRow:false}")
+        p 
+          span.word_title_4 4、北京地区台区同期线损率完成情况
+        p 
+          span.word_content 11月第4周，北京地区台区共8.67万个，可计算台区8.49万个，可算率97.85%，同期线损率为3.14%，比上周上升了0.03个百分点，总体趋势为稳中有降，波动较小。
+        zhutuzhexianone.auto(:chartsOption="{className:'beijintaiquxiansun',isRow:false}")
+        p 
+          span.word_content 11月第4周,各单位台区同期线损率也相对稳定，波动较小。
+        zhutuzhexianone.auto(:chartsOption="{className:'gedanweixiansaun',isRow:false}")
 
-        //- h4.word_title_3 （四）不可监测配变分析
-        //- p 
-        //-   span.word_title_4 1、各单位不可监测配变占比情况
-        //- p 
-        //-   span.word_content 11月21日-11月27日，公司不可监测配变有2272台。其中不可监测数占总量比较高的三家单位分别为延庆、石景山、密云公司。
-        //- zhutuzhexianone.auto(:chartsOption="{className:'gedanweibukejiance',isRow:false}")
-        //- p 
-        //-   span.word_title_4 2、不可监测配变周变化情况
-        //- p 
-        //-   span.word_content 11月21日-11月27日，配变发生不可监测2272台,较上周2265台增加5台。其中，上周持续至本周仍不可监测2038台，本周新增234台（其中投运日期为2019年的有105台，2018年12台，2018年前的有117台）。不可监测配变数量较多的三家单位分别为延庆、朝阳、城区公司。
-        //- binpaizhutu.auto(:chartsOption="{className:'bukejiancezhou',isRow:false}")
-        //- p 
-        //-   span.word_content 对本周新增234台配变进行分析，新纳入不可监测分析的配变有104台（主要原因为“台区与电能表关系缺失”有104台，占比69.23%）；本周前属于可监测配变，本周变为不可监测配变有130台（主要原因为“电能表缺失电压曲线数据”有72台，占比55.38%）。
-        //- zhutufengcengfour.auto(:chartsOption="{className:'xinzengbuke',isRow:true}")
-        //- p 
-        //-   span.word_title_4 3、不可监测配变原因分析
-        //- p 
-        //-   span.word_content 对2272台不可监测配变进行原因分析，其中变压器与营销台区关系缺失的有183台，占比8.05%；台区与电能表关系缺失的有1459台，占比64.22%；台区与电能表存在1对多问题的有157台，占比6.91%；电能表缺失电压曲线数据的有473台，占比20.82%。
-        //- bintu.auto(:chartsOption="{className:'bukejianceyuanyin'}")
-        //- p 
-        //-   span.word_content 按照投运日期分布看，2272台不可监测配变中投运日期为2019年的有1276台（主要原因为“台区与电能表关系缺失”，占比88.87%）；投运日期为2018年的有112台（主要原因为“台区与电能表关系缺失”，占比51.79%）；2018年之前投运的有884台（主要原因为“电能表缺失电压曲线数据”，占比43.78%），具体情况见下图。
-        //- zhutufengcengfour.auto(:chartsOption="{className:'bukejiancefenxi',isRow:true}")
-        //- p 
-        //-   span.word_title_4 4、新投运配变实现可监测时长分析
-        //- p 
-        //-   span.word_content 2019年1月1日至11月27日，公司新投运配变4448台，有1276台配变还未实现监测，已实现监测的配变3172台，平均用时48.82天，其中PMS侧维护平均用时4.70天，营销侧维护平均用时44.12天。仍不可监测的1276台，PMS2.0侧维护平均用时6.23天，营销系统侧维护平均已用时62.16天。
-        //- p 
-        //-   span.word_content 已实现监测的配变3172台配变中，投运当天及投运前完成维护实现可监测配变有563台，投运7天内完成维护实现可监测配变有701台，投运8-15天完成维护实现可监测配变有258台，投运15天以上完成维护实现可监测配变有1650台。
-        //- bintu.auto(:chartsOption="{className:'xintouyunfenxi'}")
+        h4.word_title_3 （二）负损监测情况
+        p 
+          span.word_title_4 1、10kV线路负损周趋势
+        p 
+          span.word_content 11月第4周，北京地区10kV负损线路1581条，比上周增加了36条，占线路总数比例为16.86%，比上周上升了0.32个百分点。
+        zhutuzhexianone.auto(:chartsOption="{className:'10kvfusuanqingkuang',isRow:false}")
+        p 
+          span.word_title_4 2、各单位10kV线路负损情况
+        p 
+          span.word_content 本周，10kV负损线路占比较高的三家单位分别是亦庄、城区、顺义，占本单位线路总数比例分别达26.20%、22.95%、19.12%。
+        zhutuzhexianone.auto(:chartsOption="{className:'gedan10kvfusuanqing',isRow:false}")
+        p 
+          span.word_title_4 3、10kV线路负损区间分布情况
+        p 
+          span.word_content 从分布来看，线损率在[-1,0）区间的小负损线路数最多，达666条，占比为42.13%，数量和占比较上周均有所上升。
+        zhutuzhexianone.auto(:chartsOption="{className:'fusunqujian',isRow:false}")
+        p 
+          span.word_title_4 4、10kV线路小负损[-1,0）情况
+        p 
+          span.word_content 本周，北京地区10kV小负损线路共666条，较上周增加63条，占负损总数比例42.13%，比上周上升了3.1个百分点。
+        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusunqujian',isRow:false}")
+        p 
+          span.word_content 从各单位来看，小负损线路占比最高的三家单位分别是亦庄（51.61%）、石景山（51.52%）、朝阳（49.67%）。
+        zhutuzhexianone.auto(:chartsOption="{className:'xiao10kvfusunqujian',isRow:false}")
+        p 
+          span.word_title_4 5、10kV线路持续负损情况
+        p 
+          span.word_content 本周，持续至少6周负损的线路共213条，占比为12.73%，其中朝阳公司数量最多（为54条），大兴公司占比最高（13.79%）。
+        zhutuzhexianone.auto(:chartsOption="{className:'xiao10kvfusunqingkuna',isRow:false}")
+        h4.word_title_3 （三）台区同期线损率负损监测情况
+        p 
+          span.word_title_4 1、台区负损周趋势
+        p 
+          span.word_content 11月第4周，北京地区负损台区5715个，比上周减少了493个，占台区总数比例为7.02%，比上周下降了0.66个百分点。
+        zhutuzhexianone.auto(:chartsOption="{className:'taiqufusunqushi',isRow:false}")
+        p 
+          span.word_title_4 2、各单位台区负损情况
+        p 
+          span.word_content 本周，负损台区占比较大的三家单位分别是延庆、顺义、大兴，占本单位台区总数比例分别达12.27%、11.01%、9.58%。
+        zhutuzhexianone.auto(:chartsOption="{className:'gedanweifusuntai',isRow:false}")
+        p 
+          span.word_title_4 3、台区负损区间分布情况
+        p 
+          span.word_content 从分布来看，线损率在[-1,0）区间的小负损台区数最多，达3073个，占比为53.77%，数量较上周有所下降，但占比较上周有所上升，且远高于其他区间。
+        zhutuzhexianone.auto(:chartsOption="{className:'taiqufusunqujian',isRow:false}")
+        p 
+          span.word_title_4 4、台区小负损[-1,0）情况
+        p 
+          span.word_content 本周，北京地区小负损台区共3073个，较上周减少了66个，占比为53.77%，较上周上升了3.21个百分点。
+        zhutuzhexianone.auto(:chartsOption="{className:'taiquxiaofusunqujian',isRow:false}")
+        p 
+          span.word_content 从各单位看，本周小负损台区占比较高的三家单位分别是房山（71.00%）、亦庄（68.75%）、顺义（68.16%）。
+        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusuntaiqu',isRow:false}")
+        p 
+          span.word_content 从供电量分布看，小负损台区供电量主要集中在(0,200]低电量区间，占比29.87%，较上周有所下降。
+        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusundianliang',isRow:false}")
+        p 
+          span.word_content 从用户数分布看，小负损台区用户数主要集中在（0，10]户数区间，占比72.80%，较上周有所上升。
+        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusundianliang',isRow:false}")
+        p 
+          span.word_title_4 5、台区负损持续发生情况
+        p 
+          span.word_content 本周，持续至少6周负损的台区共1730个，占比24.07%；从各单位情况看，台区持续6周负损情况较为严重的三家单位是顺义（28.11%）、延庆（19.81%）、通州（17.12%）。
+        zhutuzhexianone.auto(:chartsOption="{className:'taiqushuliangzhanbi',isRow:false}")
 
-        //- h4.word_title_3 （五）配变发生重过载情况监测
-        //- p 
-        //-   span.word_title_4 1、各单位配变重过载占比情况
-        //- p 
-        //-   span.word_content 11月21日-11月27日，公司配变发生重过载214台。重过载率0.25%，较上周下降0个百分点。
-        //- zhutuzhexian.auto(:className="'gongsipeidianqishi'" :isRow="true")
-        //- p 
-        //-   span.word_content 从单位分布上看，重过载数占总量比较高的三家单位分别为大兴、怀柔、门头沟公司。
-        //- zhutuzhexianone.auto(:chartsOption="{className:'gedanweizhongzai'}")
-        //- p 
-        //-   span.word_title_4 2、配变重过载周趋势
-        //- p 
-        //-   span.word_content 11月21日-11月27日,公司发生重过载配变214台，较上周减少2台。其中重载⁶有105台(占比49.07%)，较上周增加4台；过载⁷有109台（占比50.93%），较上周减少6台。
-        //- p 
-        //-   span.word_content.tip ⁶配变重载：配变负载处于80%-100%区间;
-        //-   span.word_content.tip ⁷配变过载：配变负载大于100%。
-        //- duidiezhutu.auto(:chartsOption="{className:'zhongzaipeibian',isRow:true}")
-        //- p 
-        //-   span.word_title_4 3、各单位配变重过载分布情况
-        //- p 
-        //-   span.word_content 11月21日-11月27日，公司发生重过载共214台，其中重过载配变较多的三家单位分别为大兴、怀柔、密云公司。
-        //- duidiezhutu.auto(:chartsOption="{className:'zhongzaipeibianguozai',isRow:false}")
-
-        //- h4.word_title_3 （六）配变发生三相不平衡情况监测
-        //- p 
-        //-   span.word_title_4 1、各单位配变三相不平衡占比情况
-        //- p 
-        //-   span.word_content 11月21日-11月27日，公司配变发生三相不平衡有1125台。三相不平衡率1.30%，较上周上升0.45个百分点。
-        //- zhutuzhexian.auto(:className="'sanxiangbupinghen'" :isRow="true")
-        //- p 
-        //-   span.word_content 11月21日-11月27日，公司配变发生三相不平衡有1125台。三相不平衡率1.30%，较上周上升0.45个百分点。
-        //- zhutuzhexian.auto(:className="'sanxiangbupinghenzhanbi'" :isRow="true")
-        //- p 
-        //-   span.word_title_4 2、配变三相不平衡周趋势
-        //- p 
-        //-   span.word_content 11月21日-11月27日,公司发生三相不平衡配变1125台，较上周数量增加491台。
-        //- zhutuzhexian.auto(:className="'sanxiangbupinghenqushi'" :isRow="true")
-        //- p 
-        //-   span.word_title_4 3、各单位配变三相不平衡分布情况
-        //- p 
-        //-   span.word_content 11月21日-11月27日，公司发生三相不平衡共1125台，其中三相不平衡配变较多的三家单位分别为顺义、通州、朝阳公司。
-        //- zhutuzhexian.auto(:className="'sanxiangbupinghenfenbu'" :isRow="true")
+        h4.word_title_3 （四）新投运台区线损监测情况
+        p 
+          span.word_content 2019年1月1日至11月25日，公司新投运台区累计4420个（本周新投运台区98个），可监测台区共3295个，线损率3.17%，略高于全量台区线损率。
+        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunqushi',isRow:false}")
+        p 
+          span.word_content 从各单位情况看，新投运台区线损率最低为亦庄公司（1.17%），低于本单位台区总体线损率0.71个百分点；最高的为城区公司（4.51%），高于本单位台区总体线损率0.42个百分点。
+        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunxiansuanlv',isRow:false}")
+        p 
+          span.word_content 各单位新投运台区负损情况总体较好，延庆公司占本单位台区比例最高。
+        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunbuhege',isRow:false}")
+        p
+          span.word_lingt 【结论】
+        p 
+          span.word_content 1．11月第4周，北京地区同期线损率为6.51%，10kV线路同期线损率为3.09%，台区同期线损率为3.14%。
+        p 
+          span.word_content 2．11月第4周，北京地区10kV负损线路占线路总数比例为16.86%，小负损线路占负损线路比例为42.13%；负损台区占台区总数比例为7.02%，小负损台区占负损台区比例为53.77%。
+        p 
+          span.word_content 3．11月第4周，新投运台区线损率为3.17%。
 </template>
 <script>
 export default {
