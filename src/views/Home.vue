@@ -5,6 +5,7 @@
     twoPage
     threePage
     fourPage
+    fivePage
     //- zhuzhaungtu
 </template>
 <script>

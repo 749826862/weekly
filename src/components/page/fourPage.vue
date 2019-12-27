@@ -1,6 +1,6 @@
 <template lang="pug">
   .two_main
-    //- h3.word_title_1 第一部分 重点专题监测情况
+    //- h3.word_title_1 
     .message
       .title_1
         h4.word_title_2 三、线损率
