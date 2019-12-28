@@ -12,7 +12,13 @@ export default {
     value: {
       type: Object,
       default: () => {
-        return {};
+        return {
+          xData:["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          serverData:[
+            [120, 132, 101, 134, 90, 230, 210],
+            [220, 182, 191, 234, 290, 330, 310],
+          ]
+        };
       }
     },
     className: {
@@ -57,8 +63,17 @@ export default {
             trigger: "axis"
           },
           legend: {
-            show:false,
-            data: ["邮件营销", "联盟广告", "视频广告", "直接访问", "搜索引擎"]
+            show:true,
+            // orient:"vertical",
+            itemWidth:10,
+            itemHeight:10,
+            right:0,
+            top:0,
+            textStyle: {
+              fontSize:10,
+              color: "#000"
+            },
+            data: ["最高温", "最低温"]
           },
           grid: {
             borderWidth: 0,
@@ -84,7 +99,7 @@ export default {
           },
           series: [
             {
-              name: "邮件营销",
+              name: "最高温",
               type: "line",
               stack: "总量",
               itemStyle: {
@@ -101,7 +116,7 @@ export default {
               data: [120, 132, 101, 134, 90, 230, 210]
             },
             {
-              name: "联盟广告",
+              name: "最低温",
               type: "line",
               stack: "总量",
               itemStyle: {

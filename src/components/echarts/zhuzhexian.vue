@@ -11,7 +11,14 @@ export default {
     value: {
       type: Object,
       default: () => {
-        return {};
+        return {
+          xData:["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          serverData:[
+            [120, 132, 101, 134, 90, 230, 210],
+            [220, 182, 191, 234, 290, 330, 310],
+            [1036, 3693, 2962, 3810, 2519, 1915, 1748]
+          ]
+        };
       }
     },
     className: {
@@ -81,9 +88,10 @@ export default {
             itemHeight:10,
             borderRadius:0,
             textStyle: {
-              color: "#90979c"
+              fontSize:10,
+              color: "#000"
             },
-            data: ["女", "男", "平均"]
+            data: ["不合格配变数(台)","合格配变数(台)"]
           },
 
           calculable: true,
@@ -108,7 +116,7 @@ export default {
               axisLabel: {
                 interval: 0
               },
-              data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+              data: this.value.xData
             }
           ],
           yAxis: [
@@ -135,14 +143,14 @@ export default {
           ],
           series: [
             {
-              name: "女",
+              name: "不合格配变数(台)",
               type: "bar",
               stack: "总量",
               barMaxWidth: 25,
               barGap: "10%",
               itemStyle: {
                 normal: {
-                  color: "#e15759",
+                  color: "#4e79a7",
                   label: {
                     show: false,
                     textStyle: {
@@ -155,16 +163,15 @@ export default {
                   }
                 }
               },
-              data: [120, 132, 101, 134, 90, 230, 210]
+              data: this.value.serverData[0]
             },
-
             {
-              name: "男",
+              name: "合格配变数(台)",
               type: "bar",
               stack: "总量",
               itemStyle: {
                 normal: {
-                  color: "#4e79a7",
+                  color: "#e15759",
                   barBorderRadius: 0,
                   label: {
                     show: false,
@@ -172,7 +179,7 @@ export default {
                   }
                 }
               },
-              data: [220, 182, 191, 234, 290, 330, 310]
+              data: this.value.serverData[1]
             },
             {
               name: "总数",
@@ -193,7 +200,7 @@ export default {
                   }
                 }
               },
-              data: [1036, 3693, 2962, 3810, 2519, 1915, 1748]
+              data: this.value.serverData[2]
             }
           ]
         };

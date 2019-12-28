@@ -1,8 +1,7 @@
 <template lang="pug">
   .chartMain
     div.zhuzhuangtu(:class="className")
-    //- img.canvasImg(ref="echartsImg")
-    p 配电自动化故障自愈实现率周趋势
+    p {{ title.tableName }}
 </template>
 <script>
 import echarts from "echarts"
@@ -11,13 +10,29 @@ export default {
     value: {
       type: Object,
       default: () => {
-        return {};
+        return {
+          xData:["石景山", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+          serverData:[10,20,32,15,66,43,55]
+        }
       }
     },
     className:{
       type:String,
       default:()=>{
         return ""
+      }
+    },
+    isRow:{
+      type:Boolean,
+      default: true
+    },
+    title:{
+      type:Object,
+      default:()=>{
+        return {
+          tableName:"未知图表名称",
+          legendName:"未知图例名称"
+        }
       }
     }
   },
@@ -31,14 +46,8 @@ export default {
   methods: {
     initChart(){
       this.setChart().then(option => {
-        console.log(document.querySelector('.'+this.className),888)
         let myChart = echarts.init(document.querySelector('.'+this.className))
         myChart.setOption(option)
-        // myChart.on('finished',()=>{
-        //   var img=myChart.getDataURL();
-        //   this.$refs.echartsImg.src = img
-        //   console.log(img,998)
-        // })
         window.addEventListener("resize",()=>{
           myChart.resize()
         })
@@ -59,22 +68,29 @@ export default {
           },
           grid: {
             left: "4%",
+            top:"10%",
             right: "4%",
             bottom: "12%",
             containLabel: true
           },
           legend: {
+            left:"43%",
             bottom: "2%",
             textStyle: {
-              color: "#90979c"
+              color: "#000"
             }
           },
           xAxis: [
             {
               type: "category",
-              data: ["Mon", "Tue", "Wed", "Thu", "Fri", "Sat", "Sun"],
+              data: this.value.xData,
               axisTick: {
-                alignWithLabel: true
+                alignWithLabel: false    //X轴标签居中显示
+              },
+              axisLabel:{
+                formatter:(value) => {
+                  return this.isRow? value:value.split("").join("\n")
+                }
               }
             }
           ],
@@ -85,7 +101,7 @@ export default {
           ],
           series: [
             {
-              name: "故障自愈实现率(%)",
+              name: this.title.legendName,
               type: "bar",
               barWidth: "30%",
               label: {
@@ -96,7 +112,7 @@ export default {
                   color: "#000"
                 }
               },
-              data: [10, 52, 200, 334, 390, 330, 220]
+              data: this.value.serverData
             }
           ]
         };
@@ -124,6 +140,7 @@ export default {
 p{
   text-align: center;
   position: absolute;
+  font-size: 12px;
   bottom: -25px;
   left: 50%;
   transform: translate(-50%);

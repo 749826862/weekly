@@ -17,12 +17,12 @@
           span.word_lingt 1、故障自愈实现率总体情况
         p 
           span.word_content 11月18日-11月24日,北京公司累计投入配电自动化8689条，故障自愈实现率为99.70%，较上周上升0.01个百分点。
-        zhuzhaungtu.auto(:className="'realizationtrend'")
+        zhuzhaungtu.auto(:className="'realizationtrend'" :title="{tableName:'图3 配电自动化故障自愈实现率周趋势',legendName:'故障自愈实现率(%)'}")
         p 
           span.word_lingt 2、各单位故障自愈实现率情况
         p 
           span.word_content 11月18日-11月24日，故障自愈实现率较高的公司分别为城区、通州、朝阳公司，故障自愈实现率较低的公司分为延庆、密云、门头沟公司。
-        zhuzhaungtu.auto(:className="'realization'")
+        zhuzhaungtu.auto(:className="'realization'" :title="{tableName:'图4 各单位配电自动化故障自愈实现率情况',legendName:'故障自愈实现率(%)'}" :isRow="false")
         p 
           span.word_lingt 【相关建议】
         p 

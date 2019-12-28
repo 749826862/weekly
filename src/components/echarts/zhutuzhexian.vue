@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
     div.zhuzhuangtu(:class="className")
-    p(v-if="isTitle") 图6 各单位配变电压合格率分布
+    p {{ title.tableName }}
     //- p.titleLeft 配变台区数(台)
 </template>
 <script>
@@ -11,7 +11,22 @@ export default {
     value: {
       type: Object,
       default: () => {
-        return {};
+        return {
+          xData:["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
+          serverData:[
+            [120, 132, 101, 134, 90, 230, 210],
+            [220, 182, 191, 234, 290, 330, 310],
+          ]
+        };
+      }
+    },
+    title:{
+      type: Object,
+      default: () => {
+        return {
+          tableName:"图6 各单位配变电压合格率分布",
+          legendName:["电压合格配变数(台)", "电压不合格配变数(台)", "配变电压合格率(%)"]
+        };
       }
     },
     className: {
@@ -19,10 +34,6 @@ export default {
       default: () => {
         return "";
       }
-    },
-    isTitle: {
-      type: Boolean,
-      default: false
     },
     isRow:{
       type: Boolean,
@@ -87,7 +98,7 @@ export default {
             textStyle: {
               color: "#000"
             },
-            data: ["电压合格配变数(台)", "电压不合格配变数(台)", "配变电压合格率(%)"]
+            data: this.title.legendName
           },
           calculable: true,
           xAxis: [
@@ -165,7 +176,7 @@ export default {
           ],
           series: [
             {
-              name: "电压合格配变数(台)",
+              name: this.title.legendName[0],
               type: "bar",
               stack: "总量",
               yAxisIndex: 0,
@@ -190,7 +201,7 @@ export default {
             },
 
             {
-              name: "电压不合格配变数(台)",
+              name: this.title.legendName[1],
               type: "bar",
               yAxisIndex: 0,
               stack: "总量",
@@ -207,7 +218,7 @@ export default {
               data: [220, 182, 191, 234, 290, 330, 310]
             },
             {
-              name: "配变电压合格率(%)",
+              name: this.title.legendName[2],
               type: "line",
               symbolSize: 10,
               yAxisIndex: 1,
