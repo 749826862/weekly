@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
     div.zhuzhuangtu(:class="this.chartsOption.className")
-    p(v-if="this.chartsOption.isTitle") 图7 电压不合格配变周趋势
+    p {{ chartsOption.tableName }}
     //- p.titleLeft 配变台区数(台)
 </template>
 <script>
@@ -12,9 +12,13 @@ export default {
       type: Object,
       default: () => {
         return {
-          data1:[27, 32, 10, 13],
-          data2:[20, 18, 9, 24],
-          data3:[20, 18, 19, 34]
+          xData:["1106", "1113", "1120", "1127"],
+          serverData:[
+            [27, 32, 10, 13],
+            [20, 18, 9, 24],
+            [20, 18, 19, 34]
+          ]
+          
         };
       }
     },
@@ -23,8 +27,9 @@ export default {
       default:()=>{
         return {
           className:"",
-          isTitle:true,
-          isRow:true
+          isRow:true,
+          legendName:["低电压异常(台)", "过电压异常(台)", "数据异常(台)"],
+          tableName:"图7 电压不合格配变周趋势"
         }
       }
     }
@@ -70,8 +75,9 @@ export default {
           grid: {
             borderWidth: 0,
             top: 30,
-            bottom: 50,
+            bottom: "9%",
             left: 60,
+            containLabel: true,
             textStyle: {
               color: "#fff"
             }
@@ -85,7 +91,7 @@ export default {
             textStyle: {
               color: "#000"
             },
-            data: ["低电压异常(台)", "过电压异常(台)", "数据异常(台)"]
+            data: this.chartsOption.legendName
           },
           calculable: true,
           xAxis: [
@@ -112,7 +118,7 @@ export default {
                   return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               },
-              data: ["1106", "1113", "1120", "1127"]
+              data: this.value.xData
             }
           ],
           yAxis: [
@@ -142,25 +148,6 @@ export default {
             }
           ],
           series: [
-            // {
-            //   name: "总数",
-            //   type: "bar",
-            //   stack: "总量",
-            //   barMaxWidth: 0,
-            //   itemStyle: {
-                
-            //     label: {
-            //       normal: {
-            //         show: true,
-            //         position: "top",
-            //         textStyle: {
-            //           fontSize: 18
-            //         }
-            //       }
-            //     }
-            //   },
-            //  data:[67,68,38,71]
-            // },
             {
               name: "低电压异常(台)",
               type: "bar",
@@ -183,7 +170,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data1
+              data: this.value.serverData[0]
             },
             {
               name: "过电压异常(台)",
@@ -200,7 +187,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.serverData[1]
             },
             {
               name: "数据异常(台)",
@@ -221,7 +208,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data3
+              data: this.value.serverData[2]
             }
           ]
         };

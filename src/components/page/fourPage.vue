@@ -24,12 +24,12 @@
           span.word_title_4 1、北京地区同期线损率完成情况
         p 
           span.word_content 11月第4周，北京地区同期线损率为6.51%，比上周上升了1.18个百分点，比10月统计线损率累计值5.42%高1.09个百分点。
-        zhutuzhexianone.auto(:chartsOption="{className:'beijingdiquxiansun',isRow:false}")
+        binpaifuzhuline.auto(:chartsOption="{className:'beijingdiquxiansun',isRow:true,isMarkline:false,tableName: '图1 北京地区同期线损率周趋势'}")
         p 
           span.word_title_4 2、各单位同期线损率完成情况
         p 
           span.word_content 11月第4周，亦庄公司同期线损率较低（2.75%），怀柔公司同期线损率较高（12.36%），大兴、延庆、朝阳等公司同期线损率波动较大。
-        binpaizhutu.auto(:chartsOption="{className:'xiansuanwancheng',isRow:false}")
+        binpaifuzhuline.auto(:chartsOption="{className:'xiansuanwancheng',isRow:false,isMarkline:true,tableName: '图2 各单位同期线损率完成情况'}")
         p 
           span.word_title_4 3、北京地区10kV线路同期线损率完成情况
         p 

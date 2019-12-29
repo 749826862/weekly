@@ -16,6 +16,7 @@ export default {
           serverData:[
             [120, 132, 101, 134, 90, 230, 210],
             [220, 182, 191, 234, 290, 330, 310],
+            [10, 93, 26, 38, 51, 15, 48]
           ]
         };
       }
@@ -125,7 +126,7 @@ export default {
                   return this.isRow? value:value.split("").join("\n")
                 }
               },
-              data: ["平谷", "房山", "门头沟", "周四", "周五", "石景山", "周日"]
+              data: this.value.xData
             }
           ],
           yAxis: [
@@ -197,7 +198,7 @@ export default {
                   }
                 }
               },
-              data: [120, 132, 101, 134, 90, 230, 210]
+              data: this.value.serverData[0]
             },
 
             {
@@ -215,7 +216,7 @@ export default {
                   }
                 }
               },
-              data: [220, 182, 191, 234, 290, 330, 310]
+              data: this.value.serverData[1]
             },
             {
               name: this.title.legendName[2],
@@ -236,7 +237,7 @@ export default {
                   }
                 }
               },
-              data: [10, 93, 26, 38, 51, 15, 48]
+              data: this.value.serverData[2]
             }
           ]
         };

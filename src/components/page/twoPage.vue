@@ -33,7 +33,7 @@
         p 
           span.word_content.tip ¹配变电压合格率=配变电压合格台数/在运配变总数，其中电压合格数=在运配变总数-不可监测配变数-配变电压异常数-配变数据异常数。
           span.word_content.tip ²配变低电压：配变电压低于198V，在132V-198 V之间，持续1小时;
-        zhutufenceng.auto(:chartsOption="{className:'noqualified',isRow:true}")
+        zhutufenceng.auto(:chartsOption="{className:'noqualified',isRow:true,tableName:'图7 电压不合格配变周趋势'}")
         p 
           span.word_title_4 4、各单位配变电压不合格分布情况
         p 
