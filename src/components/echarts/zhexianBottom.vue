@@ -39,7 +39,6 @@ export default {
     initChart() {
       this.setChart().then(
         option => {
-          console.log(document.querySelector("." + this.className), 888);
           let myChart = echarts.init(
             document.querySelector("." + this.className)
           );

@@ -9,12 +9,20 @@
     //- zhuzhaungtu
 </template>
 <script>
+import { GET_CHARTS_OPTION } from "@api/home"
 export default {
   data() {
     return {};
   },
-  created() {},
-  methods: {}
+  created() {
+    // this.getChartsOption()
+  },
+  methods: {
+    async getChartsOption(){
+     let options = await GET_CHARTS_OPTION()
+     console.log(options,999)
+    }
+  }
 };
 </script>
 <style lang='less' scoped>

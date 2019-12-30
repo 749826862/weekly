@@ -34,94 +34,94 @@
           span.word_title_4 3、北京地区10kV线路同期线损率完成情况
         p 
           span.word_content 11月第4周，北京地区10kV线路共9909条，可计算线路9230条，可算率93.15%，同期线损率为3.09%，比上周下降了0.04个百分点。
-        mijizhutu.auto(:chartsOption="{className:'dejindiqu10kv',isRow:true}")
+        zhexianone.auto(:chartsOption="{className:'dejindiqu10kv',isRow:true,legendName: ['北京地区10kv线路同期线损率(%)'],tableName: '图3 北京地区10kV线路同期线损率周趋势'}")
         p 
           span.word_content 11月第4周，延庆公司10kV线路同期线损率比上周下降了1.01个百分点，其他单位保持相对稳定。
-        zhutuzhexianone.auto(:chartsOption="{className:'10Kvwanchengqingkuang',isRow:false}")
+        binpaifuzhuline.auto(:chartsOption="{className:'Kv10wanchengqingku',isRow:false,isMarkline:true,tableName: '图4 各单位10kV线路同期线损率完成情况'}")
         p 
           span.word_title_4 4、北京地区台区同期线损率完成情况
         p 
           span.word_content 11月第4周，北京地区台区共8.67万个，可计算台区8.49万个，可算率97.85%，同期线损率为3.14%，比上周上升了0.03个百分点，总体趋势为稳中有降，波动较小。
-        zhutuzhexianone.auto(:chartsOption="{className:'beijintaiquxiansun',isRow:false}")
+        zhexianone.auto(:chartsOption="{className:'zhoubeijintaiquxiansun',isRow:true,tableName: '图5 北京地区台区同期线损率周趋势',legendName: ['北京地区台区同期线损率(%)']}")
         p 
           span.word_content 11月第4周,各单位台区同期线损率也相对稳定，波动较小。
-        zhutuzhexianone.auto(:chartsOption="{className:'gedanweixiansaun',isRow:false}")
+        binpaifuzhuline.auto(:chartsOption="{className:'gedanweixiansaun',isRow:false,isMarkline:true,tableName: '图6 各单位台区同期线损率完成情况',legendName: ['北京地区台区同期线损率(%)']}")
 
         h4.word_title_3 （二）负损监测情况
         p 
           span.word_title_4 1、10kV线路负损周趋势
         p 
           span.word_content 11月第4周，北京地区10kV负损线路1581条，比上周增加了36条，占线路总数比例为16.86%，比上周上升了0.32个百分点。
-        zhutuzhexianone.auto(:chartsOption="{className:'10kvfusuanqingkuang',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'kv10fusuanqingkuang',isRow:true,tableName: '图7 北京地区10kV线路负损情况周趋势',legendName: ['10kv负损线路数','10kv负损线路占10kv线路总数比例']}")
         p 
           span.word_title_4 2、各单位10kV线路负损情况
         p 
           span.word_content 本周，10kV负损线路占比较高的三家单位分别是亦庄、城区、顺义，占本单位线路总数比例分别达26.20%、22.95%、19.12%。
-        zhutuzhexianone.auto(:chartsOption="{className:'gedan10kvfusuanqing',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'gedan10kvfusuanqing',isRow:false,tableName: '图8 各单位10kV线路负损情况',legendName: ['本周负损数','本周10kv负损线路占10kv线路总数比例']}")
         p 
           span.word_title_4 3、10kV线路负损区间分布情况
         p 
           span.word_content 从分布来看，线损率在[-1,0）区间的小负损线路数最多，达666条，占比为42.13%，数量和占比较上周均有所上升。
-        zhutuzhexianone.auto(:chartsOption="{className:'fusunqujian',isRow:false}")
+        qujianzhutu.auto(:chartsOption="{className:'fusunqujian',tableName: '图9 10kV线路负损区间分布',legendName: ['本周10kv线路同期线损率不同区间段数量和占比']}")
         p 
           span.word_title_4 4、10kV线路小负损[-1,0）情况
         p 
           span.word_content 本周，北京地区10kV小负损线路共666条，较上周增加63条，占负损总数比例42.13%，比上周上升了3.1个百分点。
-        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusunqujian',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'xiaofusunqujian',isRow:true,tableName: '图10 10kV线路小负损趋势',legendName: ['线损率在[-1,0)区间的数量','10kV线路小负损数占负损总数比例']}")
         p 
           span.word_content 从各单位来看，小负损线路占比最高的三家单位分别是亦庄（51.61%）、石景山（51.52%）、朝阳（49.67%）。
-        zhutuzhexianone.auto(:chartsOption="{className:'xiao10kvfusunqujian',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'xiao10kvfusunqujian',isRow:false,tableName: '图11 各单位10kV线路小负损情况',legendName: ['10kv线路同期线损率在[-1,0)区间的数量','10kV线路小负损数占负损总数比例']}")
         p 
           span.word_title_4 5、10kV线路持续负损情况
         p 
           span.word_content 本周，持续至少6周负损的线路共213条，占比为12.73%，其中朝阳公司数量最多（为54条），大兴公司占比最高（13.79%）。
-        zhutuzhexianone.auto(:chartsOption="{className:'xiao10kvfusunqingkuna',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'xiao10kvfusunqingkuna',tableName: '图12 各单位10kV线路持续6周负损情况',legendName: ['10kv线路持续负损数量','10kv线路持续负损数占本单位不合格线路总数比例']}")
         h4.word_title_3 （三）台区同期线损率负损监测情况
         p 
           span.word_title_4 1、台区负损周趋势
         p 
           span.word_content 11月第4周，北京地区负损台区5715个，比上周减少了493个，占台区总数比例为7.02%，比上周下降了0.66个百分点。
-        zhutuzhexianone.auto(:chartsOption="{className:'taiqufusunqushi',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'taiqufusunqushi',isRow:true,tableName: '图13 台区负损情况周趋势',legendName: ['台区负损数','台区负损数占台区总数比例']}")
         p 
           span.word_title_4 2、各单位台区负损情况
         p 
           span.word_content 本周，负损台区占比较大的三家单位分别是延庆、顺义、大兴，占本单位台区总数比例分别达12.27%、11.01%、9.58%。
-        zhutuzhexianone.auto(:chartsOption="{className:'gedanweifusuntai',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'gedanweifusuntai',isRow:false,tableName: '图14 各单位负损台区情况',legendName: ['本周台区负损数','本周台区负损数占台区总数比例']}")
         p 
           span.word_title_4 3、台区负损区间分布情况
         p 
           span.word_content 从分布来看，线损率在[-1,0）区间的小负损台区数最多，达3073个，占比为53.77%，数量较上周有所下降，但占比较上周有所上升，且远高于其他区间。
-        zhutuzhexianone.auto(:chartsOption="{className:'taiqufusunqujian',isRow:false}")
+        qujianzhutu.auto(:chartsOption="{className:'taiqufusunqujian',tableName: '图15 台区负损区间分布'}")
         p 
           span.word_title_4 4、台区小负损[-1,0）情况
         p 
           span.word_content 本周，北京地区小负损台区共3073个，较上周减少了66个，占比为53.77%，较上周上升了3.21个百分点。
-        zhutuzhexianone.auto(:chartsOption="{className:'taiquxiaofusunqujian',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'taiquxiaofusunqujian',isRow:true,tableName: '图16 台区小负损周趋势',legendName: ['线损率在[-1,0)区间的数量','台区小负损数占负损总数比例']}")
         p 
           span.word_content 从各单位看，本周小负损台区占比较高的三家单位分别是房山（71.00%）、亦庄（68.75%）、顺义（68.16%）。
-        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusuntaiqu',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'xiaofusuntaiqu',isRow:false,tableName: '图17 各单位小负损台区情况',legendName: ['台区同期线损率在[-1,0)区间的数量','台区小负损数占负损总数比例']}")
         p 
           span.word_content 从供电量分布看，小负损台区供电量主要集中在(0,200]低电量区间，占比29.87%，较上周有所下降。
-        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusundianliang',isRow:false}")
+        qujianzhutu.auto(:chartsOption="{className:'xiaofusundianliang',tableName: '图18 小负损台区供电量分布情况',legendName: ['本周小负损台区不同供电量区间段数量和占比']}")
         p 
           span.word_content 从用户数分布看，小负损台区用户数主要集中在（0，10]户数区间，占比72.80%，较上周有所上升。
-        zhutuzhexianone.auto(:chartsOption="{className:'xiaofusundianliang',isRow:false}")
+        qujianzhutu.auto(:chartsOption="{className:'xiaofusundianliangyonghu',tableName: '图19 小负损台区用户数分布情况'}")
         p 
           span.word_title_4 5、台区负损持续发生情况
         p 
           span.word_content 本周，持续至少6周负损的台区共1730个，占比24.07%；从各单位情况看，台区持续6周负损情况较为严重的三家单位是顺义（28.11%）、延庆（19.81%）、通州（17.12%）。
-        zhutuzhexianone.auto(:chartsOption="{className:'taiqushuliangzhanbi',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'taiqushuliangzhanbi',isRow:false,tableName: '图20 各单位持续负损台区数量及占比',legendName: ['台区持续负损数量','台区持续负损数占本单位不合格台区总数比例']}")
 
         h4.word_title_3 （四）新投运台区线损监测情况
         p 
           span.word_content 2019年1月1日至11月25日，公司新投运台区累计4420个（本周新投运台区98个），可监测台区共3295个，线损率3.17%，略高于全量台区线损率。
-        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunqushi',isRow:false}")
+        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunqushi',isRow:true,tableName: '图21 新投运台区线损率趋势图',legendName: ['新投运台区同期线损率(%)','总体台区同期线损率(%)']}")
         p 
           span.word_content 从各单位情况看，新投运台区线损率最低为亦庄公司（1.17%），低于本单位台区总体线损率0.71个百分点；最高的为城区公司（4.51%），高于本单位台区总体线损率0.42个百分点。
-        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunxiansuanlv',isRow:false}")
+        binpaifuzhuline.auto(:chartsOption="{className:'xintouyunxiansuanlv',isRow:false,tableName: '图22 各单位新投运台区线损率情况',legendName: ['各单位新投运台区同期线损率(%)','各单位总体台区同期线损率(%)','新投运总体台区同期线损率(3.16%)','总体台区同期线损率(3.14%)']}")
         p 
           span.word_content 各单位新投运台区负损情况总体较好，延庆公司占本单位台区比例最高。
-        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunbuhege',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'xintouyunbuhege',isRow:false,tableName: '图23 各单位新投运不合格台区情况',legendName: ['新投运台区负损数','新投运台区负损数占台区总数的比例']}")
         p
           span.word_lingt 【结论】
         p 

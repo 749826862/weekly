@@ -1,4 +1,4 @@
 import http from '@api/http.js'
 
-// 实时数据
-export const GET_OVER_REAL = params => http('get', '/map/api/realTimeData', params)
+// 获取图表配置
+export const GET_CHARTS_OPTION = params => http('get', '../../static/weeklyCharts/chartsOption.json', params)
