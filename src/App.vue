@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-    <input type="button" name="button_export" title="打印1" @click="preview()" value="打印">
+    <!-- <input type="button" name="button_export" title="打印1" @click="preview()" value="打印" v-if="$route.meta.isPrint"> -->
+    <floatBtn @print="preview" v-if="$route.meta.isPrint" />
     <section ref="print" class="print_size" >
       <router-view/>
     </section>
@@ -10,6 +11,9 @@
 <script>
 export default {
   name: "App",
+  created(){
+    console.log(this.$route.meta)
+  },
   methods: {
     preview() {
      this.$print(this.$refs.print) // 使用

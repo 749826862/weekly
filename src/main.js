@@ -7,6 +7,7 @@ import axios from 'axios'
 import globalMethods from '@public/globalMethods.js'
 import utils from '@public/utils'
 import configData from '../static/config.json'
+import '@assets/icon/iconfont.css'
 // 注册全局方法
 Vue.use(globalMethods)
 
