@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
     div.zhuzhuangtu(:class="this.chartsOption.className")
-    p(v-if="this.chartsOption.isTitle") 图7 电压不合格配变周趋势
+    p {{ chartsOption.tableName }}
     //- p.titleLeft 配变台区数(台)
 </template>
 <script>
@@ -23,7 +23,7 @@ export default {
       default: () => {
         return {
           className: "",
-          isTitle: true,
+          tableName:"",
           isRow: true
         };
       }

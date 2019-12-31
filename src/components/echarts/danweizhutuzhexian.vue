@@ -12,20 +12,31 @@ export default {
       type: Object,
       default: () => {
         return {
-          data1:[27, 32, 10, 13],
-          data2:[20, 18, 9, 24],
-          data3:[20, 18, 19, 34]
+          xData: [
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周"
+          ],
+          serverData: [
+            [102, 52, 200, 334, 90, 100, 220],
+            [12, 52, 20, 124, 190, 10, 22]
+          ]
         };
       }
     },
-    chartsOption:{
+    chartsOption: {
       type: Object,
-      default:()=>{
+      default: () => {
         return {
-          className:"",
-          isRow:true,
-          tableName:""
-        }
+          className: "", //类名
+          isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
+          legendName: ["北京地区10kv线路同期线损率(%)"], //图例显示文字
+          tableName: "图1 北京地区同期线损率周趋势" //表格名称
+        };
       }
     }
   },
@@ -57,130 +68,108 @@ export default {
     setChart() {
       return new Promise((resolve, reject) => {
         let option = {
-          backgroundColor: "#fff",
           tooltip: {
             trigger: "axis",
             axisPointer: {
-              type: "shadow",
-              textStyle: {
-                color: "#fff"
-              }
+              // 坐标轴指示器，坐标轴触发有效
+              type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
             }
           },
           grid: {
-            borderWidth: 0,
-            top: 30,
-            bottom: 70,
-            left: 60,
-            right:"8%",
-            textStyle: {
-              color: "#fff"
-            }
+            top: "13%",
+            left: "3%",
+            right: "10%",
+            bottom: "9%",
+            containLabel: true
           },
           legend: {
-            bottom: "0%",
-            left: "40%",
-            itemWidth: 30,
-            itemHeight: 10,
-            itemGap:40,
-            borderRadius: 0,
-            textStyle: {
-              color: "#000"
-            },
-            data: ["上周",  "本周"]
+            show: true,
+            bottom: 0,
+            data: this.chartsOption.legendName
           },
-          calculable: true,
           xAxis: [
             {
-              show: true,
               type: "category",
-              axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
-              },
-              splitLine: {
-                show: false
-              },
+              data: this.value.xData,
               axisTick: {
-                show: false
-              },
-              splitArea: {
-                show: false
+                // show:false,
+                alignWithLabel: false
               },
               axisLabel: {
                 interval: 0,
-                formatter:(value) => {
-                  return this.chartsOption.isRow? value:value.split("").join("\n")
+                formatter: value => {
+                  return this.chartsOption.isRow
+                    ? value
+                    : value.split("").join("\n");
                 }
-              },
-              data: ["门头沟", "房山", "昌平", "石景山"]
+              }
             }
           ],
           yAxis: [
             {
+              name:"单位:万件",
               type: "value",
-              splitLine: {
-                show: true,
-                lineStyle: {
-                  type: "dashed",
-                  color: "#333"
-                }
-              },
               axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
+                //y轴
+                show: false
               },
               axisTick: {
-                show: true
+                //y轴刻度线
+                show: false
+              }
+            },
+            {
+              name:"单位:兆瓦/时",
+              type: "value",
+              axisLine: {
+                //y轴
+                show: false
               },
-              axisLabel: {
-                interval: 0
-              },
-              splitArea: {
+              axisTick: {
+                //y轴刻度线
                 show: false
               }
             }
           ],
           series: [
-             {
-              name: "上周",
+            {
+              name: this.chartsOption.legendName[1],
               type: "bar",
-              yAxisIndex: 0,
-              // stack: "总量",
-              barMaxWidth: 15,
+              barWidth:"20%",
+               yAxisIndex:0,
+              // symbol: "circle",
+              symbolSize: 8,
               itemStyle: {
                 normal: {
-                  color: "#4f81bd",
-                  barBorderRadius: 0,
                   label: {
                     show: true,
                     position: "top",
                     color:"#000"
-                  }
+                    // formatter: "{c}%"
+                  },
+                  color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.data2
+              data: this.value.serverData[0]
             },
             {
-              name: "本周",
-              type: "bar",
-              yAxisIndex: 0,
-              // stack: "总量",
-              barMaxWidth: 15,
+              name: this.chartsOption.legendName[0],
+              type: "line",
+              yAxisIndex:1,
+              barWidth: "30%",
+              symbol: "none",
+              symbolSize: 8,
               itemStyle: {
                 normal: {
-                  color: "#c0504d",
-                  barBorderRadius: 0,
                   label: {
                     show: true,
                     position: "top",
-                    color:"#000"
-                  }
+                    // formatter: "{c}%"
+                  },
+                  color: "rgba(192,80,77,1)"
                 }
               },
-              data: this.value.data2
+              data: this.value.serverData[1]
             }
             
           ]
@@ -204,7 +193,7 @@ export default {
   position: relative;
 }
 .zhuzhuangtu {
-  width: 90%;
+  width: 100%;
   height: 99%;
 }
 p {

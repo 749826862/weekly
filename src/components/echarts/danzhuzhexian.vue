@@ -33,6 +33,7 @@ export default {
       default: () => {
         return {
           className: "", //类名
+          company:"",
           isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
           legendName: ["北京地区10kv线路同期线损率(%)"], //图例显示文字
           tableName: "图1 北京地区同期线损率周趋势" //表格名称
@@ -76,9 +77,9 @@ export default {
             }
           },
           grid: {
-            top: "5%",
+            top: "13%",
             left: "3%",
-            right: "4%",
+            right: "10%",
             bottom: "9%",
             containLabel: true
           },
@@ -106,6 +107,7 @@ export default {
           ],
           yAxis: [
             {
+              name:this.chartsOption.company,
               type: "value",
               axisLine: {
                 //y轴
@@ -190,7 +192,7 @@ export default {
   position: relative;
 }
 .zhuzhuangtu {
-  width: 100%;
+  width: 90%;
   height: 99%;
 }
 p {

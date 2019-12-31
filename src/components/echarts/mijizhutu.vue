@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
     div.zhuzhuangtu(:class="this.chartsOption.className")
-    p(v-if="this.chartsOption.isTitle") 图17 配变过电压时长分布
+    p {{ chartsOption.tableName }}
     p.titleLeft 过电压异常(台)
 </template>
 <script>
@@ -23,8 +23,8 @@ export default {
       default:()=>{
         return {
           className:"",
-          isTitle:true,
-          isRow:true
+          isRow:true,
+          tableName:""
         }
       }
     }
@@ -72,6 +72,7 @@ export default {
             top: 30,
             bottom: 50,
             left: 60,
+            right:"5%",
             textStyle: {
               color: "#fff"
             }
@@ -186,7 +187,7 @@ export default {
   position: relative;
 }
 .zhuzhuangtu {
-  width: 100%;
+  width: 90%;
   height: 99%;
 }
 p {

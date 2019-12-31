@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
-    div.zhuzhuangtu(:class="className")
-    p {{ title.tableName }}
+    div.zhuzhuangtu(:class="chartsOption.className")
+    p {{ chartsOption.tableName }}
 </template>
 <script>
 import echarts from "echarts"
@@ -16,22 +16,16 @@ export default {
         }
       }
     },
-    className:{
-      type:String,
-      default:()=>{
-        return ""
-      }
-    },
-    isRow:{
-      type:Boolean,
-      default: true
-    },
-    title:{
+   
+    chartsOption:{
       type:Object,
       default:()=>{
         return {
+          className:"",
+          isRow:true,
           tableName:"未知图表名称",
-          legendName:"未知图例名称"
+          legendName:"未知图例名称",
+          company:""
         }
       }
     }
@@ -46,7 +40,7 @@ export default {
   methods: {
     initChart(){
       this.setChart().then(option => {
-        let myChart = echarts.init(document.querySelector('.'+this.className))
+        let myChart = echarts.init(document.querySelector('.'+this.chartsOption.className))
         myChart.setOption(option)
         window.addEventListener("resize",()=>{
           myChart.resize()
@@ -68,9 +62,9 @@ export default {
           },
           grid: {
             left: "4%",
-            top:"10%",
+            top:"13%",
             right: "4%",
-            bottom: "12%",
+            bottom: "8%",
             containLabel: true
           },
           legend: {
@@ -89,21 +83,27 @@ export default {
               },
               axisLabel:{
                 formatter:(value) => {
-                  return this.isRow? value:value.split("").join("\n")
+                  return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               }
             }
           ],
           yAxis: [
             {
-              type: "value"
+              type: "value",
+              name:this.chartsOption.company
             }
           ],
           series: [
             {
-              name: this.title.legendName,
+              name: this.chartsOption.legendName,
               type: "bar",
               barWidth: "30%",
+              itemStyle: {
+                normal: {
+                  color: "rgba(79,129,189,1)"
+                }
+              },
               label: {
                 normal: {
                   show: true,

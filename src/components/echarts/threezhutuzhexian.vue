@@ -12,21 +12,31 @@ export default {
       type: Object,
       default: () => {
         return {
-          data1:[27, 32, 10, 13],
-          data2:[20, 18, 9, 24],
-          data3:[20, 18, 19, 34]
+          xData: [
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周"
+          ],
+          serverData: [
+            [102, 52, 200, 334, 90, 100, 220],
+            [12, 52, 20, 124, 190, 10, 22]
+          ]
         };
       }
     },
-    chartsOption:{
+    chartsOption: {
       type: Object,
-      default:()=>{
+      default: () => {
         return {
-          className:"",
-          isRow:true,
-          tableName:"",
-          legendName:[]
-        }
+          className: "", //类名
+          isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
+          legendName: ["北京地区10kv线路同期线损率(%)"], //图例显示文字
+          tableName: "图1 北京地区同期线损率周趋势" //表格名称
+        };
       }
     }
   },
@@ -58,87 +68,65 @@ export default {
     setChart() {
       return new Promise((resolve, reject) => {
         let option = {
-          backgroundColor: "#fff",
           tooltip: {
             trigger: "axis",
             axisPointer: {
-              type: "shadow",
-              textStyle: {
-                color: "#fff"
-              }
+              // 坐标轴指示器，坐标轴触发有效
+              type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
             }
           },
           grid: {
-            borderWidth: 0,
-            top: 30,
-            bottom: 70,
-            left: 60,
-            right:"8%",
-            textStyle: {
-              color: "#fff"
-            }
+            top: "13%",
+            left: "3%",
+            right: "10%",
+            bottom: "9%",
+            containLabel: true
           },
           legend: {
-            bottom: "0%",
-            left: "10%",
-            itemWidth: 30,
-            itemHeight: 10,
-            borderRadius: 0,
-            textStyle: {
-              color: "#000"
-            },
+            show: true,
+            bottom: 0,
             data: this.chartsOption.legendName
           },
-          calculable: true,
           xAxis: [
             {
-              show: true,
               type: "category",
-              axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
-              },
-              splitLine: {
-                show: false
-              },
+              data: this.value.xData,
               axisTick: {
-                show: false
-              },
-              splitArea: {
-                show: false
+                // show:false,
+                alignWithLabel: false
               },
               axisLabel: {
                 interval: 0,
-                formatter:(value) => {
-                  return this.chartsOption.isRow? value:value.split("").join("\n")
+                formatter: value => {
+                  return this.chartsOption.isRow
+                    ? value
+                    : value.split("").join("\n");
                 }
-              },
-              data: ["1106", "1113", "1120", "1127"]
+              }
             }
           ],
           yAxis: [
             {
+              name:"单位:万件",
               type: "value",
-              splitLine: {
-                show: true,
-                lineStyle: {
-                  type: "dashed",
-                  color: "#333"
-                }
-              },
               axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
+                //y轴
+                show: false
               },
               axisTick: {
-                show: true
+                //y轴刻度线
+                show: false
+              }
+            },
+            {
+              // name:"单位:兆瓦/时",
+              type: "value",
+              axisLine: {
+                //y轴
+                show: false
               },
-              axisLabel: {
-                interval: 0
-              },
-              splitArea: {
+              axisTick: {
+                //y轴刻度线
                 show: false
               }
             }
@@ -147,82 +135,82 @@ export default {
             {
               name: this.chartsOption.legendName[0],
               type: "bar",
-              stack: "总量",
-              yAxisIndex: 0,
-              barMaxWidth: 25,
-              barGap: "10%",
+              barWidth:"20%",
+               yAxisIndex:0,
+               barGap: "0%",
+              // symbol: "circle",
+              symbolSize: 8,
               itemStyle: {
                 normal: {
-                  color: "#4e79a7",
                   label: {
-                    show: false,
-                    textStyle: {
-                      color: "#fff"
-                    },
-                    position: "insideTop",
-                    formatter: function(p) {
-                      return p.value > 0 ? p.value : "";
-                    }
-                  }
+                    show: true,
+                    position: "top",
+                    color:"#000"
+                    // formatter: "{c}%"
+                  },
+                  color: "rgba(0,176,80,1)"
                 }
               },
-              data: this.value.data1
+              data: this.value.serverData[0]
             },
             {
               name: this.chartsOption.legendName[1],
               type: "bar",
-              yAxisIndex: 0,
-              stack: "总量",
+              yAxisIndex:0,
+              barWidth: "30%",
+              symbol: "none",
+              symbolSize: 8,
               itemStyle: {
                 normal: {
-                  color: "#e15759",
-                  barBorderRadius: 0,
                   label: {
-                    show: false,
-                    position: "top"
-                  }
+                    show: true,
+                    position: "top",
+                    // formatter: "{c}%"
+                  },
+                  color: "rgba(228,108,10,1)"
                 }
               },
-              data: this.value.data2
+              data: this.value.serverData[1]
             },
             {
               name: this.chartsOption.legendName[2],
               type: "bar",
-              yAxisIndex: 0,
-              stack: "总量",
+              yAxisIndex:0,
+              barWidth: "30%",
+              symbol: "none",
+              symbolSize: 8,
               itemStyle: {
                 normal: {
-                  color: "#9bbb59",
-                  barBorderRadius: 0,
-                  label: {
-                    show: false,
-                    position: "top",
-                    color:"#000"
-                  }
-                }
-              },
-              data: this.value.data3
-            },
-            {
-              name: this.chartsOption.legendName[3],
-              type: "bar",
-              yAxisIndex: 0,
-              stack: "总量",
-              itemStyle: {
-                normal: {
-                  color: "#8064a2",
-                  barBorderRadius: 0,
                   label: {
                     show: true,
                     position: "top",
-                    formatter:(parms)=>{  
-                      return parms.value+this.value.data1[parms.dataIndex]+this.value.data2[parms.dataIndex]+this.value.data2[parms.dataIndex]
-                    }
-                  }
+                    // formatter: "{c}%"
+                  },
+                  color: "rgba(0,176,240,1)"
                 }
               },
-              data: this.value.data2
+              data: this.value.serverData[1]
+            },
+            {
+              name: this.chartsOption.legendName[3],
+              type: "line",
+              yAxisIndex:1,
+              barWidth: "30%",
+              symbol: "none",
+              symbolSize: 8,
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: "top",
+                    // formatter: "{c}%"
+                  },
+                  color: "rgba(192,80,77,1)"
+                }
+              },
+              data: this.value.serverData[1]
             }
+            
           ]
         };
         resolve(option);
@@ -244,7 +232,7 @@ export default {
   position: relative;
 }
 .zhuzhuangtu {
-  width: 90%;
+  width: 100%;
   height: 99%;
 }
 p {

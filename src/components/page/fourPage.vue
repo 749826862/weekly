@@ -115,10 +115,10 @@
         h4.word_title_3 （四）新投运台区线损监测情况
         p 
           span.word_content 2019年1月1日至11月25日，公司新投运台区累计4420个（本周新投运台区98个），可监测台区共3295个，线损率3.17%，略高于全量台区线损率。
-        zhutuzhexianone.auto(:chartsOption="{className:'xintouyunqushi',isRow:true,tableName: '图21 新投运台区线损率趋势图',legendName: ['新投运台区同期线损率(%)','总体台区同期线损率(%)']}")
+        twozhexian.auto(:chartsOption="{className:'xintouyunqushi',isRow:true,tableName: '图21 新投运台区线损率趋势图',legendName: ['新投运台区同期线损率(%)','总体台区同期线损率(%)']}")
         p 
           span.word_content 从各单位情况看，新投运台区线损率最低为亦庄公司（1.17%），低于本单位台区总体线损率0.71个百分点；最高的为城区公司（4.51%），高于本单位台区总体线损率0.42个百分点。
-        binpaifuzhuline.auto(:chartsOption="{className:'xintouyunxiansuanlv',isRow:false,tableName: '图22 各单位新投运台区线损率情况',legendName: ['各单位新投运台区同期线损率(%)','各单位总体台区同期线损率(%)','新投运总体台区同期线损率(3.16%)','总体台区同期线损率(3.14%)']}")
+        twofuzhuline.auto(:chartsOption="{className:'xintouyunxiansuanlv',isRow:false,tableName: '图22 各单位新投运台区线损率情况',legendName: ['各单位新投运台区同期线损率(%)','各单位总体台区同期线损率(%)','新投运总体台区同期线损率(3.16%)','总体台区同期线损率(3.14%)']}")
         p 
           span.word_content 各单位新投运台区负损情况总体较好，延庆公司占本单位台区比例最高。
         danzhuzhexian.auto(:chartsOption="{className:'xintouyunbuhege',isRow:false,tableName: '图23 各单位新投运不合格台区情况',legendName: ['新投运台区负损数','新投运台区负损数占台区总数的比例']}")

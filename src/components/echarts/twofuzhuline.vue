@@ -13,13 +13,13 @@ export default {
       default: () => {
         return {
           xData: [
-            "十月第一周",
-            "十月第一周",
-            "十月第一周",
-            "十月第一周",
-            "十月第一周",
-            "十月第一周",
-            "十月第一周"
+            "石景山",
+            "房山",
+            "石景山",
+            "石景山",
+            "石景山",
+            "石景山",
+            "石景山"
           ],
           serverData: [
             [102, 52, 200, 334, 90, 100, 220],
@@ -80,7 +80,7 @@ export default {
             top: "10%",
             left: "3%",
             right: "14%",
-            bottom: "9%",
+            bottom: "16%",
             containLabel: true
           },
           legend: {
@@ -148,40 +148,65 @@ export default {
                 }
               },
               data: this.value.serverData[1]
+            },
+            {
+              name: this.chartsOption.legendName[2],
+              type: "line",
+              barGap: "0%",
+              itemStyle: {
+                normal: {
+                  type: "dashed",
+                  color: "rgba(149,179,215,1)"
+                }
+              },
+              markLine: {
+                symbol: "none",
+                data: [
+                  {
+                    name: "Y 轴值为 100 的水平线",
+                    yAxis: 300,
+                    lineStyle: {
+                      width: 3,
+                      show: false,
+                      color: "rgba(149,179,215,1)"
+                    },
+                    label: {
+                      show: false
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              name: this.chartsOption.legendName[3],
+              type: "line",
+              barGap: "0%",
+              itemStyle: {
+                normal: {
+                  type: "dashed",
+                  color: "rgba(217,150,148,1)"
+                }
+              },
+              markLine: {
+                symbol: "none",
+                data: [
+                  {
+                    name: "Y 轴值为 100 的水平线",
+                    yAxis: 310,
+                    lineStyle: {
+                      width: 3,
+                      show: false,
+                      color: "rgba(217,150,148,1)"
+                    },
+                    label: {
+                      show: false
+                    }
+                  }
+                ]
+              }
             }
           ]
-        };
-
-        // 辅助线
-        let markline = {
-          name: "本周北京地区同期线损率(6.51%)",
-          type: "line",
-          barGap: "0%",
-          itemStyle: {
-            normal: {
-              type: "dashed",
-              color: "rgba(155,187,89,1)"
-            }
-          },
-          markLine: {
-            symbol: "none",
-            data: [
-              {
-                name: "Y 轴值为 100 的水平线",
-                yAxis: 300,
-                lineStyle: {
-                  width: 3,
-                  show: false,
-                  color: "rgba(155,187,89,1)"
-                },
-                label: {
-                  show: false
-                }
-              }
-            ]
-          }
-        };
-        this.chartsOption.isMarkline ? option.series.push(markline) : "";
+        }
         resolve(option);
       }).catch(err => {
         reject(err);

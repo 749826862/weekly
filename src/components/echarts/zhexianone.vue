@@ -75,9 +75,9 @@ export default {
             }
           },
           grid: {
-            top: "5%",
+            top: "10%",
             left: "3%",
-            right: "4%",
+            right: "10%",
             bottom: "9%",
             containLabel: true
           },

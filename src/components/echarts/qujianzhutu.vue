@@ -82,9 +82,11 @@ export default {
           grid: [
             {
               // height: 378,
-              left:"12%",
+              left:"2%",
+              right:"20%",
               top: 18,
-              bottom:50,
+              bottom:30,
+              containLabel: true
               // width: 478
             },
             {

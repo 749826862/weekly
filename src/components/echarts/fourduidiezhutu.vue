@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
     div.zhuzhuangtu(:class="this.chartsOption.className")
-    p {{ chartsOption.tableName  }}
+    p {{ chartsOption.tableName }}
     //- p.titleLeft 配变台区数(台)
 </template>
 <script>
@@ -24,7 +24,8 @@ export default {
         return {
           className:"",
           isRow:true,
-          tableName:"",
+          company:"",
+          tableName:"图6  国网一次办结工单在各单位的分布情况",
           legendName:[]
         }
       }
@@ -70,7 +71,7 @@ export default {
           },
           grid: {
             borderWidth: 0,
-            top: 30,
+            top: 40,
             bottom: 70,
             left: 60,
             textStyle: {
@@ -79,8 +80,8 @@ export default {
           },
           legend: {
             bottom: "0%",
-            left: "30%",
-            itemWidth: 30,
+            left: "20%",
+            itemWidth: 20,
             itemHeight: 10,
             itemGap:40,
             borderRadius: 0,
@@ -120,6 +121,7 @@ export default {
           yAxis: [
             {
               type: "value",
+              name:this.chartsOption.company,
               splitLine: {
                 show: true,
                 lineStyle: {
@@ -141,55 +143,10 @@ export default {
               splitArea: {
                 show: false
               }
-            },
-            {
-              type: "value",
-              min:0,
-              max:100,
-              splitLine: {
-                show: false
-              },
-              position: "right",
-              axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
-              },
-              axisTick: {
-                show: true
-              },
-              axisLabel: {
-                interval: 0,
-                formatter: "{value} %", //右侧Y轴文字显示
-              },
-              splitArea: {
-                show: false
-              }
             }
           ],
           series: [
-            {
-              name: this.chartsOption.legendName[1],
-              type: "line",
-              symbolSize: 10,
-              yAxisIndex: 1,
-              smooth: true, //平滑曲线显示
-              showAllSymbol: true, //显示所有图形。
-              symbol: "circle",
-              itemStyle: {
-                normal: {
-                  color: "#9bbb59",
-                  barBorderRadius: 0,
-                  label: {
-                    show: true,
-                    color: "#000",
-                    position: "top"
-                  }
-                }
-              },
-              data: [10, 93, 26, 38, 51, 15, 48]
-            },
-            {
+             {
               name: this.chartsOption.legendName[0],
               type: "bar",
               yAxisIndex: 0,
@@ -197,17 +154,74 @@ export default {
               barMaxWidth: 15,
               itemStyle: {
                 normal: {
-                  color: "red",
+                  color: "rgba(79,129,189,1)",
                   barBorderRadius: 0,
                   label: {
-                    show: false,
-                    position: "top"
+                    show: true,
+                    position: "top",
+                    color:"#000"
+                  }
+                }
+              },
+              data: this.value.data2
+            },
+            {
+              name: this.chartsOption.legendName[1],
+              type: "bar",
+              yAxisIndex: 0,
+              stack: "总量",
+              barMaxWidth: 15,
+              itemStyle: {
+                normal: {
+                  color: "rgba(192,80,77,1)",
+                  barBorderRadius: 0,
+                  label: {
+                    show: true,
+                    position: "top",
+                    color:"#000"
+                  }
+                }
+              },
+              data: this.value.data2
+            },
+            {
+              name: this.chartsOption.legendName[2],
+              type: "bar",
+              yAxisIndex: 0,
+              stack: "总量",
+              barMaxWidth: 15,
+              itemStyle: {
+                normal: {
+                  color: "rgba(0,176,80,1)",
+                  barBorderRadius: 0,
+                  label: {
+                    show: true,
+                    position: "top",
+                    color:"#000"
+                  }
+                }
+              },
+              data: this.value.data2
+            },
+            {
+              name: this.chartsOption.legendName[3],
+              type: "bar",
+              yAxisIndex: 0,
+              stack: "总量",
+              barMaxWidth: 15,
+              itemStyle: {
+                normal: {
+                  color: "rgba(247,150,70,1)",
+                  barBorderRadius: 0,
+                  label: {
+                    show: true,
+                    position: "top",
+                    color:"#000"
                   }
                 }
               },
               data: this.value.data2
             }
-            
           ]
         };
         resolve(option);
@@ -229,7 +243,7 @@ export default {
   position: relative;
 }
 .zhuzhuangtu {
-  width: 90%;
+  width: 100%;
   height: 99%;
 }
 p {

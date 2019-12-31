@@ -33,12 +33,12 @@
         p 
           span.word_content.tip ¹配变电压合格率=配变电压合格台数/在运配变总数，其中电压合格数=在运配变总数-不可监测配变数-配变电压异常数-配变数据异常数。
           span.word_content.tip ²配变低电压：配变电压低于198V，在132V-198 V之间，持续1小时;
-        zhutufenceng.auto(:chartsOption="{className:'noqualified',isRow:true,tableName:'图7 电压不合格配变周趋势'}")
+        zhutufenceng.auto(:chartsOption="{className:'noqualified',isRow:true,tableName:'图7 电压不合格配变周趋势',legendName:['低电压异常(台)', '过电压异常(台)', '数据异常(台)']}")
         p 
           span.word_title_4 4、各单位配变电压不合格分布情况
         p 
           span.word_content 11月21日-11月27日，公司发生电压不合格配变⁵共746台，其中电压不合格配变较多的三家单位分别为城区、大兴、通州公司。
-        zhutufenceng.auto(:chartsOption="{className:'noqualifiedfenbu',isRow:false}")
+        zhutufenceng.auto(:chartsOption="{className:'noqualifiedfenbu',isRow:false,tableName:'图8 各单位电压不合格配变分布',legendName:['低电压异常(台)', '过电压异常(台)', '数据异常(台)']}")
         p 
           span.word_title_4 5、不可监测配变周趋势
         p 
@@ -47,12 +47,12 @@
           span.word_content.tip ³配变过电压：配变电压高于235.4V，在235.4V-308V之间，持续1小时;
           span.word_content.tip ⁴配变数据异常：配变电压低于正常电压40%（132V）或电压高于正常电压40%（308V），持续1小时。
           span.word_content.tip ⁵电压不合格配变数=低电压台区数+过电压配变数+数据异常配变数;
-        zhutufengcengfour.auto(:chartsOption="{className:'gedanweibuke',isRow:true}")
+        zhutufengcengfour.auto(:chartsOption="{className:'gedanweibuke',isRow:true,tableName:'图9 各单位不可监测配变分布',legendName:['变压器与营销台区关系紧缺', '台区与电能表关系紧缺', '台区与电能表存在1对多问题','电能表缺失电压曲线数据']}")
         p 
           span.word_title_4 6、配变不合格治理情况
         p 
           span.word_content 自2018年6月份以来，公司累计发生不合格配变共计12559台，截至11月27日，已有12299台完成治理，治理率为97.93%。各单位治理情况如下：
-        zhutuzhexian.auto(:className="'dianyaqingkuang'")
+        zhutuzhexian.auto(:className="'dianyaqingkuang'" :title="{tableName:'图10 配变电压不合格治理情况',legendName:['已治理配变数(台)', '未治理配变数(台)','治理率(%)']}")
         p 
           span.word_title_4 配变电压不合格治理措施分析：
           span.word_content 扣除瞬时发生自行恢复外，治理二次线虚接、错接的措施占比最大，占比27.08%，其次为调整配变分接头措施，占比9.26%。
@@ -61,7 +61,7 @@
           span.word_title_4 7、不可监测配变治理情况
         p 
           span.word_content 自2018年6月份以来，公司累计发生不可监测配变共计11440台，截至11月27日，已有9928台完成治理，治理率为86.78%。各单位治理情况如下：
-        zhutuzhexian.auto(:className="'bukejiance'")
+        zhutuzhexian.auto(:className="'bukejiance'" :title="{tableName:'图11 不可监测配变情况',legendName:['已实现监测配变数(台)','仍不可监测配变数(台)','治理率(%)']}")
         NoMonitorTable
 </template>
 <script>

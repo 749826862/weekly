@@ -1,7 +1,7 @@
 <template lang="pug">
   .chartMain
     div.zhuzhuangtu(:class="this.chartsOption.className")
-    p(v-if="this.chartsOption.isTitle") 图7 电压不合格配变周趋势
+    p {{ chartsOption.tableName }}
     //- p.titleLeft 配变台区数(台)
 </template>
 <script>
@@ -23,8 +23,10 @@ export default {
       default:()=>{
         return {
           className:"",
-          isTitle:true,
-          isRow:true
+          isRow:true,
+          company:"",
+          tableName:"图6  国网一次办结工单在各单位的分布情况",
+          legendName:[]
         }
       }
     }
@@ -69,7 +71,8 @@ export default {
           },
           grid: {
             borderWidth: 0,
-            top: 30,
+            top: 40,
+            right:"8%",
             bottom: 70,
             left: 60,
             textStyle: {
@@ -78,7 +81,7 @@ export default {
           },
           legend: {
             bottom: "0%",
-            left: "40%",
+            left: "35%",
             itemWidth: 30,
             itemHeight: 10,
             itemGap:40,
@@ -86,7 +89,7 @@ export default {
             textStyle: {
               color: "#000"
             },
-            data: ["上周",  "本周"]
+            data: this.chartsOption.legendName
           },
           calculable: true,
           xAxis: [
@@ -119,6 +122,7 @@ export default {
           yAxis: [
             {
               type: "value",
+              name:this.chartsOption.company,
               splitLine: {
                 show: true,
                 lineStyle: {
@@ -144,7 +148,7 @@ export default {
           ],
           series: [
              {
-              name: "上周",
+              name: this.chartsOption.legendName[0],
               type: "bar",
               yAxisIndex: 0,
               stack: "总量",
@@ -163,7 +167,7 @@ export default {
               data: this.value.data2
             },
             {
-              name: "本周",
+              name: this.chartsOption.legendName[1],
               type: "bar",
               yAxisIndex: 0,
               stack: "总量",

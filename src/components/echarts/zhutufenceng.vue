@@ -73,10 +73,10 @@ export default {
             }
           },
           grid: {
-            borderWidth: 0,
             top: 30,
+            right:"5%",
             bottom: "9%",
-            left: 60,
+            left: 40,
             containLabel: true,
             textStyle: {
               color: "#fff"
@@ -203,7 +203,7 @@ export default {
                     position: "top",
                     color:"#000",
                     formatter:(parms)=>{  
-                      return parms.value+this.value.data1[parms.dataIndex]+this.value.data2[parms.dataIndex]
+                      return parms.value+this.value.serverData[0][parms.dataIndex]+this.value.serverData[1][parms.dataIndex]
                     }
                   }
                 }
@@ -231,7 +231,7 @@ export default {
   position: relative;
 }
 .zhuzhuangtu {
-  width: 100%;
+  width: 90%;
   height: 99%;
 }
 p {

@@ -20,15 +20,15 @@
           span.word_content 95598话务量总体情况见下图。
         p 
           span.word_content 95598电话呼入量及最大负荷周趋势变化情况见下图。
-        binpaizhutu.auto(:chartsOption="{className:'beijing95598',isRow:false}")
+        danweizhutuzhexian.auto(:chartsOption="{className:'beijing95598',isRow:true,tableName: '图2  北京地区95598电话呼入量变化趋势',legendName: ['最大负荷','电话呼入量']}")
         p 
           span.word_content 95598电话呼入量、IVR自助语音服务量、国网一次办结工单数量、八类工单关联关系见下图。
-        binpaizhutu.auto(:chartsOption="{className:'hualaingguanlian',isRow:false}")
+        threezhutuzhexian.auto(:chartsOption="{className:'hualaingguanlian',isRow:true, tableName: '图3  北京地区95598话务量关联关系',legendName: ['IVR自助语音','一次性办结','八类工单量','电话呼入量']}")
         p 
           span.word_title_4 2、国网客服中心一次办结工单情况
         p 
           span.word_content 截至11月28日0时，北京地区国网客服中心一次办结工单累计217.22万件，同比下降16.43%；本周4.15万件，环比下降8.07%，主要由于客户误报工单增加较少。周变化情况如下图。
-        binpaizhutu.auto(:chartsOption="{className:'kefuzhongxinqushi',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'kefuzhongxinqushi',isRow:true,tableName: '图4 国网客服中心一次办结工单变化趋势',legendName: '',company:'单位:万件'}")
         p 
           span.word_lingt （1）从工单类别及客户诉求热点来看
           span.word_content ，故障报修1.68万件、咨询2.47万件。客户诉求热点主要集中在：客户误报、电费抄核收及电量电费查询⁹、基本档案信息三个方面。
@@ -43,12 +43,12 @@
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
           span.word_content ，工单较多的三家单位分别为朝阳、昌平、城区公司。
-        binpaizhutu.auto(:chartsOption="{className:'gongdanfenbu',isRow:false}")
+        duidiezhutu.auto(:chartsOption="{className:'gongdanfenbu',isRow:false,tableName: '图6  国网一次办结工单在各单位的分布情况',legendName: ['故障报修','咨询'],company:'单位:件'}")
         p 
           span.word_title_4 3、八类工单情况
         p 
           span.word_content 截至11月28日0时，国网客服中心下派北京公司处理的八类工单累计59.31万件，同比下降3.89%；本周1.35万件，环比下降5.28%，主要由于用电服务需求等使用问题工单增加较多。
-        binpaizhutu.auto(:chartsOption="{className:'baleigongdanbianhua',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'baleigongdanbianhua',isRow:true,tableName: '图7 八类工单变化趋势',legendName: '',company:'单位:万件'}")
         p 
           span.word_lingt （1）从工单类别及客户诉求热点来看
           span.word_content ，服务申请、故障报修工单数量占比较大，意见、投诉等其它六类工单占比较小。客户诉求热点主要集中：掌上电力APP等使用问题、电能表显示异常、一户无电、应急送电需求四个方面。
@@ -61,53 +61,53 @@
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
           span.word_content ，工单较多的三家单位分别为城区、朝阳、丰台公司。
-        binpaizhutu.auto(:chartsOption="{className:'baleigogndandanwei',isRow:false}")
+        fourduidiezhutu.auto(:chartsOption="{className:'baleigogndandanwei',isRow:false,tableName: '图9  八类工单在各单位的分布情况',legendName: ['服务申请','故障报修','投诉','其它'],company:'单位:件'}")
         p 
           span.word_title_4 4、95598客户投诉情况专题分析
         p 
           span.word_content 截至11月28日0时，北京地区投诉工单累计929件，同比下降64.50%；本周7件，环比下降50.00%。
         p 
           span.word_lingt （1）投诉工单变化趋势。
-        binpaizhutu.auto(:chartsOption="{className:'tousugongdanbianhua',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'tousugongdanbianhua',isRow:true,tableName: '图10  投诉工单变化趋势',legendName: '',company:'单位:件'}")
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
           span.word_content ，投诉工单数量最多为朝阳公司共2件，其次通州、丰台、房山、海淀、密云等公司各为1件。
-        binpaizhutu.auto(:chartsOption="{className:'tousuzaigedanwei',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'tousuzaigedanwei',isRow:false,tableName: '图11  投诉工单在各单位分布情况',legendName: '',company:'单位:件'}")
         p 
           span.word_title_4 5、95598客户意见情况专题分析
         p 
           span.word_content 截至11月28日0时，北京地区意见工单累计3.38万件，同比上升23.12%；本周691件，环比下降6.24%。
         p 
           span.word_lingt （1）意见工单变化趋势。
-        binpaizhutu.auto(:chartsOption="{className:'yijiangongdan',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'yijiangongdan',isRow:true,tableName: '图12  意见工单变化趋势',legendName: '',company:'单位:件'}")
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
           span.word_content ，见工单数量较多的三家单位分别为朝阳、房山、城区。
-        binpaizhutu.auto(:chartsOption="{className:'yijiangedanweifenbu',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'yijiangedanweifenbu',isRow:false,tableName: '图13  意见工单在各单位分布情况',legendName: '',company:'单位:件'}")
         p 
           span.word_title_4 6、购电下发专题分析
         p 
           span.word_content 北京地区客户电话反映购电未及时下发工单1893件，占服务申请工单的21.24%，周变化情况见下图。
-        binpaizhutu.auto(:chartsOption="{className:'goudianweijishi',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'goudianweijishi',isRow:false,tableName: '图14  客户反映购电未及时下发数量变化趋势',legendName: '',company:'单位:件'}")
         p 
           span.word_lingt （1）北京地区购电下发平均时长情况
           span.word_content ，本周，公司购电下发平均时长6.36分钟，周变化趋势情况见下图。
-        binpaizhutu.auto(:chartsOption="{className:'goudianxiafapingjun',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'goudianxiafapingjun',isRow:true,tableName: '图15  购电下发平均时长变化趋势',legendName: '',company:'单位:分钟'}")
         p 
           span.word_content 本周购电记录共计94.03万条，下发时长小于1分钟的记录83.24万条，占比88.53%；超过5分钟的记录4.61万条，占比4.91%。
         p 
           span.word_lingt （2）各单位购电下发平均时长情况
           span.word_content ，本周，平均时长较长的三家单位分别为城区、朝阳、通州公司。
-        binpaizhutu.auto(:chartsOption="{className:'gedanweigoudain',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'gedanweigoudain',isRow:false,tableName: '图18  各单位购电下发平均时长分布情况',legendName: '',company:'单位:分钟'}")
         p 
           span.word_lingt （3）4G和2G通信信道效果对比情况
           span.word_content ，本周，全量购电下发数据共84.66万条，通信信道为4G的购电下发记录83.73万条，占购电记录89.04%；通信信道为2G的有9145条，占购电记录0.97%。2G通道中，系统自动执行执行率为97.99%，较4G通道的98.01%下降0.02，4G通道的效率略高于2G通道。
-        binpaizhutu.auto(:chartsOption="{className:'butongtongxinxindao',isRow:false}")
+        danzhuzhexian.auto(:chartsOption="{className:'butongtongxinxindao',isRow:true,tableName: '图16  不同通信信道购电下发占比情况',legendName: ['购电下发数量','系统自动执行率'],company:'单位:万条'}")
         p 
           span.word_content 涉及2G通道的集中器共1388台，其中房山、朝阳、丰台排在前三位，请相关单位尽快安排更换。2G集中器分布情况如下图所示。
         p 
           span.word_content.tip ¹⁰购电下发执行方式为自动执行、且购电下发执行时间在5分钟以内（系统每隔5分钟自动刷新）的购电记录占本通道购电记录的比例。
-        binpaizhutu.auto(:chartsOption="{className:'gedanwei2Gjizhong',isRow:false}")
+        zhuzhaungtu.auto(:chartsOption="{className:'gedanwei2Gjizhong',isRow:false,tableName: '图17  各单位2G集中器分布情况',legendName: '',company:'单位:台'}")
         p 
           span.word_title_4 （4）各单位严重不合格集中器¹¹数量及治理情况
         p 
