@@ -26,12 +26,14 @@ export default {
 @import "~@assets/css/normalize.less";
 @import "~@assets/css/globalStyle.less";
 #app {
-  width: 210mm;
+  width: 100%;
   height: 100%;
-  margin: 0 auto;
-  background: #fff;
+  // margin: 0 auto;
+  // background: #fff;
   .print_size{
     width: 100%;
+
+    height: 100%;
     // padding: 0 80px;
   }
 }

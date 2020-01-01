@@ -27,6 +27,10 @@ export default {
 </script>
 <style lang='less' scoped>
 .home_main{
-  padding: 0 60px;
+  width: 210mm;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
 }
 </style>

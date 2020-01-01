@@ -1,4 +1,6 @@
-body {
+body,
+html {
+  height: 100%;
   -webkit-print-color-adjust: exact;
 }
 .word_title {
@@ -42,4 +44,7 @@ body {
 .auto {
   margin: 0 auto;
   margin-bottom: 40px;
+}
+.el-form-item__label {
+  color: #fff;
 }
