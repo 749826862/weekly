@@ -1,6 +1,5 @@
 <template lang="pug">
-  .monthhome
-    
+  .monthhome 正在建设中。。。
     
 </template>
 <script>

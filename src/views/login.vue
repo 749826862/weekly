@@ -43,7 +43,11 @@ export default {
   created() {},
   methods: {
     onSubmit(){
-      console.log(this.form,888)
+      if (this.form.resource == 1) {
+        this.$router.push({path:"/weeklyhome"})
+      }else{
+        this.$router.push({path:"/monthhome"})
+      }
     }
   }
 };
