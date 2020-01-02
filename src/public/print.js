@@ -92,10 +92,11 @@ Print.prototype = {
       canvass[k4].parentNode.insertBefore(img,canvass[k4].nextElementSibling);
     }
     //做分页
-    //style="page-break-after: always"
+    // style="page-break-after: always"
     var pages = document.querySelectorAll('.result');
     for (var k5 = 0; k5 < pages.length; k5++) {
       pages[k5].setAttribute('style', 'page-break-after: always');
+      pages[k5].innerHTML = k5
     }
     return this.dom.outerHTML;
   },
@@ -104,7 +105,7 @@ Print.prototype = {
     var w, doc, iframe = document.createElement('iframe'),
       f = document.body.appendChild(iframe);
     iframe.id = "myIframe";
-    //iframe.style = "position:absolute;width:0;height:0;top:-10px;left:-10px;";
+    iframe.style = "position:absolute;width:0;height:0;top:-10px;left:-10px;";
     // iframe.setAttribute('style', 'position:absolute;width:' + document.querySelector('.results').clientWidth + 'px;height:0;top:-10px;left:-10px;');
     w = f.contentWindow || f.contentDocument;
     doc = f.contentDocument || f.contentWindow.document;

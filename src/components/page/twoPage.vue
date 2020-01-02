@@ -17,6 +17,7 @@
           span.word_title_4 1、配变电压合格率周趋势
         p 
           span.word_content 截至11月27日，公司在运配变8.68万台，可监测配变8.45万台（不可监测配变2272台），配变电压可监测率97.38%，电压合格率¹为96.54%，较上周上升0.21个百分点，较10月份97.17%下降0.63个百分点。
+        .result
         div.trendCharts
           zhuzhexian.auto(:className="'trend'")
           zhexian(:className="'hegezhexian1'")
@@ -62,6 +63,7 @@
         p 
           span.word_content 自2018年6月份以来，公司累计发生不可监测配变共计11440台，截至11月27日，已有9928台完成治理，治理率为86.78%。各单位治理情况如下：
         zhutuzhexian.auto(:className="'bukejiance'" :title="{tableName:'图11 不可监测配变情况',legendName:['已实现监测配变数(台)','仍不可监测配变数(台)','治理率(%)']}")
+        .result
         NoMonitorTable
 </template>
 <script>
