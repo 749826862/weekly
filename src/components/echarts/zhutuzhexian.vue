@@ -254,14 +254,16 @@ export default {
   height: 300px;
   // flex: 1;
   // padding-bottom: 20px;
-  border: 1px solid #ccc;
+  
   box-sizing: border-box;
   position: relative;
 }
 .zhuzhuangtu {
   width: 90%;
-  margin:0 5px;
+  // margin:0 5px;
   height: 99%;
+  border: 2px solid #ccc;
+  margin: 0 auto;
 }
 p {
   text-align: center;

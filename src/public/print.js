@@ -96,7 +96,7 @@ Print.prototype = {
     var pages = document.querySelectorAll('.result');
     for (var k5 = 0; k5 < pages.length; k5++) {
       pages[k5].setAttribute('style', 'page-break-after: always');
-      pages[k5].innerHTML = k5
+      // pages[k5].innerHTML = k5
     }
     return this.dom.outerHTML;
   },

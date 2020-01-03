@@ -224,13 +224,15 @@ export default {
   height: 300px;
   // flex: 1;
   // padding-bottom: 20px;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   box-sizing: border-box;
   position: relative;
 }
 .zhuzhuangtu {
   width: 90%;
   height: 99%;
+  border: 1px solid #ccc;
+  margin: 0 auto;
 }
 p {
   text-align: center;

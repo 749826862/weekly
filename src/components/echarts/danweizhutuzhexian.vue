@@ -78,7 +78,7 @@ export default {
           grid: {
             top: "13%",
             left: "3%",
-            right: "10%",
+            right: "4%",
             bottom: "9%",
             containLabel: true
           },
@@ -188,13 +188,15 @@ export default {
   height: 300px;
   // flex: 1;
   // padding-bottom: 20px;
-  border: 1px solid #ccc;
+  // border: 1px solid #ccc;
   box-sizing: border-box;
   position: relative;
 }
 .zhuzhuangtu {
   width: 100%;
   height: 99%;
+   border: 1px solid #ccc;
+  margin: 0 auto;
 }
 p {
   text-align: center;

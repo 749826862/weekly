@@ -68,8 +68,8 @@ export default {
             containLabel: true
           },
           legend: {
-            left:"43%",
-            bottom: "2%",
+            left:"41%",
+            bottom: "0%",
             textStyle: {
               color: "#000"
             }
@@ -129,20 +129,22 @@ export default {
   width: 100%;
   height: 300px;
   // padding-bottom: 20px;
-  border: 1px solid #ccc;
+  
   position: relative;
   // margin-bottom: 20px;
 }
 .zhuzhuangtu,.canvasImg{
   width: 90%;
   height: 99%;
+  border: 1px solid #ccc;
+  margin: 0 auto;
 }
 p{
   text-align: center;
-  position: absolute;
-  font-size: 12px;
-  bottom: -25px;
-  left: 50%;
-  transform: translate(-50%);
+  // position: absolute;
+  // font-size: 12px;
+  // bottom: -25px;
+  // left: 50%;
+  // transform: translate(-50%);
 }
 </style>
