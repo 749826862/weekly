@@ -3,7 +3,7 @@
     HomeHeade(v-model="dataList")
     onePage(v-model="dataList")
     twoPage(v-model="dataList.pbdyhgl")
-    threePage(v-model="dataList")
+    threePage(v-model="dataList.pbdyhgl")
     fourPage(v-model="dataList")
     fivePage(v-model="dataList")
     //- zhuzhaungtu
