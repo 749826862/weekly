@@ -1,26 +1,31 @@
 <template lang="pug">
   .home_main
-    HomeHeade
-    onePage
-    twoPage
-    threePage
-    fourPage
-    fivePage
+    HomeHeade(v-model="dataList")
+    onePage(v-model="dataList")
+    twoPage(v-model="dataList.pbdyhgl")
+    threePage(v-model="dataList")
+    fourPage(v-model="dataList")
+    fivePage(v-model="dataList")
     //- zhuzhaungtu
 </template>
 <script>
 import { GET_CHARTS_OPTION } from "@api/home"
+import ajaxData from "@api/index"
+import weekData from '../../static/weeklyCharts/chartsOption.json'
 export default {
   data() {
-    return {};
+    return {
+      dataList:weekData
+    };
   },
   created() {
-    // this.getChartsOption()
+    // this.getWeekReport()
   },
   methods: {
-    async getChartsOption(){
-     let options = await GET_CHARTS_OPTION()
-     console.log(options,999)
+    getWeekReport(){
+      ajaxData("getWeekReport")().then(res=>{
+        console.log(res)
+      })
     }
   }
 };

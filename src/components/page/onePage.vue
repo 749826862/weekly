@@ -30,10 +30,15 @@
 </template>
 <script>
 export default {
+  props:["value"],
   data() {
-    return {};
+    return {
+      
+    };
   },
-  created() {},
+  created() {
+    console.log(this.value,999)
+  },
   methods: {}
 };
 </script>

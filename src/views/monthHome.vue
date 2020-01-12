@@ -1,7 +1,7 @@
 <template lang="pug">
   .monthhome
     MonthHeader
-    onePage
+    MonePage
     
 </template>
 <script>

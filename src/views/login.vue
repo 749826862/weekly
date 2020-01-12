@@ -6,14 +6,16 @@
     .login_content
       Form(ref="form" :model="form" label-width="100px")
         FormItem(label="报表类型:")
-          RadioGroup(v-model="form.resource")
+          RadioGroup(v-model="form.resource" @change="lableChage")
             Radio(label="1") 周报
             Radio(label="2") 月报
-        FormItem(label="报表时间:")
-          DatePicker(v-model="form.dataTime" type="week" format="yyyy 第 WW 周" placeholder="选择周" v-if="form.resource == 1")
-          DatePicker(v-model="form.dataTime" type="month"  placeholder="选择月" v-else)
+        FormItem(label="报表时间:" class="datalist")
+          Select(v-model="year" placeholder="请选择年" style="width:50%")
+            Option(v-for="(item,key) in dateObj" :key="key" :label="key" :value="key")
+          Select(v-model="days" placeholder="请选择" style="width:50%")
+            Option(v-for="item in dateObj[year]" :key="item.name" :label="item.name" :value="item.name")
         FormItem
-          Button(type="primary" @click="onSubmit") 生成
+          Button(type="primary" @click="onSubmit" :loading="disable") 生成
       //- .typesele
       //-   span 报表类型
       //-   Radio(v-model="radio" label="1") 周报
@@ -22,10 +24,12 @@
     
 </template>
 <script>
-import { DatePicker,Radio,RadioGroup,Form,FormItem,Button } from 'element-ui';
+import ajaxData from "@api/index"
+import { Select,Option,Radio,RadioGroup,Form,FormItem,Button } from 'element-ui';
 export default {
   components:{
-    DatePicker,
+    Select,
+    Option,
     Radio,
     Form,
     FormItem,
@@ -34,20 +38,45 @@ export default {
   },
   data() {
     return {
+      dateObj:{},
+      allData:{},
+      year:null,
+      days:null,
       form:{
-        resource:"",
-        dataTime:""
-      }
+        resource:"1"
+      },
+      disable:false
     };
   },
-  created() {},
+  created() {
+    this.getData()   //时间
+  },
   methods: {
-    onSubmit(){
+    lableChage(){
+      this.days = ""
       if (this.form.resource == 1) {
-        this.$router.push({path:"/weeklyhome"})
+        this.dateObj = this.allData.week
       }else{
-        this.$router.push({path:"/monthhome"})
+        this.dateObj = this.allData.month
       }
+    },
+    onSubmit(){
+      this.disable = true
+      setTimeout(()=>{
+        if (this.form.resource == 1) {
+        this.$router.push({path:"/weeklyhome",query:{year:this.year,week:this.days}})
+        }else{
+          this.$router.push({path:"/monthhome"})
+        }
+        // this.disable = true
+      },100)
+      
+    },
+    getData(){
+      ajaxData("getData")().then(res=>{
+        this.allData = res
+        this.dateObj = res.week
+      })
     }
   }
 };
@@ -88,7 +117,7 @@ export default {
    box-shadow: 0px 0px 10px 2px #57DCFD;
    margin: 50px auto;
    .el-form{
-     width: 50%;
+     width: 55%;
      margin: 0 auto;
      color: #fff;
      .el-form-item__label{
@@ -97,6 +126,13 @@ export default {
      .el-radio{
        color: #fff;
      }
+   }
+   .datalist{
+     /deep/.el-form-item__content{
+       display: flex;
+       justify-content: space-between;
+     }
+     
    }
  }
 }
