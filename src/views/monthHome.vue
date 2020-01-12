@@ -1,5 +1,7 @@
 <template lang="pug">
-  .monthhome 正在建设中。。。
+  .monthhome
+    MonthHeader
+    onePage
     
 </template>
 <script>
@@ -12,4 +14,11 @@ export default {
 };
 </script>
 <style lang='less' scoped>
+.monthhome{
+  width: 210mm;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 80px;
+  box-sizing: border-box;
+}
 </style>

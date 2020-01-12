@@ -6,12 +6,27 @@ body,html{
   // background-size: cover;
 }
 
+.month_title{
+  font-size: 50px;
+  font-weight: 500;
+  color: #FF0000;
+}
+
+
 // 文档标题
 .word_title{
   font-size: 50px;
   font-weight: 500;
   color: #008080;
 }
+
+// 第一部分标题
+.big_tilte{
+  font-size: 30px;
+  font-family: "黑体";
+  text-align: center;
+}
+
 
 // 一级标题
 .word_title_1{
@@ -66,10 +81,20 @@ body,html{
 
 .result{
   text-align: center;
-  // margin-top: 100px;
+  margin-top: 100px;
+  position:relative;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+
+// 打印样式
+@media print{
+  .result{
+    display: block;
+  }
 }
 
 .el-form-item__label{
   color: #fff;
-
 }

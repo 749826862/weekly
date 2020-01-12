@@ -3,10 +3,20 @@ html {
   height: 100%;
   -webkit-print-color-adjust: exact;
 }
+.month_title {
+  font-size: 50px;
+  font-weight: 500;
+  color: #FF0000;
+}
 .word_title {
   font-size: 50px;
   font-weight: 500;
   color: #008080;
+}
+.big_tilte {
+  font-size: 30px;
+  font-family: "黑体";
+  text-align: center;
 }
 .word_title_1 {
   font-family: "黑体";
@@ -44,6 +54,19 @@ html {
 .auto {
   margin: 0 auto;
   margin-bottom: 40px;
+}
+.result {
+  text-align: center;
+  margin-top: 100px;
+  position: relative;
+  bottom: 0;
+  right: 0;
+  display: none;
+}
+@media print {
+  .result {
+    display: block;
+  }
 }
 .el-form-item__label {
   color: #fff;
