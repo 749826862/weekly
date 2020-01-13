@@ -22,7 +22,7 @@
           span.word_title_4 2．各单位故障自愈实现率情况
         p 
           span.word_content 11月份，配电自动化故障自愈实现率较高的三家单位分别为城区、通州、朝阳公司，较低的单位为延庆、密云、门头沟公司。
-        Mzhexian(:chartsOption="{className:'gzzlsx',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhuzhaungtu(:chartsOption="{className:'gzzlsx',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
         p 
           span.word_lingt 【相关建议】
         p 

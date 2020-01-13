@@ -34,7 +34,8 @@ export default {
           className: "", //类名
           isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
           legendName: ["北京地区10kv线路同期线损率(%)"], //图例显示文字
-          tableName: "图1 北京地区同期线损率周趋势" //表格名称
+          tableName: "图1 北京地区同期线损率周趋势", //表格名称
+          color:['#C0504D']
         };
       }
     }
@@ -129,7 +130,7 @@ export default {
                     show: true,
                     position: "top"
                   },
-                  color: "rgba(79,129,189,1)"
+                  color: this.chartsOption.color?this.chartsOption.color[0]:"#C0504D"
                 }
               },
               data: this.value.serverData[0]
