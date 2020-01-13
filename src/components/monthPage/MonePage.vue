@@ -11,23 +11,20 @@
         p 
           span.word_content 11月份，公司“四率”指标完成情况如下：
         .result
-        p 
-          span.word_lingt 【监测分析情况】
-        h4.word_title_3 （一）配电自动化故障自愈实现情况
-        p 
-          span.word_lingt 1、故障自愈实现率总体情况
-        p 
-          span.word_content 11月18日-11月24日,北京公司累计投入配电自动化8689条，故障自愈实现率为99.70%，较上周上升0.01个百分点。
-        zhuzhaungtu.auto(:chartsOption="{className:'realizationtrend', tableName:'图3 配电自动化故障自愈实现率周趋势',legendName:'故障自愈实现率(%)'}")
-        p 
-          span.word_lingt 2、各单位故障自愈实现率情况
-        p 
-          span.word_content 11月18日-11月24日，故障自愈实现率较高的公司分别为城区、通州、朝阳公司，故障自愈实现率较低的公司分为延庆、密云、门头沟公司。
-        zhuzhaungtu.auto(:chartsOption="{className:'realization',isRow:false,tableName:'图4 各单位配电自动化故障自愈实现率情况',legendName:'故障自愈实现率(%)'}"  )
-        p 
-          span.word_lingt 【相关建议】
-        p 
-          span.word_content 11月18日-11月24日，故障自愈实现率为99.70%，延庆、密云、门头沟公司故障自愈实现率较低，以上单位进一步关注配电自动化功能投入率和故障自愈实现率的水平。
+        .imgCharts
+          .chart_1
+            img(src="~@assets/charts2.png")
+            imgzhexian(:chartsOption="{className:'pdzdhl',legendName:[],tableName:'',isRow:true}")
+          .chart_1
+            img(src="~@assets/charts3.png")
+            imgzhexian(:chartsOption="{className:'dyhgl',legendName:[],tableName:'',isRow:true}")
+          .chart_1
+            img(src="~@assets/charts1.png")
+            imgzhexian(:chartsOption="{className:'xsl',legendName:[],tableName:'',isRow:true}")
+          .chart_1
+            img(src="~@assets/charts4.png")
+            imgzhexian(:chartsOption="{className:'khmyl',legendName:[],tableName:'',isRow:true}")
+
 </template>
 <script>
 export default {
@@ -55,6 +52,22 @@ export default {
       text-indent: 3em;
       line-height: 25px;
       letter-spacing: 2px;
+    }
+  }
+  .imgCharts{
+    // margin-top: 200px;
+    width: 100%;
+    img{
+      width: 100%;
+      height: 260px;
+      position: absolute;
+      top: 0px;
+    }
+    .chart_1{
+      width: 100%;
+      height: 260px;
+      position: relative;
+      margin-bottom: 10px;
     }
   }
 }

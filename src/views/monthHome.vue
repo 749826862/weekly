@@ -2,7 +2,10 @@
   .monthhome
     MonthHeader
     MonePage
-    
+    MtwoPage
+    MthreePage
+    MfourPage
+    MfivePage
 </template>
 <script>
 export default {
