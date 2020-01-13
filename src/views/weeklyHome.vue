@@ -4,7 +4,7 @@
     onePage(v-model="dataList")
     twoPage(v-model="dataList.pbdyhgl")
     threePage(v-model="dataList.pbdyhgl")
-    fourPage(v-model="dataList")
+    fourPage(v-model="dataList.xsl")
     fivePage(v-model="dataList")
     //- zhuzhaungtu
 </template>

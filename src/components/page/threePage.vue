@@ -72,15 +72,15 @@
         p 
           span.word_title_4 1、各单位配变重过载占比情况
         p 
-          span.word_content 11月21日-11月27日，公司配变发生重过载214台。重过载率0.25%，较上周下降0个百分点。
+          span.word_content {{ value.dwpbzgzzbqk1 }}-{{ value.dwpbzgzzbqk2 }}，公司配变发生重过载{{ value.dwpbzgzzbqk3 }}台。重过载率{{ value.dwpbzgzzbqk4 }}，较上周{{ value.dwpbzgzzbqk5 }}个百分点。
         zhutuzhexian.auto(:className="'gongsipeidianqishi'" :isRow="true" :title="{tableName:'图24 公司配变重过载变化趋势',legendName:['非重过载配变数(万台)','重过载配变数(万台)','配变重过载率(%)']}")
         p 
-          span.word_content 从单位分布上看，重过载数占总量比较高的三家单位分别为大兴、怀柔、门头沟公司。
+          span.word_content 从单位分布上看，重过载数占总量比较高的三家单位分别为{{ value.dwpbzgzzbqk6 }}公司。
         zhutuzhexianone.auto(:chartsOption="{className:'gedanweizhongzai',tableName:'图25 各单位配变重过载占比',legendName:['重过载配变数(万台)','占比(%)']}")
         p 
           span.word_title_4 2、配变重过载周趋势
         p 
-          span.word_content 11月21日-11月27日,公司发生重过载配变214台，较上周减少2台。其中重载⁶有105台(占比49.07%)，较上周增加4台；过载⁷有109台（占比50.93%），较上周减少6台。
+          span.word_content {{ value.pbzgzzcs1 }}-{{ value.pbzgzzcs2 }},公司发生重过载配变{{ value.pbzgzzcs3 }}台，较上周{{ value.pbzgzzcs4 }}台。其中重载⁶有{{ value.pbzgzzcs5 }}台(占比{{ value.pbzgzzcs6 }})，较上周{{ value.pbzgzzcs7 }}台；过载⁷有{{ value.pbzgzzcs8 }}台（占比{{ value.pbzgzzcs9 }}），较上周{{ value.pbzgzzcs10 }}台。
         p 
           span.word_content.tip ⁶配变重载：配变负载处于80%-100%区间;
           span.word_content.tip ⁷配变过载：配变负载大于100%。
@@ -88,44 +88,44 @@
         p 
           span.word_title_4 3、各单位配变重过载分布情况
         p 
-          span.word_content 11月21日-11月27日，公司发生重过载共214台，其中重过载配变较多的三家单位分别为大兴、怀柔、密云公司。
+          span.word_content {{ value.dwpbzgzfb1 }}-{{ value.dwpbzgzfb2 }}，公司发生重过载共{{ value.dwpbzgzfb3 }}台，其中重过载配变较多的三家单位分别为{{ value.dwpbzgzfb4 }}公司。
         duidiezhutu.auto(:chartsOption="{className:'zhongzaipeibianguozai',isRow:false,tableName: '图27 各单位重过载配变分布',legendName: ['重载(台)','过载(台)']}")
 
         h4.word_title_3 （六）配变发生三相不平衡情况监测
         p 
           span.word_title_4 1、各单位配变三相不平衡占比情况
         p 
-          span.word_content 11月21日-11月27日，公司配变发生三相不平衡有1125台。三相不平衡率1.30%，较上周上升0.45个百分点。
+          span.word_content {{ value.dwpbsxbphzb1 }}-{{ value.dwpbsxbphzb2 }}，公司配变发生三相不平衡有{{ value.dwpbsxbphzb3 }}台。三相不平衡率{{ value.dwpbsxbphzb4 }}，较上周{{ value.dwpbsxbphzb5 }}个百分点。
         zhutuzhexian.auto(:className="'sanxiangbupinghen'" :isRow="true" :title="{tableName:'图28 公司配变三相不平衡变化趋势',legendName:['非三项不平衡配电数(台)','三项不平衡配电数(台)','三项不平衡率(%)']}")
         p 
-          span.word_content 11月21日-11月27日，公司配变发生三相不平衡有1125台。三相不平衡率1.30%，较上周上升0.45个百分点。
+          span.word_content 从单位分布上看，三相不平衡数占总量占比较高的三家单位分别为{{ value.dwpbsxbphzb6 }}公司。
         zhutuzhexian.auto(:className="'sanxiangbupinghenzhanbi'" :isRow="true" :title="{tableName:'图29 各单位配变三相不平衡占比',legendName:['三项不平衡数(台)','占比(%)']}")
         p 
           span.word_title_4 2、配变三相不平衡周趋势
         p 
-          span.word_content 11月21日-11月27日,公司发生三相不平衡配变1125台，较上周数量增加491台。
+          span.word_content {{ value.dwpbsxbphzcs1 }}-{{ value.dwpbsxbphzcs2 }},公司发生三相不平衡配变{{ value.dwpbsxbphzcs3 }}台，较上周数量增加{{ value.dwpbsxbphzcs4 }}台。
         zhuzhaungtu.auto( :chartsOption="{className:'sanxiangbupinghenqushi',isRow:'true',tableName:'图30 三相不平衡配变周趋势'}")
         p 
           span.word_title_4 3、各单位配变三相不平衡分布情况
         p 
-          span.word_content 11月21日-11月27日，公司发生三相不平衡共1125台，其中三相不平衡配变较多的三家单位分别为顺义、通州、朝阳公司。
+          span.word_content {{ value.dwpbsxbphfb1 }}-{{ value.dwpbsxbphfb2 }}，公司发生三相不平衡共{{ value.dwpbsxbphfb3 }}台，其中三相不平衡配变较多的三家单位分别为{{ value.dwpbsxbphfb4 }}公司。
         zhuzhaungtu.auto( :chartsOption="{className:'sanxiangbupinghenfenbu' ,isRow:'true',tableName:'图29 各单位配变三相不平衡占比'}")
 
         h4.word_title_3 （七）配变异动重叠发生情况监测
         p 
           span.word_title_4 1、配变低电压与重过载重叠发生情况
         p 
-          span.word_content 11月21日-11月27日，公司配变发生低电压异动72台，发生重过载有214台。其中重叠发生的配变有1台，为门头沟公司“田庄路门ZB37111026变压器”。
+          span.word_content {{ value.pbddyyzgzcd1 }}-{{ value.pbddyyzgzcd2 }}，公司配变发生低电压异动{{ value.pbddyyzgzcd3 }}台，发生重过载有{{ value.pbddyyzgzcd4 }}台。其中重叠发生的配变有{{ value.pbddyyzgzcd5 }}台，为{{ value.pbddyyzgzcd6 }}。
         bintu.auto(:chartsOption="{className:'guozaichongdiefasheng',tableName:'图32 配变低电压与重过载重叠发生情况'}")
         p 
           span.word_title_4 2、配变低电压与三相不平衡重叠发生情况
         p 
-          span.word_content 11月21日-11月27日，公司配变发生低电压异动72台，发生三相不平衡有1125台。其中重叠发生的配变有3台，为密云公司“密ZB027(石娥路）”、平谷公司“平ZB012水峪路柱上变压器”、延庆公司“古城路031柱上变压器”。
+          span.word_content {{ value.pbddyysxbphcd1 }}-{{ value.pbddyysxbphcd2 }}，公司配变发生低电压异动{{ value.pbddyysxbphcd3 }}台，发生三相不平衡有{{ value.pbddyysxbphcd4 }}台。其中重叠发生的配变有{{ value.pbddyysxbphcd5 }}台，为{{ value.pbddyysxbphcd6 }}。
         bintu.auto(:chartsOption="{className:'pinghengchongdie',tableName:'图33 配变低电压与三相不平衡重叠发生情况'}")
         p 
           span.word_lingt 【总结建议】
         p 
-          span.word_content 1、截至11月27日，公司配变电压运行平稳，未发生较大幅度的波动，电压合格率完成值为96.54%。其中配变电压合格率较低的三家公司分别为延庆、城区、密云公司，相关单位应加大治理力度，提升电压合格率水平。
+          span.word_content 1、截至{{ value.pbydcdzj1 }}，公司配变电压运行平稳，未发生较大幅度的波动，电压合格率完成值为{{ value.pbydcdzj2 }}。其中配变电压合格率较低的三家公司分别为{{ value.pbydcdzj3 }}公司，相关单位应加大治理力度，提升电压合格率水平。
         p 
           span.word_content 2、自2018年6月份以来，组织各单位开展不合格配变、不可监测配变的治理工作，取得了一定成效，但依然存在部分配变供电电压不合格、不可监测，各单位应进一步加强治理，消除由于台账维护错误、采集数据缺失等造成的配变无法监测、电压不合格问题。
 </template>

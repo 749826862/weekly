@@ -6,10 +6,10 @@
         h4.word_title_2 三、线损率
         p 
           span.word_lingt 【监测周期】
-          span.word_content 2019年11月18日0时—2019年11月24日24时
+          span.word_content {{ value.jczq1 }}—{{ value.jczq2 }}
         p 
           span.word_lingt 【数据来源】
-          span.word_content 主要来源于一体化电量与线损管理系统、电力用户用电信息采集系统和综合线损管理系统，涉及22个数据字段，获取本周明细数据9.68万条，其中统计线损来源于综合线损管理系统共19条，分区、10kV线路同期线损来源于一体化电量与线损管理系统共9875条，台区同期线损来源于电力用户用电信息采集系统共8.69条。
+          span.word_content 主要来源于一体化电量与线损管理系统、电力用户用电信息采集系统和综合线损管理系统，涉及{{ value.jcsj1 }}个数据字段，获取本周明细数据{{ value.jcsj2 }}万条，其中统计线损来源于综合线损管理系统共{{ value.jcsj3 }}条，分区、10kV线路同期线损来源于一体化电量与线损管理系统共{{ value.jcsj4 }}条，台区同期线损来源于电力用户用电信息采集系统共8.69条。
         p 
           span.word_lingt 【监测规则】
         p 
@@ -23,7 +23,8 @@
         p 
           span.word_title_4 1、北京地区同期线损率完成情况
         p 
-          span.word_content 11月第4周，北京地区同期线损率为6.51%，比上周上升了1.18个百分点，比10月统计线损率累计值5.42%高1.09个百分点。
+          //- 缺少
+          span.word_content {{ value.bjtqxslqk1 }}第{{ value.bjtqxslqk2 }}，北京地区同期线损率为{{ value.bjtqxslqk3 }}，比上周{{ value.bjtqxslqk4 }}个百分点，比{{ value.bjtqxslqk5 }}统计线损率累计值5.42%高1.09个百分点。
         binpaifuzhuline.auto(:chartsOption="{className:'beijingdiquxiansun',isRow:true,isMarkline:false,tableName: '图1 北京地区同期线损率周趋势'}")
         p 
           span.word_title_4 2、各单位同期线损率完成情况
@@ -133,6 +134,7 @@
 </template>
 <script>
 export default {
+  props:["value"],
   data() {
     return {};
   },
