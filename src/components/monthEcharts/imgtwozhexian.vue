@@ -13,16 +13,22 @@ export default {
       default: () => {
         return {
           xData: [
+            "1月",
+            "2月",
+            "3月",
+            "4月",
+            "5月",
+            "6月",
+            "7月",
+            "8月",
+            "9月",
             "10月",
             "11月",
-            "12月",
-            "13月",
-            "14月",
-            "15月",
-            "16月"
+            "12月"
           ],
           serverData: [
-            [102, 52, 200, 334, 90, 100, 220]
+            [102, 52, 200, 334, 90, 100, 220,200, 334, 90, 100, 220],
+            [72, 22, 100, 34, 100, 70, 80,90, 100, 220,200, 334]
           ]
         };
       }
@@ -83,7 +89,7 @@ export default {
           },
           legend: {
             show: true,
-            bottom: 0,
+            top: 10,
             data:this.chartsOption.legendName
           },
           xAxis: [
@@ -91,11 +97,11 @@ export default {
               type: "category",
               data: this.value.xData,
               axisTick: {
-                show:false,
+                show:true,
                 alignWithLabel: false
               },
               axisLine: {
-                show: false
+                show: true
               },
               axisLabel: {
                 interval: 0,
@@ -114,6 +120,9 @@ export default {
                 //y轴
                 show: false
               },
+              axisLabel:{
+                show: false
+              },
               axisTick: {
                 //y轴刻度线
                 show: false
@@ -124,23 +133,42 @@ export default {
             {
               name: this.chartsOption.legendName[0],
               type: "line",
-              barWidth: "20%",
-              symbol:"circle",
               symbolSize:8,
+              symbol:'circle',
               itemStyle: {
                 normal: {
                   label: {
                     show: true,
                     position: "top",
-                    color:"#000"
+                    color:"#15B450"
                   },
-                  lineStyle: {
-                    color: "#4BACC6"
+                  lineStyle:{
+                    color: "#00B0F0"
                   },
-                  color: "#F79646"
+                  color: "#376092"
                 }
               },
               data: this.value.serverData[0]
+            },
+            {
+              name: this.chartsOption.legendName[1],
+              type: "line",
+              symbolSize:8,
+              symbol:'circle',
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: false,
+                    position: [5,-15],
+                    color:"#0079C7"
+                  },
+                  lineStyle:{
+                    color: "#C00000"
+                  },
+                  color: "#FFC000"
+                }
+              },
+              data: this.value.serverData[1]
             }
           ]
         };
@@ -154,9 +182,9 @@ export default {
 </script>
 <style lang='less' scoped>
 .chartMain {
-  width: 100%;
+  // width: 100%;
   height: 300px;
-  // flex: 1;
+  flex: 1;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;
   box-sizing: border-box;
@@ -172,7 +200,7 @@ export default {
 p {
   text-align: center;
   position: absolute;
-  top: 40px;
+  top: 30px;
   left: 50%;
   font-weight: bold;
   color: #000;

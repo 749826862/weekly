@@ -14,16 +14,18 @@
         .imgCharts
           .chart_1
             img(src="~@assets/charts2.png")
-            imgzhexian(:chartsOption="{className:'pdzdhl',legendName:[],tableName:'',isRow:true}")
+            imgzhexian(:chartsOption="{className:'pdzdhl',legendName:[],tableName:'自愈实现率',isRow:true}")
           .chart_1
             img(src="~@assets/charts3.png")
-            imgzhexian(:chartsOption="{className:'dyhgl',legendName:[],tableName:'',isRow:true}")
+            imgzhutu(:chartsOption="{className:'dyhgl',legendName:[],tableName:'1-11月配变电压合格率(%)',isRow:true}")
           .chart_1
             img(src="~@assets/charts1.png")
-            imgzhexian(:chartsOption="{className:'xsl',legendName:[],tableName:'',isRow:true}")
+            imgbinpaizhutu(:chartsOption="{className:'xsl',legendName:['统计线损率累计值(%)','月统计线损率(%)'],tableName:'',isRow:true}")
           .chart_1
             img(src="~@assets/charts4.png")
-            imgzhexian(:chartsOption="{className:'khmyl',legendName:[],tableName:'',isRow:true}")
+            .charts_zhexian
+              imgtwozhexian(:chartsOption="{className:'khmyl',legendName:['2018','2019'],tableName:'95598话务量（万通）',isRow:true}")
+              imgtwozhexian(:chartsOption="{className:'khmylwanjian',legendName:['2018','2019'],tableName:'八类工单数量（万件）',isRow:true}")
 
 </template>
 <script>
@@ -68,6 +70,10 @@ export default {
       height: 260px;
       position: relative;
       margin-bottom: 10px;
+    }
+    .charts_zhexian{
+      display: flex;
+      justify-content: space-between;
     }
   }
 }

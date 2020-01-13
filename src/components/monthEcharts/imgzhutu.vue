@@ -114,6 +114,9 @@ export default {
                 //y轴
                 show: false
               },
+              axisLabel:{
+                show: false
+              },
               axisTick: {
                 //y轴刻度线
                 show: false
@@ -123,21 +126,25 @@ export default {
           series: [
             {
               name: this.chartsOption.legendName[0],
-              type: "line",
+              type: "bar",
               barWidth: "20%",
-              symbol:"circle",
-              symbolSize:8,
               itemStyle: {
                 normal: {
                   label: {
                     show: true,
                     position: "top",
-                    color:"#000"
+                    color:"#1F81C6"
                   },
                   lineStyle: {
                     color: "#4BACC6"
                   },
-                  color: "#F79646"
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#398BA1'
+                  }, {
+                      offset: 0.8,
+                      color: '#B0DAE6'
+                  }], false)
                 }
               },
               data: this.value.serverData[0]
@@ -172,7 +179,7 @@ export default {
 p {
   text-align: center;
   position: absolute;
-  top: 40px;
+  top: 43px;
   left: 50%;
   font-weight: bold;
   color: #000;

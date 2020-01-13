@@ -83,7 +83,7 @@ export default {
           },
           legend: {
             show: true,
-            bottom: 0,
+            top: 0,
             data:this.chartsOption.legendName
           },
           xAxis: [
@@ -114,6 +114,9 @@ export default {
                 //y轴
                 show: false
               },
+              axisLabel:{
+                show: false
+              },
               axisTick: {
                 //y轴刻度线
                 show: false
@@ -123,21 +126,45 @@ export default {
           series: [
             {
               name: this.chartsOption.legendName[0],
-              type: "line",
+              type: "bar",
               barWidth: "20%",
-              symbol:"circle",
-              symbolSize:8,
+              barGap:0,//柱间距离
               itemStyle: {
                 normal: {
                   label: {
                     show: true,
-                    position: "top",
-                    color:"#000"
+                    position: [-5,-15],
+                    color:"#15B450"
                   },
-                  lineStyle: {
-                    color: "#4BACC6"
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#15B450'
+                  }, {
+                      offset: 0.8,
+                      color: '#BFDD98'
+                  }], false)
+                }
+              },
+              data: this.value.serverData[0]
+            },
+            {
+              name: this.chartsOption.legendName[1],
+              type: "bar",
+              barWidth: "20%",
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: [5,-15],
+                    color:"#0079C7"
                   },
-                  color: "#F79646"
+                  color: new echarts.graphic.LinearGradient(0, 0, 0, 1, [{
+                    offset: 0,
+                    color: '#0079C7'
+                  }, {
+                      offset: 0.8,
+                      color: '#48BBEB'
+                  }], false)
                 }
               },
               data: this.value.serverData[0]
@@ -172,10 +199,8 @@ export default {
 p {
   text-align: center;
   position: absolute;
-  top: 40px;
+  bottom: -25px;
   left: 50%;
-  font-weight: bold;
-  color: #000;
   transform: translate(-50%);
 }
 .titleLeft {
