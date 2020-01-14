@@ -17,41 +17,41 @@
           span.word_title_4 1．配变电压合格率总体情况
         p 
           span.word_content 11月份，公司在运配变8.68万台，电压可监测配变8.47万台，可监测率97.64%，电压合格率95.71%。
-        Mzhexian(:chartsOption="{className:'pbdyhegelv',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhutuzhexian.auto(:title="{legendName:['电压合格配变数(万台)','电压不合格配变数(万台)','配变电压合格率(%)'],tableName:'图1  公司配变电压合格率变化趋势',isRow:true}" :className="'pbdyhegelv'",)
         p 
           span.word_content 11月份，公司发生电压异常的配变¹共计1733台，其中低电压¹415台、过电压²592台、数据异常³726台。电压异常配变数量与负荷关联关系见下图。
         p 
           span.word_content.tip ¹电压不合格配变数=低电压台区数+过电压配变数+数据异常配变数;
           span.word_content.tip ²配变过电压：配变电压高于235.4V，在235.4V-308V之间，持续1小时;
           span.word_content.tip ³配变数据异常：配变电压低于正常电压40%（132V）或电压高于正常电压40%（308V），持续1小时。
-        Mzhexian(:chartsOption="{className:'fhqkdb',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        danzhuzhexian.auto(:chartsOption="{className:'fhqkdb',legendName:['电压不合格配变数(台)','月最大负荷(万千瓦)'],tableName:'图2  公司配变电压异常台数与负荷情况对比',isRow:true}")
         p 
           span.word_content 11月份，公司发生不可监测配变2044台，较10月份增加404台，各月变化情况见下图。
-        Mzhexian(:chartsOption="{className:'bkjcpb',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhuzhaungtu.auto(:chartsOption="{className:'bkjcpb',legendName:['不可监测配变数(台)'],tableName:'图3  公司不可监测配变数量变化趋势',isRow:true}")
         p 
           span.word_content 2044台不可监测配变中，投运日期在2019年的1276台，占比62.43%，具体分布情况见下图。
         p 
           span.word_title_4 2．各单位配变电压合格率情况
         p 
           span.word_content 11月份，配变电压合格率较高的三家单位分别为房山、平谷、亦庄公司，较低的三家单位分别为延庆、密云、怀柔公司。
-        Mzhexian(:chartsOption="{className:'gedwdyheg',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhutuzhexian.auto(:title="{legendName:['电压合格配变数(万台)','电压不合格配变数(万台)','配变电压合格率(%)'],tableName:'图5  各单位配变电压合格率情况',isRow:true}" :className="'gedwdyheg'")
         p 
           span.word_title_4 3．配变电压合格率治理情况
         p 
           span.word_content 截至11月份，公司配变电压异常治理率96.96%，不可监测治理率87.23%。
         p 
           span.word_content 配变电压异常治理情况：自2018年6月，公司发生电压异常配变累计12559台。截至11月30日，已有12177台完成治理，治理率96.96%。各单位治理情况见下图。
-        Mzhexian(:chartsOption="{className:'dypbzlqk',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhutuzhexian.auto(:title="{legendName:['已治理配变数(台)','未治理配变数(台)','治理率(%)'],tableName:'图6  各单位电压异常配变治理情况',isRow:true}" :className="'dypbzlqk'")
         p 
           span.word_content 不可监测配变治理情况：自2018年6月，公司发现不可监测配变累计11440台。截至11月30日，已有9979台完成治理，治理率87.23%。各单位治理情况见下图。
-        Mzhexian(:chartsOption="{className:'dypbbkzlqk',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhutuzhexian.auto(:title="{legendName:['已实现监测配变数(台)','仍不可监测配变数(台)','治理率(%)'],tableName:'图7  各单位不可监测配变治理情况',isRow:true}" :className="'dypbbkzlqk'")
         p 
           span.word_title_4 4．新投配变维护时长分析
         p 
           span.word_content 2019年1月1日至11月30日，公司新投运配变4489台。已实现可监测3213台，平均用时48.69天，其中PMS2.0侧维护平均用时4.69天，营销系统侧维护平均用时44.0天。仍不可监测的1276台，其中PMS2.0侧维护平均用时6.40天，营销系统侧维护平均已用时62.30天。
         p 
           span.word_content 从各单位情况看，数据维护平均用时较短的三家单位分别为平谷、密云、顺义公司，较长的三家单位分别为石景山、城区、海淀公司。
-        Mzhexian(:chartsOption="{className:'gdwxty',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        Mdanzhuzhexian.auto(:chartsOption="{className:'gdwxty',legendName:['已实现监测配变数(台)','实现监测平均用时(天)'],tableName:'图8  各单位新投运配变实现监测用时情况',isRow:true}")
         p 
           span.word_lingt 【相关建议】
         p 

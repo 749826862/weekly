@@ -23,7 +23,7 @@ export default {
           ],
           serverData: [
             [102, 52, 200, 334, 90, 100, 220],
-            [12, 52, 20, 124, 190, 10, 22]
+            [10, 152, 100, 34, 390, 330, 20]
           ]
         };
       }
@@ -34,8 +34,10 @@ export default {
         return {
           className: "", //类名
           isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
-          legendName: ["北京地区10kv线路同期线损率(%)"], //图例显示文字
-          tableName: "图1 北京地区同期线损率周趋势" //表格名称
+          legendName: ["统计线损率累计值(%)", "同期线损率(%)"], //图例显示文字
+          tableName: "图1 北京地区同期线损率周趋势", //表格名称
+          isMarkline: true, //是否显示辅助线
+          danwei:""
         };
       }
     }
@@ -76,7 +78,7 @@ export default {
             }
           },
           grid: {
-            top: "10%",
+            top: "12%",
             left: "3%",
             right: "4%",
             bottom: "9%",
@@ -85,14 +87,13 @@ export default {
           legend: {
             show: true,
             bottom: 0,
-            data: this.chartsOption.legendName
+            data:this.chartsOption.legendName
           },
           xAxis: [
             {
               type: "category",
               data: this.value.xData,
               axisTick: {
-                // show:false,
                 alignWithLabel: false
               },
               axisLabel: {
@@ -107,6 +108,7 @@ export default {
           ],
           yAxis: [
             {
+              name:this.chartsOption.danwei?this.chartsOption.danwei:"",
               type: "value",
               axisLine: {
                 //y轴
@@ -121,41 +123,52 @@ export default {
           series: [
             {
               name: this.chartsOption.legendName[0],
-              type: "line",
-              barWidth: "30%",
-              symbol: "circle",
-              symbolSize: 8,
+              type: "bar",
+              barWidth: "20%",
               itemStyle: {
                 normal: {
                   label: {
                     show: true,
-                    position: "top",
-                    // formatter: "{c}%"
+                    position: "top"
                   },
                   color: "rgba(79,129,189,1)"
-                }
-              },
-              data: this.value.serverData[1]
-            },
-            {
-              name: this.chartsOption.legendName[1],
-              type: "line",
-              symbol: "circle",
-              symbolSize: 8,
-              itemStyle: {
-                normal: {
-                  label: {
-                    show: true,
-                    position: "top",
-                    // formatter: "{c}%"
-                  },
-                  color: "rgba(192,80,77,1)"
                 }
               },
               data: this.value.serverData[0]
             }
           ]
         };
+
+        // 辅助线
+        let markline = {
+          name: this.chartsOption.legendName[1],
+          type: "line",
+          barGap: "0%",
+          itemStyle: {
+            normal: {
+              type: "dashed",
+              color: "#C0504D"
+            }
+          },
+          markLine: {
+            symbol: "none",
+            data: [
+              {
+                name: "Y 轴值为 100 的水平线",
+                yAxis: 300,
+                lineStyle: {
+                  width: 3,
+                  show: false,
+                  color: "#C0504D"
+                },
+                label: {
+                  show: false
+                }
+              }
+            ]
+          }
+        };
+        this.chartsOption.isMarkline ? option.series.push(markline) : "";
         resolve(option);
       }).catch(err => {
         reject(err);
@@ -177,13 +190,12 @@ export default {
 .zhuzhuangtu {
   width: 100%;
   height: 99%;
-  border: 1px solid #ccc;
+   border: 1px solid #ccc;
   margin: 0 auto;
 }
 p {
   text-align: center;
   position: absolute;
-  white-space: nowrap;
   bottom: -25px;
   left: 50%;
   transform: translate(-50%);

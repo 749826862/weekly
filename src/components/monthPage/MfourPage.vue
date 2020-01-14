@@ -15,56 +15,56 @@
         h4.word_title_3 （一）线损率总体情况
         p 
           span.word_content 1．11月份，北京地区统计线损率累计值为5.85%，同期线损率为6.43%。
-        Mzhexian(:chartsOption="{className:'bjdqxsl',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        binpaifuzhuline.auto(:chartsOption="{className:'bjdqxsl',legendName:['统计线损率累计值(%)','月同期线损率(%)'],tableName:'图1 北京地区线损率变化趋势',isRow:true}")
         p 
           span.word_content 2．11月份，北京地区220kV电压等级线损率较10月份下降了1.42个百分点，且为负值。
-        Mzhexian(:chartsOption="{className:'kv10tqxsl',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        Mfourzhexian.auto(:chartsOption="{className:'kv10tqxsl',legendName:['35千伏','110千伏','220千伏','500千伏'],tableName:'图2 10kV以上电压等级同期线损率变化趋势',isRow:true}")
         p 
           span.word_content 10kV及以下电压等级线损率为3.44%，总体呈波动起伏趋势。
-        Mzhexian(:chartsOption="{className:'kv10tqxsldj',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        Mzhexian(:chartsOption="{className:'kv10tqxsldj',legendName:[''],tableName:'图3 10kV及以下电压等级同期线损率变化趋势',isRow:true,color:['#E46C0A']}")
         p 
           span.word_content 3.11月份，北京地区10kV线路同期线损率分布在[0,6]区间的线路数共6380条，占比为64.30%，较上月有上升；台区同期线损率分布在[0,10]区间的台区数为69515个，占比为84.29%，台区线损管控情况平稳良好。
-        Mzhexian(:chartsOption="{className:'bejxszcdb',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        twozhexian.auto(:chartsOption="{className:'bejxszcdb',legendName:['线损率在[0,6]之间的10Kv线路占比(%)','线损率在[0,10]之间的台区占比(%)'],tableName:'图4 北京地区10kV线路及台区同期线损率正常区间占比',isRow:true}")
         p 
           span.word_content 4.11月份，北京地区10kV负损线路共计1137条，比上月减少132条，占线路总数的11.46%，占比较10月份下降了1.5个百分点，持续5个月下降，治理成效显著。
-        Mzhexian(:chartsOption="{className:'bejfsbh',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        Mduidiedanzhuzheline.auto(:chartsOption="{className:'bejfsbh',legendName:['10Kv线路小负损数','10Kv线路其它负损数','10Kv负损线路占比(%)'],tableName:'图5 北京地区10kV线路负损变化趋势',isRow:true}")
         p 
           span.word_content 11月份，负损台区共计6292个，占台区总数的7.63%，台区小负损数有所下降，其他负损数和负损占比均有上升。
-        Mzhexian(:chartsOption="{className:'betqfsbh',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        Mduidiedanzhuzheline.auto(:chartsOption="{className:'betqfsbh',legendName:['台区小负损数','台区其它负损数','负损台区占比(%)'],tableName:'图6 北京地区台区负损变化趋势',isRow:true}")
 
         h4.word_title_3 （二）10kV线路同期线损情况
         p 
           span.word_title_4 1．北京地区10kV线路同期线损整体情况
         p 
           span.word_content 11月份，北京地区10kV线路同期线损率为5.23%，较10月份下降了0.56个百分点。
-        Mzhexian(:chartsOption="{className:'beijintqbh',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        Mzhexian.auto(:chartsOption="{className:'beijintqbh',legendName:['10Kv线路同期线损率(%)'],tableName:'图7 北京地区10kV线路同期线损率变化趋势',isRow:true,color:['#4F81BD']}")
         p 
           span.word_title_4 2．各单位10kV线路同期线损完成情况
         p 
           span.word_content 11月份，大兴公司10kV线路同期线损率较低（2.07%），朝阳公司10kV线路同期线损率较高（8.93%）。
-        Mzhexian(:chartsOption="{className:'gdbeijintqbh',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        binpaifuzhuline.auto(:chartsOption="{className:'gdbeijintqbh',legendName:['上月10Kv线路同期线损率(%)','本月10Kv线路同期线损率(%)'],tableName:'图8 各单位10kV线路同期线损率情况',isRow:true}")
         p 
           span.word_title_4 3．各单位10kV线路负损情况
         p 
           span.word_content 11月份，朝阳公司10kV负损线路数量最多，延庆公司10kV负损线路占比最高，应重点加强治理。
-        Mzhexian(:chartsOption="{className:'gdbeijinfsqk',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhutuzhexian.auto(:title="{legendName:['10Kv线路小负损数','10Kv线路其它负损数','10Kv线路负损占总线路数比例(%)'],tableName:'图9 各单位10kV线路负损及小负损情况',isRow:true}" :className="'gdbeijinfsqk'",)
 
         h4.word_title_3 （三）台区同期线损率情况
         p 
           span.word_title_4 1．北京地区台区同期线损整体情况
         p 
           span.word_content 11月份，北京地区台区同期线损率为3.02%，较10月份下降了0.37个百分点，总体较为稳定。
-        Mzhexian(:chartsOption="{className:'tqgdbeijinfsqk',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        Mzhexian.auto(:chartsOption="{className:'tqgdbeijinfsqk',legendName:[''],tableName:'图10 北京地区台区同期线损率变化趋势',isRow:true,color:['#4F81BD']}")
         p 
           span.word_title_4 2．各单位台区同期线损完成情况
         p 
           span.word_content 11月份，台区同期线损率最低的为怀柔公司（1.17%），最高的为门头沟公司（5.23%）。城区公司台区同期线损率降幅较大。
-        Mzhexian(:chartsOption="{className:'tqgdbeijindbt',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        binpaifuzhuline.auto(:chartsOption="{className:'tqgdbeijindbt',legendName:['上月台区同期线损率(%)','本月台区同期线损率(%)'],tableName:'图11 各单位台区同期线损率对比图',isRow:true}")
         p 
           span.word_title_4 3．各单位台区负损情况
         p 
           span.word_content 11月份，延庆公司负损台区占比最高，顺义公司负损台区数量最多，应重点加强治理。
-        Mzhexian(:chartsOption="{className:'xftqgdbeijindbt',legendName:['故障自愈实现率'],tableName:'',isRow:true}")
+        zhutuzhexian.auto(:title="{legendName:['台区小负损数','台区其它负损数','台区负损占台区总数比例(%)'],tableName:'图12 各单位台区负损及小负损情况',isRow:true}" :className="'xftqgdbeijindbt'",)
         p 
           span.word_lingt 【相关建议】
         p 

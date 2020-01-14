@@ -2,7 +2,6 @@
   .chartMain
     div.zhuzhuangtu(:class="this.chartsOption.className")
     p {{ chartsOption.tableName }}
-    //- p.titleLeft 配变台区数(台)
 </template>
 <script>
 import echarts from "echarts";
@@ -23,7 +22,9 @@ export default {
           ],
           serverData: [
             [102, 52, 200, 334, 90, 100, 220],
-            [12, 52, 20, 124, 190, 10, 22]
+            [12, 22, 100, 33, 90, 200, 180],
+            [2, 52, 200, 34, 70, 30, 50],
+            [32, 52, 60, 154, 90, 20, 120]
           ]
         };
       }
@@ -35,7 +36,8 @@ export default {
           className: "", //类名
           isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
           legendName: ["北京地区10kv线路同期线损率(%)"], //图例显示文字
-          tableName: "图1 北京地区同期线损率周趋势" //表格名称
+          tableName: "图1 北京地区同期线损率周趋势", //表格名称
+          color:['#C0504D']
         };
       }
     }
@@ -85,14 +87,13 @@ export default {
           legend: {
             show: true,
             bottom: 0,
-            data: this.chartsOption.legendName
+            data:this.chartsOption.legendName
           },
           xAxis: [
             {
               type: "category",
               data: this.value.xData,
               axisTick: {
-                // show:false,
                 alignWithLabel: false
               },
               axisLabel: {
@@ -110,11 +111,11 @@ export default {
               type: "value",
               axisLine: {
                 //y轴
-                show: false
+                show: true
               },
               axisTick: {
                 //y轴刻度线
-                show: false
+                show: true
               }
             }
           ],
@@ -122,37 +123,70 @@ export default {
             {
               name: this.chartsOption.legendName[0],
               type: "line",
-              barWidth: "30%",
-              symbol: "circle",
-              symbolSize: 8,
+              barWidth: "20%",
+              symbol:"circle",
+              symbolSize:8,
               itemStyle: {
                 normal: {
                   label: {
                     show: true,
-                    position: "top",
-                    // formatter: "{c}%"
+                    position: "top"
                   },
-                  color: "rgba(79,129,189,1)"
+                  color: this.chartsOption.color?this.chartsOption.color[0]:"#4F81BD"
+                }
+              },
+              data: this.value.serverData[0]
+            },
+            {
+              name: this.chartsOption.legendName[1],
+              type: "line",
+              barWidth: "20%",
+              symbol:"circle",
+              symbolSize:8,
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: "top"
+                  },
+                  color: this.chartsOption.color?this.chartsOption.color[0]:"#C0504D"
                 }
               },
               data: this.value.serverData[1]
             },
             {
-              name: this.chartsOption.legendName[1],
+              name: this.chartsOption.legendName[2],
               type: "line",
-              symbol: "circle",
-              symbolSize: 8,
+              barWidth: "20%",
+              symbol:"circle",
+              symbolSize:8,
               itemStyle: {
                 normal: {
                   label: {
                     show: true,
-                    position: "top",
-                    // formatter: "{c}%"
+                    position: "top"
                   },
-                  color: "rgba(192,80,77,1)"
+                  color: this.chartsOption.color?this.chartsOption.color[0]:"#9BBB59"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.serverData[2]
+            },
+            {
+              name: this.chartsOption.legendName[3],
+              type: "line",
+              barWidth: "20%",
+              symbol:"circle",
+              symbolSize:8,
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: "top"
+                  },
+                  color: this.chartsOption.color?this.chartsOption.color[0]:"#8064A2"
+                }
+              },
+              data: this.value.serverData[3]
             }
           ]
         };
@@ -167,26 +201,27 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
-  // flex: 1;
+  // height: 300px;
+  // flex: 1;height: 300px;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;
   box-sizing: border-box;
   position: relative;
+  margin-bottom: 20px;
 }
 .zhuzhuangtu {
-  width: 100%;
-  height: 99%;
+  width: 90%;
+  height: 300px;
   border: 1px solid #ccc;
   margin: 0 auto;
 }
 p {
   text-align: center;
-  position: absolute;
-  white-space: nowrap;
-  bottom: -25px;
-  left: 50%;
-  transform: translate(-50%);
+  margin-top: 5px;
+  // position: absolute;
+  // bottom: -25px;
+  // left: 50%;
+  // transform: translate(-50%);
 }
 .titleLeft {
   height: 20px;

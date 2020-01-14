@@ -2,7 +2,6 @@
   .chartMain
     div.zhuzhuangtu(:class="this.chartsOption.className")
     p {{ chartsOption.tableName }}
-    //- p.titleLeft 配变台区数(台)
 </template>
 <script>
 import echarts from "echarts";
@@ -109,11 +108,11 @@ export default {
               type: "value",
               axisLine: {
                 //y轴
-                show: false
+                show: true
               },
               axisTick: {
                 //y轴刻度线
-                show: false
+                show: true
               }
             }
           ],
@@ -148,25 +147,27 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
-  // flex: 1;
+  // height: 300px;
+  // flex: 1;height: 300px;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;
   box-sizing: border-box;
   position: relative;
+  margin-bottom: 20px;
 }
 .zhuzhuangtu {
-  width: 100%;
-  height: 99%;
+  width: 90%;
+  height: 300px;
   border: 1px solid #ccc;
   margin: 0 auto;
 }
 p {
   text-align: center;
-  position: absolute;
-  bottom: -25px;
-  left: 50%;
-  transform: translate(-50%);
+  margin-top: 5px;
+  // position: absolute;
+  // bottom: -25px;
+  // left: 50%;
+  // transform: translate(-50%);
 }
 .titleLeft {
   height: 20px;

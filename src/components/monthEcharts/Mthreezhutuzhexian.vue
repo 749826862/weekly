@@ -76,7 +76,7 @@ export default {
             }
           },
           grid: {
-            top: "10%",
+            top: "13%",
             left: "3%",
             right: "4%",
             bottom: "9%",
@@ -107,6 +107,19 @@ export default {
           ],
           yAxis: [
             {
+              name:"单位:万件",
+              type: "value",
+              axisLine: {
+                //y轴
+                show: false
+              },
+              axisTick: {
+                //y轴刻度线
+                show: false
+              }
+            },
+            {
+              name:"单位:万通",
               type: "value",
               axisLine: {
                 //y轴
@@ -121,9 +134,31 @@ export default {
           series: [
             {
               name: this.chartsOption.legendName[0],
-              type: "line",
-              barWidth: "30%",
-              symbol: "circle",
+              type: "bar",
+              barWidth:"20%",
+               yAxisIndex:0,
+               barGap: "0%",
+              // symbol: "circle",
+              symbolSize: 8,
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: "top",
+                    color:"#000"
+                    // formatter: "{c}%"
+                  },
+                  color: "#E46C0A"
+                }
+              },
+              data: this.value.serverData[0]
+            },
+            {
+              name: this.chartsOption.legendName[1],
+              type: "bar",
+              yAxisIndex:0,
+              barWidth: "20%",
+              symbol: "none",
               symbolSize: 8,
               itemStyle: {
                 normal: {
@@ -132,15 +167,17 @@ export default {
                     position: "top",
                     // formatter: "{c}%"
                   },
-                  color: "rgba(79,129,189,1)"
+                  color: "#00B0F0"
                 }
               },
               data: this.value.serverData[1]
             },
             {
-              name: this.chartsOption.legendName[1],
-              type: "line",
-              symbol: "circle",
+              name: this.chartsOption.legendName[2],
+              type: "bar",
+              yAxisIndex:0,
+              barWidth: "20%",
+              symbol: "none",
               symbolSize: 8,
               itemStyle: {
                 normal: {
@@ -149,11 +186,31 @@ export default {
                     position: "top",
                     // formatter: "{c}%"
                   },
-                  color: "rgba(192,80,77,1)"
+                  color: "#C0504D"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.serverData[1]
+            },
+            {
+              name: this.chartsOption.legendName[3],
+              type: "line",
+              yAxisIndex:1,
+              barWidth: "30%",
+              symbol: "none",
+              symbolSize: 8,
+              itemStyle: {
+                normal: {
+                  label: {
+                    show: true,
+                    position: "top",
+                    // formatter: "{c}%"
+                  },
+                  color: "#4F81BD"
+                }
+              },
+              data: this.value.serverData[1]
             }
+            
           ]
         };
         resolve(option);
@@ -183,7 +240,6 @@ export default {
 p {
   text-align: center;
   position: absolute;
-  white-space: nowrap;
   bottom: -25px;
   left: 50%;
   transform: translate(-50%);

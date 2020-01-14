@@ -25,12 +25,12 @@
         p 
           //- 缺少
           span.word_content {{ value.bjtqxslqk1 }}第{{ value.bjtqxslqk2 }}，北京地区同期线损率为{{ value.bjtqxslqk3 }}，比上周{{ value.bjtqxslqk4 }}个百分点，比{{ value.bjtqxslqk5 }}统计线损率累计值5.42%高1.09个百分点。
-        binpaifuzhuline.auto(:chartsOption="{className:'beijingdiquxiansun',isRow:true,isMarkline:false,tableName: '图1 北京地区同期线损率周趋势'}")
+        binpaifuzhuline.auto(:chartsOption="{className:'beijingdiquxiansun',legendName: ['统计线损率累计值(%)','同期线损率(%)'],isRow:true,isMarkline:false,tableName: '图1 北京地区同期线损率周趋势'}")
         p 
           span.word_title_4 2、各单位同期线损率完成情况
         p 
           span.word_content 11月第4周，亦庄公司同期线损率较低（2.75%），怀柔公司同期线损率较高（12.36%），大兴、延庆、朝阳等公司同期线损率波动较大。
-        binpaifuzhuline.auto(:chartsOption="{className:'xiansuanwancheng',isRow:false,isMarkline:true,tableName: '图2 各单位同期线损率完成情况'}")
+        binpaifuzhuline.auto(:chartsOption="{className:'xiansuanwancheng',legendName: ['上周同期线损率(%)','本周同期线损率(%)','本周北京地区同期线损率(%)'],isRow:false,isMarkline:true,tableName: '图2 各单位同期线损率完成情况'}")
         p 
           span.word_title_4 3、北京地区10kV线路同期线损率完成情况
         p 
@@ -38,7 +38,7 @@
         zhexianone.auto(:chartsOption="{className:'dejindiqu10kv',isRow:true,legendName: ['北京地区10kv线路同期线损率(%)'],tableName: '图3 北京地区10kV线路同期线损率周趋势'}")
         p 
           span.word_content 11月第4周，延庆公司10kV线路同期线损率比上周下降了1.01个百分点，其他单位保持相对稳定。
-        binpaifuzhuline.auto(:chartsOption="{className:'Kv10wanchengqingku',isRow:false,isMarkline:true,tableName: '图4 各单位10kV线路同期线损率完成情况'}")
+        binpaifuzhuline.auto(:chartsOption="{className:'Kv10wanchengqingku',legendName: ['上周10Kv线路线损率(%)','本周10Kv线路线损率(%)','本周北京地区10Kv线路线损率(%)'],isRow:false,isMarkline:true,tableName: '图4 各单位10kV线路同期线损率完成情况'}")
         p 
           span.word_title_4 4、北京地区台区同期线损率完成情况
         p 

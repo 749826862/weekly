@@ -6,6 +6,8 @@
     MthreePage
     MfourPage
     MfivePage
+    //- 煤改电
+    //- CoalPage
 </template>
 <script>
 export default {

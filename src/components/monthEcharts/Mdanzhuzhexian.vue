@@ -12,22 +12,32 @@ export default {
       type: Object,
       default: () => {
         return {
-          data1:[27, 32, 10, 13],
-          data2:[20, 18, 9, 24],
-          data3:[20, 18, 19, 34]
+          xData: [
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周",
+            "十月第一周"
+          ],
+          serverData: [
+            [102, 52, 200, 334, 90, 100, 220],
+            [12, 52, 20, 124, 190, 10, 22]
+          ]
         };
       }
     },
-    chartsOption:{
+    chartsOption: {
       type: Object,
-      default:()=>{
+      default: () => {
         return {
-          className:"",
-          isRow:true,
+          className: "", //类名
           company:"",
-          tableName:"图6  国网一次办结工单在各单位的分布情况",
-          legendName:[]
-        }
+          isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
+          legendName: ["北京地区10kv线路同期线损率(%)"], //图例显示文字
+          tableName: "图1 北京地区同期线损率周趋势" //表格名称
+        };
       }
     }
   },
@@ -59,133 +69,108 @@ export default {
     setChart() {
       return new Promise((resolve, reject) => {
         let option = {
-          backgroundColor: "#fff",
           tooltip: {
             trigger: "axis",
             axisPointer: {
-              type: "shadow",
-              textStyle: {
-                color: "#fff"
-              }
+              // 坐标轴指示器，坐标轴触发有效
+              type: "shadow" // 默认为直线，可选为：'line' | 'shadow'
             }
           },
           grid: {
-            borderWidth: 0,
-            top: 40,
-            right:"4%",
-            bottom: 70,
-            left: 60,
-            textStyle: {
-              color: "#fff"
-            }
+            top: "13%",
+            left: "3%",
+            right: "3%",
+            bottom: "9%",
+            containLabel: true
           },
           legend: {
-            bottom: "0%",
-            left: "35%",
-            itemWidth: 30,
-            itemHeight: 10,
-            itemGap:40,
-            borderRadius: 0,
-            textStyle: {
-              color: "#000"
-            },
+            show: true,
+            bottom: 0,
             data: this.chartsOption.legendName
           },
-          calculable: true,
           xAxis: [
             {
-              show: true,
               type: "category",
-              axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
-              },
-              splitLine: {
-                show: false
-              },
+              data: this.value.xData,
               axisTick: {
-                show: false
-              },
-              splitArea: {
-                show: false
+                alignWithLabel: false
               },
               axisLabel: {
                 interval: 0,
-                formatter:(value) => {
-                  return this.chartsOption.isRow? value:value.split("").join("\n")
+                formatter: value => {
+                  return this.chartsOption.isRow
+                    ? value
+                    : value.split("").join("\n");
                 }
-              },
-              data: ["门头沟", "房山", "昌平", "石景山"]
+              }
             }
           ],
           yAxis: [
             {
+              name:this.chartsOption.company,
               type: "value",
-              name:this.chartsOption.company?this.chartsOption.company:"",
-              splitLine: {
-                show: true,
-                lineStyle: {
-                  type: "dashed",
-                  color: "#333"
-                }
-              },
               axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
-              },
-              axisTick: {
+                //y轴
                 show: true
               },
+              axisTick: {
+                //y轴刻度线
+                show: true
+              }
+            },
+            {
+              type: "value",
               axisLabel: {
-                interval: 0
+                formatter: "{value}%"
               },
-              splitArea: {
-                show: false
+              axisLine: {
+                //y轴
+                show: true
+              },
+              axisTick: {
+                //y轴刻度线
+                show: true
               }
             }
           ],
           series: [
-             {
+            {
               name: this.chartsOption.legendName[0],
               type: "bar",
-              yAxisIndex: 0,
-              stack: "总量",
-              barMaxWidth: 15,
+              barWidth: "30%",
+              yAxisIndex: 1,
+              symbol: "circle",
+              symbolSize: 8,
               itemStyle: {
                 normal: {
-                  color: "#4f81bd",
-                  barBorderRadius: 0,
                   label: {
                     show: true,
-                    position: "top",
-                    color:"#000"
-                  }
+                    color: "#000",
+                    position: ["10%", "50%"]
+                  },
+                  color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.data2
+              data: this.value.serverData[1]
             },
             {
               name: this.chartsOption.legendName[1],
-              type: "bar",
+              type: "line",
+              symbol: "circle",
               yAxisIndex: 0,
-              stack: "总量",
-              barMaxWidth: 15,
+              symbolSize: 8,
               itemStyle: {
                 normal: {
-                  color: "#c0504d",
-                  barBorderRadius: 0,
                   label: {
                     show: true,
                     position: "top",
-                    color:"#000"
-                  }
+                    formatter: "{c}%"
+                  },
+                  color: "#92D050"
                 }
               },
-              data: this.value.data2
+              data: this.value.serverData[0]
             }
-            
           ]
         };
         resolve(option);
@@ -218,7 +203,6 @@ p {
   bottom: -25px;
   left: 50%;
   transform: translate(-50%);
-  white-space: nowrap;
 }
 .titleLeft {
   height: 20px;

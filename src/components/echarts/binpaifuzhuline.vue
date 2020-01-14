@@ -36,7 +36,8 @@ export default {
           isRow: true, // x轴标签横向纵向显示，true为横向，false为纵向
           legendName: ["统计线损率累计值(%)", "同期线损率(%)"], //图例显示文字
           tableName: "图1 北京地区同期线损率周趋势", //表格名称
-          isMarkline: true //是否显示辅助线
+          isMarkline: true, //是否显示辅助线
+          danwei:""
         };
       }
     }
@@ -77,7 +78,7 @@ export default {
             }
           },
           grid: {
-            top: "10%",
+            top: "12%",
             left: "3%",
             right: "4%",
             bottom: "9%",
@@ -85,7 +86,8 @@ export default {
           },
           legend: {
             show: true,
-            bottom: 0
+            bottom: 0,
+            data:this.chartsOption.legendName
           },
           xAxis: [
             {
@@ -106,6 +108,7 @@ export default {
           ],
           yAxis: [
             {
+              name:this.chartsOption.danwei?this.chartsOption.danwei:"",
               type: "value",
               axisLine: {
                 //y轴
@@ -119,7 +122,7 @@ export default {
           ],
           series: [
             {
-              name: "统计线损率累计值(%)",
+              name: this.chartsOption.legendName[0],
               type: "bar",
               barWidth: "20%",
               itemStyle: {
@@ -134,7 +137,7 @@ export default {
               data: this.value.serverData[0]
             },
             {
-              name: "同期线损率(%)",
+              name: this.chartsOption.legendName[1],
               type: "bar",
               barWidth: "20%",
               barGap: "0%",
@@ -154,7 +157,7 @@ export default {
 
         // 辅助线
         let markline = {
-          name: "本周北京地区同期线损率(6.51%)",
+          name: this.chartsOption.legendName[2],
           type: "line",
           barGap: "0%",
           itemStyle: {
