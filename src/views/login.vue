@@ -25,7 +25,7 @@
 </template>
 <script>
 import ajaxData from "@api/index"
-import { Select,Option,Radio,RadioGroup,Form,FormItem,Button } from 'element-ui';
+import { Select,Option,Radio,RadioGroup,Form,FormItem,Button,Notification } from 'element-ui';
 export default {
   components:{
     Select,
@@ -62,6 +62,11 @@ export default {
       }
     },
     onSubmit(){
+      if (!this.year && this.days) return Notification.warning({
+        title: '提示',
+        message: '请选择报表时间!!!',
+        duration: 2000
+      });
       this.disable = true
       setTimeout(()=>{
         if (this.form.resource == 1) {

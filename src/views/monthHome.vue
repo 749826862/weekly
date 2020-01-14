@@ -19,17 +19,18 @@ export default {
   },
   created() {
     let params = this.$route.params
-    console.log(params,9999)
-    if (params.year && params.zq) {
-      this.getMonthReport()
-    }else{
-      Notification.error({
-        title: '错误',
-        message: '非法跳转！！！',
-        duration: 2000
-      });
-      this.$router.replace({name:"login"})
-    }
+    this.getMonthReport()
+    // console.log(params,9999)
+    // if (params.year && params.zq) {
+      
+    // }else{
+    //   Notification.error({
+    //     title: '错误',
+    //     message: '非法跳转！！！',
+    //     duration: 2000
+    //   });
+    //   this.$router.replace({name:"login"})
+    // }
   },
   methods: {
     getMonthReport(){

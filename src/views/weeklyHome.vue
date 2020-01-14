@@ -22,16 +22,17 @@ export default {
   },
   created() {
     let params = this.$route.params
-    if (params.year && params.zq) {
-      this.getWeekReport(params)
-    }else{
-      Notification.error({
-        title: '错误',
-        message: '非法跳转！！！',
-        duration: 2000
-      });
-      this.$router.replace({name:"login"})
-    }
+    this.getWeekReport(params)
+    // if (params.year && params.zq) {
+      
+    // }else{
+    //   Notification.error({
+    //     title: '错误',
+    //     message: '非法跳转！！！',
+    //     duration: 2000
+    //   });
+    //   this.$router.replace({name:"login"})
+    // }
   },
   methods: {
     getWeekReport(params){
