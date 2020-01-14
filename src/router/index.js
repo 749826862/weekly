@@ -18,7 +18,7 @@ export default new Router({
       }
     },
     {
-      path: '/weeklyhome',
+      path: '/weeklyhome/:year/:zq',
       name: 'weeklyHome',
       component: weeklyHome,
       meta: {
@@ -26,12 +26,17 @@ export default new Router({
       }
     },
     {
-      path: '/monthhome',
+      path: '/monthhome/:year/:zq',
       name: 'monthHome',
       component: monthHome,
       meta: {
           isPrint:true
       }
+    },
+    // 404
+    {
+      path: "*",
+      redirect: "/"
     }
   ]
 })

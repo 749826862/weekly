@@ -40,8 +40,8 @@ export default {
     return {
       dateObj:{},
       allData:{},
-      year:null,
-      days:null,
+      year:2020,
+      days:30,
       form:{
         resource:"1"
       },
@@ -53,7 +53,8 @@ export default {
   },
   methods: {
     lableChage(){
-      this.days = ""
+      // this.days = ""
+      if (!this.allData.week) return 
       if (this.form.resource == 1) {
         this.dateObj = this.allData.week
       }else{
@@ -64,11 +65,10 @@ export default {
       this.disable = true
       setTimeout(()=>{
         if (this.form.resource == 1) {
-        this.$router.push({path:"/weeklyhome",query:{year:this.year,week:this.days}})
+        this.$router.push({name:"weeklyHome",params:{year:this.year,zq:this.days}})
         }else{
-          this.$router.push({path:"/monthhome"})
+          this.$router.push({name:"monthHome",params:{year:this.year,zq:this.days}})
         }
-        // this.disable = true
       },100)
       
     },
@@ -107,15 +107,15 @@ export default {
    }
  }
  .login_content{
-   width: 60%;
-   height: 400px;
+   width: 50%;
+   height: 45%;
    color: #fff;
    display: flex;
    justify-content: center;
    align-items: center;
    background: rgba(23,52,82, 0.7);
    box-shadow: 0px 0px 10px 2px #57DCFD;
-   margin: 50px auto;
+   margin: 0px auto;
    .el-form{
      width: 55%;
      margin: 0 auto;

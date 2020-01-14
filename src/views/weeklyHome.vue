@@ -6,24 +6,36 @@
     threePage(v-model="dataList.pbdyhgl")
     fourPage(v-model="dataList.xsl")
     fivePage(v-model="dataList")
-    //- zhuzhaungtu
 </template>
 <script>
 import { GET_CHARTS_OPTION } from "@api/home"
 import ajaxData from "@api/index"
 import weekData from '../../static/weeklyCharts/chartsOption.json'
+import { Notification,loading } from 'element-ui'
 export default {
+  name:"weeklyHome",
   data() {
     return {
-      dataList:weekData
+      dataList:weekData,
+      loading:true
     };
   },
   created() {
-    // this.getWeekReport()
+    let params = this.$route.params
+    if (params.year && params.zq) {
+      this.getWeekReport(params)
+    }else{
+      Notification.error({
+        title: '错误',
+        message: '非法跳转！！！',
+        duration: 2000
+      });
+      this.$router.replace({name:"login"})
+    }
   },
   methods: {
-    getWeekReport(){
-      ajaxData("getWeekReport")().then(res=>{
+    getWeekReport(params){
+      ajaxData("getWeekReport")(params).then(res=>{
         console.log(res)
       })
     }

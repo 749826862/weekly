@@ -73,7 +73,7 @@ export default {
     return {};
   },
   created() {
-    console.log(this.value,888)
+    // console.log(this.value,888)
   },
   methods: {}
 };

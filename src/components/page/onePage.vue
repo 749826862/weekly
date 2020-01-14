@@ -37,7 +37,7 @@ export default {
     };
   },
   created() {
-    console.log(this.value,999)
+    // console.log(this.value,999)
   },
   methods: {}
 };
