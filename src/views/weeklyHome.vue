@@ -5,7 +5,7 @@
     twoPage(v-model="dataList.pbdyhgl")
     threePage(v-model="dataList.pbdyhgl")
     fourPage(v-model="dataList.xsl")
-    fivePage(v-model="dataList")
+    fivePage(v-model="dataList.khfw")
 </template>
 <script>
 import { GET_CHARTS_OPTION } from "@api/home"

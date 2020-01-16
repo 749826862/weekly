@@ -6,7 +6,7 @@
         h4.word_title_2 四、客户服务满意率
         p 
           span.word_lingt 【监测周期】
-          span.word_content 2019年21月14日0时—11月28日0时
+          span.word_content {{ value.jczq1 }}—{{ value.jczq2 }}
         p 
           span.word_lingt 【监测概要】
           span.word_content 通过从95598业务支持系统、PMS2.0、用电信息采集系统获取明细数据，从95598话务量、国网一次办结工单、下派公司处理的八类工单、购电下发时长等方面开展监测分析工作，全面反映北京地区95598话务量变化趋势、聚焦客户诉求热点问题及管理短板。
@@ -15,7 +15,7 @@
         p 
           span.word_title_4 1、95598话务情况
         p 
-          span.word_content 截至11月28日0时，北京地区95598电话呼入量累计429.38万通，同比下降20.26%；本周9.56万通，环比下降5.33%；IVR自助语音服务量、国网客服中心一次办结工单量、八类工单均呈上升趋势，主要由于寒冷天气，致使电网负荷有所上升。
+          span.word_content 截至{{ value.hwqk1 }}，北京地区95598电话呼入量累计{{ value.hwqk2 }}通，同比下降{{ value.hwqk3 }}；本周{{ value.hwqk4 }}通，环比{{ value.hwqk5 }}；IVR自助语音服务量、国网客服中心一次办结工单量、八类工单均呈{{ value.hwqk6 }}趋势，主要由于寒冷天气，致使电网负荷有所{{ value.hwqk7 }}。
         p 
           span.word_content 95598话务量总体情况见下图。
         p 
@@ -27,12 +27,13 @@
         p 
           span.word_title_4 2、国网客服中心一次办结工单情况
         p 
-          span.word_content 截至11月28日0时，北京地区国网客服中心一次办结工单累计217.22万件，同比下降16.43%；本周4.15万件，环比下降8.07%，主要由于客户误报工单增加较少。周变化情况如下图。
+          span.word_content 截至{{ value.gwkfbjgd1 }}，北京地区国网客服中心一次办结工单累计{{ value.gwkfbjgd2 }}件，同比{{ value.gwkfbjgd3 }}；本周{{ value.gwkfbjgd4 }}件，环比{{ value.gwkfbjgd5 }}，主要由于客户误报工单增加较少。周变化情况如下图。
         zhuzhaungtu.auto(:chartsOption="{className:'kefuzhongxinqushi',isRow:true,tableName: '图4 国网客服中心一次办结工单变化趋势',legendName: '',company:'单位:万件'}")
         p 
           span.word_lingt （1）从工单类别及客户诉求热点来看
-          span.word_content ，故障报修1.68万件、咨询2.47万件。客户诉求热点主要集中在：客户误报、电费抄核收及电量电费查询⁹、基本档案信息三个方面。
+          span.word_content ，故障报修{{ value.gwkfbjgd6 }}件、咨询{{ value.gwkfbjgd7 }}件。客户诉求热点主要集中在：客户误报、电费抄核收及电量电费查询⁹、基本档案信息三个方面。
         p 
+          //- 缺少
           span.word_lingt 1）客户误报分类中
           span.word_content ，客户诉求内容集中在：欠费停电、指导客户故障自行消除、停限电。
         p 
@@ -42,69 +43,70 @@
           span.word_content.tip ⁹咨询电价政策、抄表周期、抄表例日、缴费方式、电费发票、电量电费退补方式流程、充值卡购买、电费账单、欠费停复电以及查询电量电费、电费余额查询等。
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
-          span.word_content ，工单较多的三家单位分别为朝阳、昌平、城区公司。
+          span.word_content ，工单较多的三家单位分别为{{ value.gwkfbjgd11 }}公司。
         duidiezhutu.auto(:chartsOption="{className:'gongdanfenbu',isRow:false,tableName: '图6  国网一次办结工单在各单位的分布情况',legendName: ['故障报修','咨询'],company:'单位:件'}")
         p 
           span.word_title_4 3、八类工单情况
         p 
-          span.word_content 截至11月28日0时，国网客服中心下派北京公司处理的八类工单累计59.31万件，同比下降3.89%；本周1.35万件，环比下降5.28%，主要由于用电服务需求等使用问题工单增加较多。
+          span.word_content 截至{{ value.blgdqk1 }}，国网客服中心下派北京公司处理的八类工单累计{{ value.blgdqk2 }}件，同比{{ value.blgdqk3 }}；本周{{ value.blgdqk4 }}件，环比{{ value.blgdqk5 }}%，主要由于用电服务需求等使用问题工单增加较多。
         zhuzhaungtu.auto(:chartsOption="{className:'baleigongdanbianhua',isRow:true,tableName: '图7 八类工单变化趋势',legendName: '',company:'单位:万件'}")
         p 
           span.word_lingt （1）从工单类别及客户诉求热点来看
-          span.word_content ，服务申请、故障报修工单数量占比较大，意见、投诉等其它六类工单占比较小。客户诉求热点主要集中：掌上电力APP等使用问题、电能表显示异常、一户无电、应急送电需求四个方面。
+          span.word_content ，{{ value.blgdqk6.join("、") }}工单数量占比较大，{{ value.blgdqk7.join("、") }}等其它六类工单占比较小。客户诉求热点主要集中：{{ value.blgdqk8.join("、") }}四个方面。
         p 
           span.word_lingt 1）服务申请工单中
-          span.word_content ，客户诉求主要集中在：掌上电力APP等使用问题、电能表显示异常、用电服务需求。
+          span.word_content ，客户诉求主要集中在：{{ value.blgdqk9.join("、") }}。
         p 
           span.word_lingt 2）故障报修工单中
-          span.word_content ，客户诉求主要集中在：一户无电、计量设备故障、多户无电等方面。
+          span.word_content ，客户诉求主要集中在：{{ value.blgdqk10.join("、") }}。
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
-          span.word_content ，工单较多的三家单位分别为城区、朝阳、丰台公司。
+          span.word_content ，工单较多的三家单位分别为{{ value.blgdqk11 }}公司。
         fourduidiezhutu.auto(:chartsOption="{className:'baleigogndandanwei',isRow:false,tableName: '图9  八类工单在各单位的分布情况',legendName: ['服务申请','故障报修','投诉','其它'],company:'单位:件'}")
         p 
           span.word_title_4 4、95598客户投诉情况专题分析
         p 
-          span.word_content 截至11月28日0时，北京地区投诉工单累计929件，同比下降64.50%；本周7件，环比下降50.00%。
+          span.word_content 截至{{ value.khtsqkfx1 }}，北京地区投诉工单累计{{ value.khtsqkfx2 }}件，同比{{ value.khtsqkfx3 }}；本周{{ value.khtsqkfx4 }}件，环比{{ value.khtsqkfx5 }}。
         p 
           span.word_lingt （1）投诉工单变化趋势。
         zhuzhaungtu.auto(:chartsOption="{className:'tousugongdanbianhua',isRow:true,tableName: '图10  投诉工单变化趋势',legendName: '',company:'单位:件'}")
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
-          span.word_content ，投诉工单数量最多为朝阳公司共2件，其次通州、丰台、房山、海淀、密云等公司各为1件。
+          span.word_content ，投诉工单数量最多为{{ value.khtsqkfx6 }}公司共{{ value.khtsqkfx7 }}件，其次{{ value.khtsqkfx8 }}等公司各为{{ value.khtsqkfx9 }}件。
         zhuzhaungtu.auto(:chartsOption="{className:'tousuzaigedanwei',isRow:false,tableName: '图11  投诉工单在各单位分布情况',legendName: '',company:'单位:件'}")
         p 
           span.word_title_4 5、95598客户意见情况专题分析
         p 
-          span.word_content 截至11月28日0时，北京地区意见工单累计3.38万件，同比上升23.12%；本周691件，环比下降6.24%。
+          span.word_content 截至{{ value.khyjqkfx1 }}，北京地区意见工单累计{{ value.khyjqkfx2 }}件，同比{{ value.khyjqkfx3 }}；本周{{ value.khyjqkfx4 }}件，环比{{ value.khyjqkfx5 }}。
         p 
           span.word_lingt （1）意见工单变化趋势。
         zhuzhaungtu.auto(:chartsOption="{className:'yijiangongdan',isRow:true,tableName: '图12  意见工单变化趋势',legendName: '',company:'单位:件'}")
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
-          span.word_content ，见工单数量较多的三家单位分别为朝阳、房山、城区。
+          span.word_content ，见工单数量较多的三家单位分别为{{ value.khyjqkfx6 }}。
         zhuzhaungtu.auto(:chartsOption="{className:'yijiangedanweifenbu',isRow:false,tableName: '图13  意见工单在各单位分布情况',legendName: '',company:'单位:件'}")
         p 
           span.word_title_4 6、购电下发专题分析
         p 
-          span.word_content 北京地区客户电话反映购电未及时下发工单1893件，占服务申请工单的21.24%，周变化情况见下图。
+          //- 缺少
+          span.word_content 北京地区客户电话反映购电未及时下发工单{{ value.gdxf1 }}件，占服务申请工单的21.24%，周变化情况见下图。
         zhuzhaungtu.auto(:chartsOption="{className:'goudianweijishi',isRow:false,tableName: '图14  客户反映购电未及时下发数量变化趋势',legendName: '',company:'单位:件'}")
         p 
           span.word_lingt （1）北京地区购电下发平均时长情况
-          span.word_content ，本周，公司购电下发平均时长6.36分钟，周变化趋势情况见下图。
+          span.word_content ，本周，公司购电下发平均时长{{ value.gdxf3 }}分钟，周变化趋势情况见下图。
         zhuzhaungtu.auto(:chartsOption="{className:'goudianxiafapingjun',isRow:true,tableName: '图15  购电下发平均时长变化趋势',legendName: '',company:'单位:分钟'}")
         p 
-          span.word_content 本周购电记录共计94.03万条，下发时长小于1分钟的记录83.24万条，占比88.53%；超过5分钟的记录4.61万条，占比4.91%。
+          span.word_content 本周购电记录共计{{ value.gdxf4 }}条，下发时长小于1分钟的记录{{ value.gdxf5 }}条，占比{{ value.gdxf6 }}；超过5分钟的记录{{ value.gdxf7 }}条，占比{{ value.gdxf8 }}。
         p 
           span.word_lingt （2）各单位购电下发平均时长情况
-          span.word_content ，本周，平均时长较长的三家单位分别为城区、朝阳、通州公司。
+          span.word_content ，本周，平均时长较长的三家单位分别为{{ value.gdxf9 }}公司。
         zhuzhaungtu.auto(:chartsOption="{className:'gedanweigoudain',isRow:false,tableName: '图18  各单位购电下发平均时长分布情况',legendName: '',company:'单位:分钟'}")
         p 
           span.word_lingt （3）4G和2G通信信道效果对比情况
-          span.word_content ，本周，全量购电下发数据共84.66万条，通信信道为4G的购电下发记录83.73万条，占购电记录89.04%；通信信道为2G的有9145条，占购电记录0.97%。2G通道中，系统自动执行执行率为97.99%，较4G通道的98.01%下降0.02，4G通道的效率略高于2G通道。
+          span.word_content ，本周，全量购电下发数据共{{ value.gdxf10 }}万条，通信信道为4G的购电下发记录{{  value.gdxf11 }}条，占购电记录{{ value.gdxf12 }}；通信信道为2G的有{{ value.gdxf13 }}条，占购电记录{{ value.gdxf14 }}。2G通道中，系统自动执行执行率为{{ value.gdxf15 }}，较4G通道的{{ value.gdxf16 }}{{ value.gdxf17 }}，4G通道的效率略{{ value.gdxf18 }}2G通道。
         danzhuzhexian.auto(:chartsOption="{className:'butongtongxinxindao',isRow:true,tableName: '图16  不同通信信道购电下发占比情况',legendName: ['购电下发数量','系统自动执行率'],company:'单位:万条'}")
         p 
-          span.word_content 涉及2G通道的集中器共1388台，其中房山、朝阳、丰台排在前三位，请相关单位尽快安排更换。2G集中器分布情况如下图所示。
+          span.word_content 涉及2G通道的集中器共{{ value.gdxf19 }}台，其中{{ value.gdxf20 }}排在前三位，请相关单位尽快安排更换。2G集中器分布情况如下图所示。
         p 
           span.word_content.tip ¹⁰购电下发执行方式为自动执行、且购电下发执行时间在5分钟以内（系统每隔5分钟自动刷新）的购电记录占本通道购电记录的比例。
         zhuzhaungtu.auto(:chartsOption="{className:'gedanwei2Gjizhong',isRow:false,tableName: '图17  各单位2G集中器分布情况',legendName: '',company:'单位:台'}")
@@ -115,9 +117,9 @@
         p 
           span.word_lingt 【相关建议】
         p 
-          span.word_content 1．本周，北京地区95598电话呼入量9.56万通，环比下降5.33%。下派北京公司处理的八类工单中，服务申请工单数量环比下降3.76%，需要相关部门和各单位高度关注。
+          span.word_content 1．本周，北京地区95598电话呼入量{{ value.gdxf22 }}通，环比{{ value.gdxf23 }}。下派北京公司处理的八类工单中，服务申请工单数量环比{{ value.gdxf24 }}，需要相关部门和各单位高度关注。
         p 
-          span.word_content 2．客户诉求热点问题中，通过指导合闸故障自行消除及欠费停电两类工单占国网一次办结工单的23.47%，建议在安全用电宣传时，通过加大宣传力度，增加客户停电后自行恢复供电的简易方法指导，有效解决客户诉求热点问题。
+          span.word_content 2．客户诉求热点问题中，通过指导合闸故障自行消除及欠费停电两类工单占国网一次办结工单的{{ value.gdxf25 }}，建议在安全用电宣传时，通过加大宣传力度，增加客户停电后自行恢复供电的简易方法指导，有效解决客户诉求热点问题。
         p 
           span.word_content 3．截至本周，没有严重不合格集中器未完成治理，相关单位应该继续保持，确保集中器设备安全、稳定、高效运行，有效提高客户诉求质量。
         p 
@@ -126,6 +128,7 @@
 </template>
 <script>
 export default {
+  props:["value"],
   data() {
     return {};
   },
