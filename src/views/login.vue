@@ -149,7 +149,7 @@ export default {
      width: 55%;
      margin: 0 auto;
      color: #fff;
-     .el-form-item__label{
+     /deep/.el-form-item__label{
        color: #fff!important;
      }
      .el-radio{
