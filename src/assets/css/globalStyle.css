@@ -69,5 +69,5 @@ html {
   }
 }
 .el-form-item__label {
-  color: #fff;
+  color: #fff!important;
 }

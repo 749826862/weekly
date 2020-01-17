@@ -9,7 +9,7 @@
           RadioGroup(v-model="form.resource" @change="lableChage")
             Radio(label="1") 周报
             Radio(label="2") 月报
-        FormItem(label="报表时间:" class="datalist")
+        FormItem(label="选择周期:" class="datalist")
           Select(v-model="year" placeholder="请选择年" style="width:50%")
             Option(v-for="(item,key) in dateObj" :key="key" :label="key" :value="key")
           Select(v-model="days" placeholder="请选择" style="width:50%")
@@ -39,9 +39,31 @@ export default {
   data() {
     return {
       dateObj:{},
-      allData:{},
-      year:2020,
-      days:30,
+      allData:{
+      "week":
+        {
+          "2019":[
+            {"name":"24周","time":"2019-07-18"},
+            {"name":"40周","time":"2019-11-21"},
+            {"name":"41周","time":"2019-11-28"}
+          ],
+          "2018":[
+            {"name":"24周","time":"2018-07-18"},
+            {"name":"40周","time":"2018-11-21"},
+            {"name":"41周","time":"2018-11-28"}
+          ]
+      },
+      "month":
+        {
+          "2019":[
+            {"name":"8期","time":"2019-07-01"},
+            {"name":"11期","time":"2019-10-01"},
+            {"name":"12期","time":"2019-11-01"}
+          ]
+        }
+      },
+      year:null,
+      days:null,
       form:{
         resource:"1"
       },
@@ -49,11 +71,13 @@ export default {
     };
   },
   created() {
-    this.getData()   //时间
+    // this.getData()   //时间
+    this.dateObj = this.allData.week
   },
   methods: {
     lableChage(){
-      // this.days = ""
+      this.days = null
+      this.year = null
       if (!this.allData.week) return 
       if (this.form.resource == 1) {
         this.dateObj = this.allData.week
