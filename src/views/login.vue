@@ -86,9 +86,9 @@ export default {
       }
     },
     onSubmit(){
-      if (!this.year && this.days) return Notification.warning({
+      if (!(this.year && this.days)) return Notification.warning({
         title: '提示',
-        message: '请选择报表时间!!!',
+        message: '请选择报表周期!!!',
         duration: 2000
       });
       this.disable = true
