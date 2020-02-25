@@ -77,7 +77,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 alignWithLabel: false    //X轴标签居中显示
               },
@@ -112,7 +112,7 @@ export default {
                   color: "#000"
                 }
               },
-              data: this.value.serverData
+              data: this.value.xValues
             }
           ]
         };

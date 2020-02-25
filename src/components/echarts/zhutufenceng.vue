@@ -118,7 +118,7 @@ export default {
                   return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               },
-              data: this.value.xData
+              data: this.value.xNames
             }
           ],
           yAxis: [
@@ -170,7 +170,7 @@ export default {
                   }
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues2
             },
             {
               name: "过电压异常(台)",
@@ -187,7 +187,7 @@ export default {
                   }
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues3
             },
             {
               name: "数据异常(台)",
@@ -203,12 +203,12 @@ export default {
                     position: "top",
                     color:"#000",
                     formatter:(parms)=>{  
-                      return parms.value+this.value.serverData[0][parms.dataIndex]+this.value.serverData[1][parms.dataIndex]
+                      return parms.value+this.value.xValues2[parms.dataIndex]+this.value.xValues3[parms.dataIndex]
                     }
                   }
                 }
               },
-              data: this.value.serverData[2]
+              data: this.value.xValues4
             }
           ]
         };
@@ -223,7 +223,7 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
+  height: 302px;
   // flex: 1;
   // padding-bottom: 20px;
   

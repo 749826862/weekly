@@ -114,7 +114,7 @@ export default {
                   return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               },
-              data: ["1106", "1113", "1120", "1127"]
+              data: this.value.xNames
             }
           ],
           yAxis: [
@@ -166,7 +166,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data1
+              data: this.value.xValues2
             },
             {
               name: this.chartsOption.legendName[1],
@@ -183,7 +183,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues3
             },
             {
               name: this.chartsOption.legendName[2],
@@ -201,7 +201,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data3
+              data: this.value.xValues4
             },
             {
               name: this.chartsOption.legendName[3],
@@ -216,12 +216,12 @@ export default {
                     show: true,
                     position: "top",
                     formatter:(parms)=>{  
-                      return parms.value+this.value.data1[parms.dataIndex]+this.value.data2[parms.dataIndex]+this.value.data2[parms.dataIndex]
+                      return parms.value+this.value.xValues2[parms.dataIndex]+this.value.xValues3[parms.dataIndex]+this.value.xValues4[parms.dataIndex]
                     }
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues5
             }
           ]
         };
@@ -236,7 +236,7 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
+  height: 302px;
   // flex: 1;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;

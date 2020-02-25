@@ -1,8 +1,8 @@
 <template lang="pug">
   .login 
     h3 
-      img(src="~@assets/baobiao.png")
-      span  报表
+    //-   img(src="~@assets/baobiao.png")
+    //-   span  报表
     .login_content
       Form(ref="form" :model="form" label-width="100px")
         FormItem(label="报表类型:")
@@ -12,8 +12,8 @@
         FormItem(label="选择周期:" class="datalist")
           Select(v-model="year" placeholder="请选择年" style="width:50%")
             Option(v-for="(item,key) in dateObj" :key="key" :label="key" :value="key")
-          Select(v-model="days" placeholder="请选择" style="width:50%")
-            Option(v-for="item in dateObj[year]" :key="item.name" :label="item.name" :value="item.name")
+          Select(v-model="days" placeholder="请选择期" style="width:50%")
+            Option(v-for="item in dateObj[year]" :key="item.name" :label="item.name+`(${item.time})`" :value="item.name")
         FormItem
           Button(type="primary" @click="onSubmit" :loading="disable") 生成
       //- .typesele
@@ -119,7 +119,7 @@ export default {
   overflow: hidden;
  h3{
     width: 80%;  
-    margin: 20px auto;
+    // margin: 60px auto;
   //  display: flex;
   //  align-items: center;
    img{
@@ -144,7 +144,7 @@ export default {
    align-items: center;
    background: rgba(23,52,82, 0.7);
    box-shadow: 0px 0px 10px 2px #57DCFD;
-   margin: 0px auto;
+   margin:70px auto;
    .el-form{
      width: 55%;
      margin: 0 auto;

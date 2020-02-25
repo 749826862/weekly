@@ -3,7 +3,7 @@
     div.zhuzhuangtu(:class="className")
     p.titleLeft 配变台区数(台)
     //- img.canvasImg(ref="echartsImg")
-    //- p 配电自动化故障自愈实现率周趋势
+    p 图5 配变供电电压合格率周趋势
 </template>
 <script>
 import echarts from "echarts";
@@ -91,7 +91,7 @@ export default {
             // show:false,
             type: "category",
             boundaryGap: true,
-            data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+            data: this.value.xNames
           },
           yAxis: {
             type: "value"
@@ -112,7 +112,7 @@ export default {
                   }
                 }
               },
-              data: [120, 132, 101, 134, 90, 230, 210]
+              data: this.value.xValues5
             },
             {
               name: "最低温",
@@ -129,7 +129,7 @@ export default {
                   }
                 }
               },
-              data: [220, 182, 191, 234, 290, 330, 310]
+              data: this.value.xValues6
             }
           ]
         };

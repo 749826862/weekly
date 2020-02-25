@@ -64,7 +64,7 @@ export default {
             top: 10,
             right:10,
             bottom: 0,
-            left:70,
+            left:60,
             containLabel: true
           },
           // toolbox: {
@@ -79,7 +79,7 @@ export default {
             axisLabel:{
               align:"center"
             },
-            data: ["周一", "周二", "周三", "周四", "周五", "周六", "周日"]
+            data: this.value.xNames
           },
           yAxis: {
             type: "value"
@@ -100,7 +100,7 @@ export default {
                   }
                 }
               },
-              data: [120, 132, 101, 134, 90, 230, 210]
+              data: this.value.xValues4
             }
           ]
         };

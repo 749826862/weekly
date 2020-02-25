@@ -115,7 +115,7 @@ export default {
               axisLabel: {
                 interval: 0
               },
-              data: this.value.xData
+              data: this.value.xNames
             }
           ],
           yAxis: [
@@ -162,7 +162,7 @@ export default {
                   }
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues1
             },
             {
               name: "合格配变数(台)",
@@ -178,7 +178,7 @@ export default {
                   }
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues2
             },
             {
               name: "总数",
@@ -199,7 +199,7 @@ export default {
                   }
                 }
               },
-              data: this.value.serverData[2]
+              data: this.value.xValues3
             }
           ]
         };

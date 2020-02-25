@@ -1,11 +1,11 @@
 <template lang="pug">
   .home_main
     HomeHeade(v-model="dataList")
-    onePage(v-model="dataList")
-    twoPage(v-model="dataList.pbdyhgl")
-    threePage(v-model="dataList.pbdyhgl")
-    fourPage(v-model="dataList.xsl")
-    fivePage(v-model="dataList.khfw")
+    onePage(v-model="dataList.pdzdh" :tbData="dataList.tb")
+    twoPage(v-model="dataList.pbdyhgl" :tbData="dataList.tb")
+    threePage(v-model="dataList.pbdyhgl" :tbData="dataList.tb")
+    fourPage(v-model="dataList.xsl" :tbData="dataList.tb")
+    fivePage(v-model="dataList.khfw" :tbData="dataList.tb")
 </template>
 <script>
 import { GET_CHARTS_OPTION } from "@api/home"
@@ -16,7 +16,7 @@ export default {
   name:"weeklyHome",
   data() {
     return {
-      dataList:weekData,
+      dataList:weekData.data,
       loading:true
     };
   },
