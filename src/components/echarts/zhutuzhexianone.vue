@@ -114,7 +114,7 @@ export default {
                   return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               },
-              data: ["门头沟", "房山", "昌平", "石景山"]
+              data: this.value.xNames
             }
           ],
           yAxis: [
@@ -187,7 +187,7 @@ export default {
                   }
                 }
               },
-              data: [10, 93, 26, 38, 51, 15, 48]
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[0],
@@ -205,7 +205,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues2
             }
             
           ]

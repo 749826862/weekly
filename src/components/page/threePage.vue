@@ -8,12 +8,12 @@
           span.word_title_4 1、各单位配变低电压占比情况
         p 
           span.word_content {{ value.dwpbddyzb1 }}-{{ value.dwpbddyzb2 }}，公司配变发生低电压有{{ value.dwpbddyzb3 }}台。其中低电压异常数占总量比较高的三家单位分别为{{ value.dwpbddyzb4 }}公司。
-        zhutuzhexianone.auto(:chartsOption="{className:'gedanweipeibian',isRow:false,tableName:'图12 各单位配变低电压分布',legendName:['低电压异常','占比(%)']}")
+        zhutuzhexianone.auto(v-model="tbData.tb12" :chartsOption="{className:'gedanweipeibian',isRow:false,tableName:'图12 各单位配变低电压分布',legendName:['低电压异常','占比(%)']}")
         p 
           span.word_title_4 2、各单位配变低电压情况
         p 
           span.word_content {{ value.dwpbddyqk1 }}-{{ value.dwpbddyqk2 }}，配变发生低电压{{ value.dwpbddyqk3 }}台，较上周{{ value.dwpbddyqk4 }}台数量{{ value.dwpbddyqk5 }}台。从单位构成上看，发生低电压配变数量较多三家单位分别为{{ value.dwpbddyqk6 }}公司。
-        binpaizhutu.auto(:chartsOption="{className:'gedanweiyichang',isRow:false,tableName:'图13 各单位配变低电压异常分布'}")
+        binpaizhutu.auto(v-model="tbData.tb13" :chartsOption="{className:'gedanweiyichang',isRow:false,tableName:'图13 各单位配变低电压异常分布'}")
         p 
           span.word_title_4 3、配变低电压持续时长、重复发生分析
         p 
@@ -131,7 +131,7 @@
 </template>
 <script>
 export default {
-  props:["value"],
+  props:["value","tbData"],
   data() {
     return {};
   },

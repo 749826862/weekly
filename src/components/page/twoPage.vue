@@ -63,7 +63,7 @@
           span.word_title_4 7、不可监测配变治理情况
         p 
           span.word_content 自{{ value.bkjcpbzl1 }}份以来，公司累计发生不可监测配变共计{{ value.bkjcpbzl2 }}台，截至{{ value.bkjcpbzl3 }}，已有{{ value.bkjcpbzl4 }}台完成治理，治理率为{{ value.bkjcpbzl5 }}。各单位治理情况如下：
-        zhutuzhexian.auto(:className="'bukejiance'" :title="{tableName:'图11 不可监测配变情况',legendName:['已实现监测配变数(台)','仍不可监测配变数(台)','治理率(%)']}")
+        zhutuzhexian.auto(v-model="tbData.tb10" :className="'bukejiance'" :title="{tableName:'图11 不可监测配变情况',legendName:['已实现监测配变数(台)','仍不可监测配变数(台)','治理率(%)']}")
         NoMonitorTable
 </template>
 <script>

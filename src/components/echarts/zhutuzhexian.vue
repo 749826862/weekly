@@ -152,7 +152,6 @@ export default {
             {
               type: "value",
               min:0,
-              max:100,
               splitLine: {
                 show: false
               },
