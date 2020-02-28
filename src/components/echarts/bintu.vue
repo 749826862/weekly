@@ -50,7 +50,7 @@ export default {
           });
         },
         error => {
-          console.log(error);
+          // console.log(error);
         }
       );
     },
@@ -72,12 +72,16 @@ export default {
               type: "pie",
               radius: "55%",
               center: ["50%", "45%"],
-              data: [
-                { value: 335, name: "电能表缺失电压曲线数据" },
-                { value: 310, name: "变压器与营销台区关系缺失" },
-                { value: 234, name: "台区与电能表存在1对多问题" },
-                { value: 135, name: "台区与电能表关系缺失" }
-              ],
+              data: (() => {
+                let arr = []
+                this.value.xNames.forEach((item,i)=>{
+                  arr.push({
+                    name: item,
+                    value: this.value.xValues1[i]
+                  })
+                })
+                return arr 
+              })(),
               itemStyle: {
                 emphasis: {
                   shadowBlur: 10,

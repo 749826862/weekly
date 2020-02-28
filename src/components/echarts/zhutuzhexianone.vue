@@ -145,7 +145,7 @@ export default {
             {
               type: "value",
               min:0,
-              max:100,
+              // max:100,
               splitLine: {
                 show: false
               },
@@ -187,7 +187,7 @@ export default {
                   }
                 }
               },
-              data: this.value.xValues1
+              data: this.value.xValues2
             },
             {
               name: this.chartsOption.legendName[0],
@@ -205,7 +205,7 @@ export default {
                   }
                 }
               },
-              data: this.value.xValues2
+              data: this.value.xValues1
             }
             
           ]
@@ -221,7 +221,7 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
+  height: 303px;
   // flex: 1;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;

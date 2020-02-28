@@ -166,7 +166,7 @@ export default {
                   }
                 }
               },
-              data: this.value.xValues2
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
@@ -183,7 +183,7 @@ export default {
                   }
                 }
               },
-              data: this.value.xValues3
+              data: this.value.xValues2
             },
             {
               name: this.chartsOption.legendName[2],
@@ -201,7 +201,7 @@ export default {
                   }
                 }
               },
-              data: this.value.xValues4
+              data: this.value.xValues3
             },
             {
               name: this.chartsOption.legendName[3],
@@ -221,7 +221,7 @@ export default {
                   }
                 }
               },
-              data: this.value.xValues5
+              data: this.value.xValues4
             }
           ]
         };

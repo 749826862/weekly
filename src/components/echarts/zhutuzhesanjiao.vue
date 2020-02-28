@@ -115,7 +115,7 @@ export default {
                   return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               },
-              data: ["门头沟", "房山", "昌平", "石景山"]
+              data: this.value.xNames
             }
           ],
           yAxis: [
@@ -142,30 +142,6 @@ export default {
               splitArea: {
                 show: false
               }
-            },
-            {
-              type: "value",
-              min:0,
-              max:100,
-              splitLine: {
-                show: false
-              },
-              position: "right",
-              axisLine: {
-                lineStyle: {
-                  color: "#000"
-                }
-              },
-              axisTick: {
-                show: true
-              },
-              axisLabel: {
-                interval: 0,
-                formatter: "{value} %", //右侧Y轴文字显示
-              },
-              splitArea: {
-                show: false
-              }
             }
           ],
           series: [
@@ -173,7 +149,7 @@ export default {
               name: "汇总",
               type: "line",
               symbolSize: 10,
-              yAxisIndex: 1,
+              yAxisIndex: 0,
               smooth: true, //平滑曲线显示
               showAllSymbol: true, //显示所有图形。
               symbol: "triangle",
@@ -193,7 +169,7 @@ export default {
                   }
                 }
               },
-              data: [10, 93, 26, 38, 51, 15, 48]
+              data: this.value.xValues3
             },
             {
               name: "持续时长超10小时",
@@ -211,7 +187,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues1
             },
             {
               name: "持续时长超10小时且重复发生",
@@ -229,7 +205,7 @@ export default {
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues2
             }
           ]
         };
@@ -244,7 +220,7 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
+  height: 303px;
   // flex: 1;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;
