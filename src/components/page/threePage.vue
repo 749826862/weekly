@@ -89,39 +89,39 @@
           span.word_title_4 3、各单位配变重过载分布情况
         p 
           span.word_content {{ value.dwpbzgzfb1 }}-{{ value.dwpbzgzfb2 }}，公司发生重过载共{{ value.dwpbzgzfb3 }}台，其中重过载配变较多的三家单位分别为{{ value.dwpbzgzfb4 }}公司。
-        duidiezhutu.auto(:chartsOption="{className:'zhongzaipeibianguozai',isRow:false,tableName: '图27 各单位重过载配变分布',legendName: ['重载(台)','过载(台)']}")
+        duidiezhutu.auto(v-model="tbData.tb27" :chartsOption="{className:'zhongzaipeibianguozai',isRow:false,tableName: '图27 各单位重过载配变分布',legendName: ['重载(台)','过载(台)']}")
 
         h4.word_title_3 （六）配变发生三相不平衡情况监测
         p 
           span.word_title_4 1、各单位配变三相不平衡占比情况
         p 
           span.word_content {{ value.dwpbsxbphzb1 }}-{{ value.dwpbsxbphzb2 }}，公司配变发生三相不平衡有{{ value.dwpbsxbphzb3 }}台。三相不平衡率{{ value.dwpbsxbphzb4 }}，较上周{{ value.dwpbsxbphzb5 }}个百分点。
-        zhutuzhexian.auto(:className="'sanxiangbupinghen'" :isRow="true" :title="{tableName:'图28 公司配变三相不平衡变化趋势',legendName:['非三项不平衡配电数(台)','三项不平衡配电数(台)','三项不平衡率(%)']}")
+        zhutuzhexian.auto(v-model="tbData.tb28" :className="'sanxiangbupinghen'" :isRow="true" :title="{tableName:'图28 公司配变三相不平衡变化趋势',legendName:['非三项不平衡配电数(台)','三项不平衡配电数(台)','三项不平衡率(%)']}")
         p 
           span.word_content 从单位分布上看，三相不平衡数占总量占比较高的三家单位分别为{{ value.dwpbsxbphzb6 }}公司。
-        zhutuzhexian.auto(:className="'sanxiangbupinghenzhanbi'" :isRow="true" :title="{tableName:'图29 各单位配变三相不平衡占比',legendName:['三项不平衡数(台)','占比(%)']}")
+        zhutuzhexianone.auto(v-model="tbData.tb29" :chartsOption="{className:'sanxiangbupinghenzhanbi',tableName:'图29 各单位配变三相不平衡占比',legendName:['三项不平衡数(台)','占比(%)']}")
         p 
           span.word_title_4 2、配变三相不平衡周趋势
         p 
           span.word_content {{ value.dwpbsxbphzcs1 }}-{{ value.dwpbsxbphzcs2 }},公司发生三相不平衡配变{{ value.dwpbsxbphzcs3 }}台，较上周数量增加{{ value.dwpbsxbphzcs4 }}台。
-        zhuzhaungtu.auto( :chartsOption="{className:'sanxiangbupinghenqushi',isRow:'true',tableName:'图30 三相不平衡配变周趋势'}")
+        zhuzhaungtu.auto(v-model="tbData.tb30" :chartsOption="{className:'sanxiangbupinghenqushi',isRow:'true',tableName:'图30 三相不平衡配变周趋势'}")
         p 
           span.word_title_4 3、各单位配变三相不平衡分布情况
         p 
           span.word_content {{ value.dwpbsxbphfb1 }}-{{ value.dwpbsxbphfb2 }}，公司发生三相不平衡共{{ value.dwpbsxbphfb3 }}台，其中三相不平衡配变较多的三家单位分别为{{ value.dwpbsxbphfb4 }}公司。
-        zhuzhaungtu.auto( :chartsOption="{className:'sanxiangbupinghenfenbu' ,isRow:'true',tableName:'图29 各单位配变三相不平衡占比'}")
+        zhuzhaungtu.auto(v-model="tbData.tb31" :chartsOption="{className:'sanxiangbupinghenfenbu' ,isRow:false,tableName:'图31 各单位三相不平衡配变分布'}")
 
         h4.word_title_3 （七）配变异动重叠发生情况监测
         p 
           span.word_title_4 1、配变低电压与重过载重叠发生情况
         p 
           span.word_content {{ value.pbddyyzgzcd1 }}-{{ value.pbddyyzgzcd2 }}，公司配变发生低电压异动{{ value.pbddyyzgzcd3 }}台，发生重过载有{{ value.pbddyyzgzcd4 }}台。其中重叠发生的配变有{{ value.pbddyyzgzcd5 }}台，为{{ value.pbddyyzgzcd6 }}。
-        bintu.auto(:chartsOption="{className:'guozaichongdiefasheng',tableName:'图32 配变低电压与重过载重叠发生情况'}")
+        bintu.auto(v-model="tbData.tb32" :chartsOption="{className:'guozaichongdiefasheng',tableName:'图32 配变低电压与重过载重叠发生情况'}")
         p 
           span.word_title_4 2、配变低电压与三相不平衡重叠发生情况
         p 
           span.word_content {{ value.pbddyysxbphcd1 }}-{{ value.pbddyysxbphcd2 }}，公司配变发生低电压异动{{ value.pbddyysxbphcd3 }}台，发生三相不平衡有{{ value.pbddyysxbphcd4 }}台。其中重叠发生的配变有{{ value.pbddyysxbphcd5 }}台，为{{ value.pbddyysxbphcd6 }}。
-        bintu.auto(:chartsOption="{className:'pinghengchongdie',tableName:'图33 配变低电压与三相不平衡重叠发生情况'}")
+        bintu.auto(v-model="tbData.tb33" :chartsOption="{className:'pinghengchongdie',tableName:'图33 配变低电压与三相不平衡重叠发生情况'}")
         wcoalPage()
         p 
           span.word_lingt 【总结建议】

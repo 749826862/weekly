@@ -4,7 +4,7 @@
     onePage(v-model="dataList.pdzdh" :tbData="dataList.tb")
     twoPage(v-model="dataList.pbdyhgl" :tbData="dataList.tb")
     threePage(v-model="dataList.pbdyhgl" :tbData="dataList.tb")
-    fourPage(v-model="dataList.xsl" :tbData="dataList.tb")
+    fourPage(v-model="dataList.xsl" :tbData="dataList.xsltb")
     fivePage(v-model="dataList.khfw" :tbData="dataList.tb")
 </template>
 <script>

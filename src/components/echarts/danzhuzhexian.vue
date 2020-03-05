@@ -91,7 +91,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 alignWithLabel: false
               },
@@ -138,7 +138,7 @@ export default {
               name: this.chartsOption.legendName[0],
               type: "bar",
               barWidth: "30%",
-              yAxisIndex: 1,
+              yAxisIndex: 0,
               symbol: "circle",
               symbolSize: 8,
               itemStyle: {
@@ -146,18 +146,18 @@ export default {
                   label: {
                     show: true,
                     color: "#000",
-                    position: ["10%", "50%"]
+                    // position: ["10%", "50%"]
                   },
                   color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
               type: "line",
               symbol: "circle",
-              yAxisIndex: 0,
+              yAxisIndex: 1,
               symbolSize: 8,
               itemStyle: {
                 normal: {
@@ -169,7 +169,7 @@ export default {
                   color: "rgba(192,80,77,1)"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues2
             }
           ]
         };

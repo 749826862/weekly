@@ -112,7 +112,7 @@ export default {
                   color: "#000"
                 }
               },
-              data: this.value.xValues
+              data: this.value.xValues || this.value.xValues1
             }
           ]
         };

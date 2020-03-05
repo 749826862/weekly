@@ -146,20 +146,7 @@ export default {
           yAxis: [
             {
               name: "",
-              data: [
-                "<-100",
-                "[-100,-90)",
-                "2019/03",
-                "2019/04",
-                "2019/05",
-                "2019/06",
-                "2019/07",
-                "2019/08",
-                "2019/09",
-                "2019/10",
-                "2019/11",
-                "2019/12"
-              ],
+              data: this.value.xNames,
               axisLabel: {
                 show: true,
                 formatter: params => {
@@ -231,11 +218,11 @@ export default {
                 color: "#000",
                 position: ["100%", "0%"],
                 formatter: p => {
-                  return p.value + ` (${p.value}%)`;
+                  return p.value + ` (${this.value.xValues2[p.dataIndex]}%)`;
                 }
               },
               barWidth: 10,
-              data: [482, 378, 446, 518, 238, 358, 312, 378, 220, 452, 302, 600]
+              data: this.value.xValues1
             }
           ]
         };

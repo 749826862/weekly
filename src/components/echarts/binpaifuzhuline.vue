@@ -87,12 +87,11 @@ export default {
           legend: {
             show: true,
             bottom: 0,
-            data:this.chartsOption.legendName
           },
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 alignWithLabel: false
               },
@@ -134,7 +133,7 @@ export default {
                   color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
@@ -150,14 +149,14 @@ export default {
                   color: "rgba(192,80,77,1)"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues2
             }
           ]
         };
 
         // 辅助线
         let markline = {
-          name: this.chartsOption.legendName[2],
+          name: `本周北京地区同期线损率(${this.value.xValues3[0]}%)`,
           type: "line",
           barGap: "0%",
           itemStyle: {
@@ -171,7 +170,7 @@ export default {
             data: [
               {
                 name: "Y 轴值为 100 的水平线",
-                yAxis: 300,
+                yAxis: this.value.xValues3[0],
                 lineStyle: {
                   width: 3,
                   show: false,

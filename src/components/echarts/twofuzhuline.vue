@@ -90,7 +90,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 alignWithLabel: false
               },
@@ -131,7 +131,7 @@ export default {
                   color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues1
             },
             {
               name: "同期线损率(%)",
@@ -147,10 +147,10 @@ export default {
                   color: "rgba(192,80,77,1)"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues2
             },
             {
-              name: this.chartsOption.legendName[2],
+              name: `新投运总体台区同期线损率(${this.value.xValues3[0]}%)`,
               type: "line",
               barGap: "0%",
               itemStyle: {
@@ -163,8 +163,8 @@ export default {
                 symbol: "none",
                 data: [
                   {
-                    name: "Y 轴值为 100 的水平线",
-                    yAxis: 300,
+                    name: "Y 轴的水平线",
+                    yAxis: this.value.xValues3[0],
                     lineStyle: {
                       width: 3,
                       show: false,
@@ -178,7 +178,7 @@ export default {
               }
             },
             {
-              name: this.chartsOption.legendName[3],
+              name: `总体台区同期线损率(${this.value.xValues4[0]}%)`,
               type: "line",
               barGap: "0%",
               itemStyle: {
@@ -191,8 +191,8 @@ export default {
                 symbol: "none",
                 data: [
                   {
-                    name: "Y 轴值为 100 的水平线",
-                    yAxis: 310,
+                    name: "Y 轴水平线",
+                    yAxis: this.value.xValues4[0],
                     lineStyle: {
                       width: 3,
                       show: false,

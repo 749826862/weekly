@@ -90,7 +90,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 // show:false,
                 alignWithLabel: false
@@ -135,7 +135,7 @@ export default {
                   color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
@@ -152,7 +152,7 @@ export default {
                   color: "rgba(192,80,77,1)"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues2
             }
           ]
         };
