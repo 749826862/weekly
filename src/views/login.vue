@@ -84,14 +84,17 @@ export default {
       }else{
         this.dateObj = this.allData.month
       }
+      
     },
     onSubmit(){
+      console.log(this.days,785)
       if (!(this.year && this.days)) return Notification.warning({
         title: '提示',
         message: '请选择报表周期!!!',
         duration: 2000
       });
       this.disable = true
+      this.getMonth()               //存储月份
       setTimeout(()=>{
         if (this.form.resource == 1) {
         this.$router.push({name:"weeklyHome",params:{year:this.year,zq:this.days}})
@@ -101,6 +104,22 @@ export default {
       },100)
       
     },
+
+    // 获取当前月份（判断煤改电）
+    getMonth(){
+      let Month = null
+      this.dateObj[this.year].forEach(item=>{
+        if(item.name == this.days){
+          Month = item.time
+        }
+      })
+      localStorage.clear()
+      let str = ((new Date(Month)).getMonth())+1
+      localStorage.setItem("timeMonth",String(str))
+    },
+
+
+    // 获取选择时间周期
     getData(){
       ajaxData("getData")().then(res=>{
         this.allData = res
