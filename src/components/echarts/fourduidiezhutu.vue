@@ -116,7 +116,7 @@ export default {
                   return this.chartsOption.isRow? value:value.split("").join("\n")
                 }
               },
-              data: ["门头沟", "房山", "昌平", "石景山"]
+              data: this.value.xNames
             }
           ],
           yAxis: [
@@ -158,13 +158,13 @@ export default {
                   color: "rgba(79,129,189,1)",
                   barBorderRadius: 0,
                   label: {
-                    show: true,
+                    show: false,
                     position: "top",
                     color:"#000"
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues2
             },
             {
               name: this.chartsOption.legendName[1],
@@ -177,13 +177,13 @@ export default {
                   color: "rgba(192,80,77,1)",
                   barBorderRadius: 0,
                   label: {
-                    show: true,
+                    show: false,
                     position: "top",
                     color:"#000"
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues3
             },
             {
               name: this.chartsOption.legendName[2],
@@ -196,13 +196,13 @@ export default {
                   color: "rgba(0,176,80,1)",
                   barBorderRadius: 0,
                   label: {
-                    show: true,
+                    show: false,
                     position: "top",
                     color:"#000"
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues4
             },
             {
               name: this.chartsOption.legendName[3],
@@ -217,11 +217,14 @@ export default {
                   label: {
                     show: true,
                     position: "top",
-                    color:"#000"
+                    color:"#000",
+                    formatter:(parms)=>{  
+                      return parms.value+this.value.xValues2[parms.dataIndex]+this.value.xValues3[parms.dataIndex]+this.value.xValues4[parms.dataIndex]
+                    }
                   }
                 }
               },
-              data: this.value.data2
+              data: this.value.xValues5
             }
           ]
         };
@@ -236,7 +239,7 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
+  height: 303px;
   // flex: 1;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;

@@ -5,7 +5,7 @@
     twoPage(v-model="dataList.pbdyhgl" :tbData="dataList.tb")
     threePage(v-model="dataList.pbdyhgl" :tbData="dataList.tb")
     fourPage(v-model="dataList.xsl" :tbData="dataList.xsltb")
-    fivePage(v-model="dataList.khfw" :tbData="dataList.tb")
+    fivePage(v-model="dataList.khfw" :tbData="dataList.khfwtb")
 </template>
 <script>
 import { GET_CHARTS_OPTION } from "@api/home"

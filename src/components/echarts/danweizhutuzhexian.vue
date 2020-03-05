@@ -90,7 +90,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 // show:false,
                 alignWithLabel: false
@@ -150,26 +150,25 @@ export default {
                   color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues2
             },
             {
               name: this.chartsOption.legendName[0],
               type: "line",
               yAxisIndex:1,
-              barWidth: "30%",
-              symbol: "none",
+              // symbol: "none",
               symbolSize: 8,
               itemStyle: {
                 normal: {
                   label: {
-                    show: true,
+                    show: false,
                     position: "top",
                     // formatter: "{c}%"
                   },
                   color: "rgba(192,80,77,1)"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues1
             }
             
           ]
