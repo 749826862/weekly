@@ -15,7 +15,6 @@
         h4.word_title_3 （一）配变电压合格率监测
         p 
           span.word_title_4 1、配变电压合格率周趋势
-        .result  
         p 
           span.word_content 截至{{ value.zcs1 }}，公司在运配变{{ value.zypb }}万台，可监测配变{{ value.kjcpb }}万台（不可监测配变{{ value.bkjcpb }}台），配变电压可监测率{{ value.kjcl }}，电压合格率¹为{{ value.dyhgl }}，较上周{{ value.dyhgl_1 }}个百分点，较10月份97.17%{{ value.dyhgl_2 }}个百分点。
         

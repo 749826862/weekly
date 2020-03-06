@@ -42,6 +42,12 @@
           span.word_content ，客服诉求内容集中在：咨询客户编号、咨询供电/用电业务等。
         p 
           span.word_content.tip ⁹咨询电价政策、抄表周期、抄表例日、缴费方式、电费发票、电量电费退补方式流程、充值卡购买、电费账单、欠费停复电以及查询电量电费、电费余额查询等。
+        .result  
+        //-关联饼图
+        .guanlain_chart
+          guanlianbintu(class="tubiao_list" v-model="tbData.tb5.tree")
+          span(v-for="item in 8" :key="item")
+        p(style="text-align:center") 图5  国网一次办结工单类别及客户诉求热点情况
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
           span.word_content ，工单较多的三家单位分别为{{ value.gwkfbjgd11 }}公司。
@@ -60,6 +66,11 @@
         p 
           span.word_lingt 2）故障报修工单中
           span.word_content ，客户诉求主要集中在：{{ value.blgdqk10.join("、") }}。
+        //-关联饼图
+        .guanlain_chart2
+          guanlianbintu(class="tubiao_list" v-model="tbData.tb8.tree")
+          span(v-for="item in 4" :key="item")
+        p(style="text-align:center") 图8  八类工单类别及客户诉求热点情况
         p 
           span.word_lingt （2）从工单在各单位的分布情况来看
           span.word_content ，工单较多的三家单位分别为{{ value.blgdqk11 }}公司。
@@ -144,6 +155,115 @@ export default {
     font-weight: bold;
     text-align: center;
   }
+  .guanlain_chart{
+    position: relative;
+    transform: rotate(-90deg);
+    span{
+      width: 100px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      opacity: 0.5;
+      transform-origin: top left;
+      &:nth-of-type(1){
+        width: 290px;
+        left: 117px;
+        top: 338px;
+        transform: rotate(-59deg);
+      }
+      &:nth-of-type(2){
+        width: 300px;
+        left: 368px;
+        top: 91px;
+        transform: rotate(56deg);
+      }
+       &:nth-of-type(3){
+        width: 264px;
+        left: 546px;
+        top: 631px;
+        transform: rotate(-90deg);
+      }
+      &:nth-of-type(4){
+        width: 264px;
+        left: 106px;
+        top: 370px;
+        transform: rotate(90deg);
+      }
+      &:nth-of-type(5){
+        width: 264px;
+        left: 229px;
+        top: 370px;
+        transform: rotate(90deg);
+      }
+      &:nth-of-type(6){
+        width: 264px;
+        left: 422px;
+        top: 370px;
+        transform: rotate(90deg);
+      }
+      &:nth-of-type(7){
+        width: 214px;
+        left: 317px;
+        top: 186px;
+        transform: rotate(61deg);
+      }
+      &:nth-of-type(8){
+        width: 207px;
+        left: 317px;
+        top: 186px;
+        transform: rotate(115deg);
+      }
+    }
+
+  }
+  .guanlain_chart2{
+    position: relative;
+    transform: rotate(-90deg);
+    span{
+      width: 100px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      opacity: 0.5;
+      transform-origin: top left;
+      &:nth-of-type(1){
+        width: 290px;
+        left: 117px;
+        top: 338px;
+        transform: rotate(-59deg);
+      }
+      &:nth-of-type(2){
+        width: 300px;
+        left: 368px;
+        top: 91px;
+        transform: rotate(56deg);
+      }
+       &:nth-of-type(3){
+        width: 225px;
+        left: 322px;
+        top: 186px;
+        transform: rotate(63deg);
+      }
+      &:nth-of-type(4){
+        width: 241px;
+        left: 322px;
+        top: 186px;
+        transform: rotate(115deg);
+      }
+    }
+  }
+  .tubiao_list{
+    // position: relative;
+    // height: 300px;
+    // display: flex;
+    // align-items: center;
+    // display: flex;
+    :first-child{
+      margin: 0 auto;
+     
+    }
+  }
+  
   .message{
     h4{
       color: #000;
@@ -185,6 +305,7 @@ export default {
       // display: flex;
       // flex-direction: column;
     }
+    
   }
 }
 </style>

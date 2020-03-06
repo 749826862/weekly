@@ -6,11 +6,18 @@
   "description": "",
   "glyphs": [
     {
-      "icon_id": "258597",
-      "name": "回到顶部",
-      "font_class": "tubiao102",
-      "unicode": "e629",
-      "unicode_decimal": 58921
+      "icon_id": "2104635",
+      "name": "下降",
+      "font_class": "web-icon-",
+      "unicode": "e6da",
+      "unicode_decimal": 59098
+    },
+    {
+      "icon_id": "681195",
+      "name": "上升",
+      "font_class": "shangsheng",
+      "unicode": "e750",
+      "unicode_decimal": 59216
     },
     {
       "icon_id": "1163700",
@@ -18,6 +25,13 @@
       "font_class": "baobiao",
       "unicode": "e654",
       "unicode_decimal": 58964
+    },
+    {
+      "icon_id": "258597",
+      "name": "回到顶部",
+      "font_class": "tubiao102",
+      "unicode": "e629",
+      "unicode_decimal": 58921
     },
     {
       "icon_id": "1506055",
