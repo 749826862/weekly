@@ -10,10 +10,12 @@
             Radio(label="1") 周报
             Radio(label="2") 月报
         FormItem(label="选择周期:" class="datalist")
-          Select(v-model="year" placeholder="请选择年" style="width:50%")
+          Select(v-model="year" placeholder="请选择年" style="width:30%")
             Option(v-for="(item,key) in dateObj" :key="key" :label="key" :value="key")
-          Select(v-model="days" placeholder="请选择期" style="width:50%")
+          Select(v-model="days" placeholder="请选择期" style="width:50%" @change="seleMonth")
             Option(v-for="item in dateObj[year]" :key="item.name" :label="item.name+`(${item.time})`" :value="item.name")
+          Select(v-model="mtype" placeholder="选择月报类型" style="width:30%" v-if="form.resource == 2 &&  isMonth.indexOf(isFlag) !== -1")
+            Option(v-for="item in MonthType" :key="item.name" :label="item.name" :value="item.type")
         FormItem
           Button(type="primary" @click="onSubmit" :loading="disable") 生成
       //- .typesele
@@ -62,8 +64,15 @@ export default {
           ]
         }
       },
+      MonthType:[
+        {type:1,name:"常规月报"},
+        {type:2,name:'"煤改电"月报'},
+      ],
+      isMonth:[11,12,1,2,3],
+      isFlag:null,              //月份
       year:null,
       days:null,
+      mtype:1,    //月报类型
       form:{
         resource:"1"
       },
@@ -78,6 +87,7 @@ export default {
     lableChage(){
       this.days = null
       this.year = null
+      this.isFlag = null
       if (!this.allData.week) return 
       if (this.form.resource == 1) {
         this.dateObj = this.allData.week
@@ -87,10 +97,14 @@ export default {
       
     },
     onSubmit(){
-      console.log(this.days,785)
       if (!(this.year && this.days)) return Notification.warning({
         title: '提示',
         message: '请选择报表周期!!!',
+        duration: 2000
+      });
+      if (this.form.resource == 2 &&  this.isMonth.indexOf(this.isFlag) !== -1 && !this.mtype) return Notification.warning({
+        title: '提示',
+        message: '请选择月报类型!!!',
         duration: 2000
       });
       this.disable = true
@@ -99,7 +113,7 @@ export default {
         if (this.form.resource == 1) {
         this.$router.push({name:"weeklyHome",params:{year:this.year,zq:this.days}})
         }else{
-          this.$router.push({name:"monthHome",params:{year:this.year,zq:this.days}})
+          this.$router.push({name:"monthHome",params:{year:this.year,zq:this.days,status:this.mtype}})
         }
       },100)
       
@@ -116,9 +130,15 @@ export default {
       localStorage.clear()
       let str = ((new Date(Month)).getMonth())+1
       localStorage.setItem("timeMonth",String(str))
+      return str
     },
 
-
+    // 选择月份
+    seleMonth(){
+      console.log(this.mtype)
+      this.mtype = 1
+      this.isFlag = this.getMonth()
+    },
     // 获取选择时间周期
     getData(){
       ajaxData("getData")().then(res=>{
@@ -165,7 +185,7 @@ export default {
    box-shadow: 0px 0px 10px 2px #57DCFD;
    margin:70px auto;
    .el-form{
-     width: 55%;
+     width: 75%;
      margin: 0 auto;
      color: #fff;
      /deep/.el-form-item__label{
@@ -178,7 +198,7 @@ export default {
    .datalist{
      /deep/.el-form-item__content{
        display: flex;
-       justify-content: space-between;
+      //  justify-content: space-between;
      }
      
    }

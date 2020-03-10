@@ -1,13 +1,14 @@
 <template lang="pug">
   .monthhome
     MonthHeader(v-model="dataList")
-    MonePage(v-model="dataList.zj")
-    MtwoPage(v-model="dataList.pdzdh")
-    MthreePage(v-model="dataList.dyhgl")
-    MfourPage(v-model="dataList.xsl")
-    MfivePage(v-model="dataList.khfw")
+    div(v-if="$route.params.status === 1")
+      MonePage(v-model="dataList.zj")
+      MtwoPage(v-model="dataList.pdzdh")
+      MthreePage(v-model="dataList.dyhgl")
+      MfourPage(v-model="dataList.xsl")
+      MfivePage(v-model="dataList.khfw")
     //- 煤改电
-    //- CoalPage
+    CoalPage(v-else)
 </template>
 <script>
 import { Notification } from 'element-ui'
