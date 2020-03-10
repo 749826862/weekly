@@ -1,25 +1,28 @@
 <template lang="pug">
   .monthhome
-    MonthHeader
-    MonePage
-    MtwoPage
-    MthreePage
-    MfourPage
-    MfivePage
+    MonthHeader(v-model="dataList")
+    MonePage(v-model="dataList.zj")
+    MtwoPage(v-model="dataList.pdzdh")
+    MthreePage(v-model="dataList.dyhgl")
+    MfourPage(v-model="dataList.xsl")
+    MfivePage(v-model="dataList.khfw")
     //- 煤改电
     //- CoalPage
 </template>
 <script>
 import { Notification } from 'element-ui'
 import ajaxData from "@api/index"
+import MontData from '../../static/monthlyCharts/chartsOption.json'
 export default {
   name:"monthHome",
   data() {
-    return {};
+    return {
+      dataList:MontData.data,
+    };
   },
   created() {
     let params = this.$route.params
-    this.getMonthReport()
+    this.getMonthReport(params)
     // console.log(params,9999)
     // if (params.year && params.zq) {
       
@@ -33,8 +36,8 @@ export default {
     // }
   },
   methods: {
-    getMonthReport(){
-      ajaxData("getMonthReport")().then(res=>{
+    getMonthReport(params){
+      ajaxData("getMonthReport")(params).then(res=>{
         console.log(res)
       })
     }

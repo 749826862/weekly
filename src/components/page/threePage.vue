@@ -35,6 +35,7 @@
           span.word_title_4 3、配变过电压时长分析
         p 
           span.word_content {{ value.pbgdyfx1 }}-{{ value.pbgdyfx2 }}，配变发生过电压异常{{ value.pbgdyfx3 }}台。对{{ value.pbgdyfx4 }}台过电压异常发生总时长进行分析，处于1～50小时的有{{ value.pbgdyfx5 }}台，占比{{ value.pbgdyfx6 }}；另超过50小时的长时过电压配变有{{ value.pbgdyfx7 }}台，占比{{ value.pbgdyfx8 }}。其中，7*24小时不间断发生过电压的有{{ value.pbgdyfx9 }}台配变，问题最严重。
+        //- 没对数据
         mijizhutu.auto(:chartsOption="{className:'peidianshichang',isRow:true,tableName:'图17 配变过电压时长分布'}")
 
         h4.word_title_3 （四）不可监测配变分析

@@ -6,6 +6,9 @@
     },
     "getWeekReport":{
       "url":"/getWeekReport"
+    },
+    "getMonthReport":{
+      "url":"/getMonthReport"
     }
   }
 }

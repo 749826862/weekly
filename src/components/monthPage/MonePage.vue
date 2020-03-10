@@ -3,13 +3,12 @@
     h3.big_tilte 第一部分 “四率”指标监测
     .message
       .title_1
-        h4.word_title_2 一、配电自动化率
         p 
-          span.word_content 11月份，按照公司董事长对“四率”
+          span.word_content {{ value.jczb1 }}份，按照公司董事长对“四率”
           span.word_lingt （配电自动化率、电压合格率、线损率、客户满意率）
           span.word_content 工作指示要求，互联网部遵循“一个指标一个指标分析、一个指标一个指标提升”的工作思路，全方位、多维度按周期（周/月）开展“四率”指标监测分析工作。定位专业管理主要问题，及时协同专业部门开展根因分析，全程督促基层单位开展问题梳理和问题整改工作，以“四率”指标促进公司高质量发展的工作目标初步实现。
         p 
-          span.word_content 11月份，公司“四率”指标完成情况如下：
+          span.word_content {{ value.jczb2 }}份，公司“四率”指标完成情况如下：
         .result
         .imgCharts
           .chart_1
@@ -30,6 +29,7 @@
 </template>
 <script>
 export default {
+  props:["value"],
   data() {
     return {};
   },

@@ -156,7 +156,7 @@ export default {
 
         // 辅助线
         let markline = {
-          name: `本周北京地区同期线损率(${this.value.xValues3[0]}%)`,
+          name: `本周北京地区同期线损率(${this.value.xValues3 && this.value.xValues3[0]}%)`,
           type: "line",
           barGap: "0%",
           itemStyle: {
@@ -170,7 +170,7 @@ export default {
             data: [
               {
                 name: "Y 轴值为 100 的水平线",
-                yAxis: this.value.xValues3[0],
+                yAxis: this.value.xValues3 && this.value.xValues3[0],
                 lineStyle: {
                   width: 3,
                   show: false,

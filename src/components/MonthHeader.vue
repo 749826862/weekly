@@ -1,16 +1,17 @@
 <template lang="pug">
   .home_title
     h3.month_title 运营监测月报
-    .stage [2019]第12期
+    .stage [{{ value.year }}]第{{ value.zq }}
     .message
       span 互联网部
-      span 2019年12月4日
+      span {{ value.time }}
     //- .statistics.word_content 本周，公司配电自动化故障自愈实现率为99.70%；配变电压合格率为96.54%；同期线损率为6.51%； 95598电话呼入量本周9.56万通，环比下降5.33%；一次办结工单本周4.15万件，环比下降8.07%。
 </template>
 
 <script>
 export default {
   name: 'HelloWorld',
+  props:["value"],
   data () {
     return {
       

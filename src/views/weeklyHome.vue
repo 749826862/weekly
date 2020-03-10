@@ -8,7 +8,7 @@
     fivePage(v-model="dataList.khfw" :tbData="dataList.khfwtb")
 </template>
 <script>
-import { GET_CHARTS_OPTION } from "@api/home"
+// import { GET_CHARTS_OPTION } from "@api/home"
 import ajaxData from "@api/index"
 import weekData from '../../static/weeklyCharts/chartsOption.json'
 import { Notification,loading } from 'element-ui'
