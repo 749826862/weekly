@@ -92,7 +92,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 show: false,
                 alignWithLabel: false
@@ -144,7 +144,7 @@ export default {
               type: "bar",
               barWidth: "30%",
               stack: "总量",
-              yAxisIndex: 1,
+              yAxisIndex: 0,
               symbol: "circle",
               symbolSize: 8,
               itemStyle: {
@@ -157,13 +157,13 @@ export default {
                   color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
               type: "bar",
               barWidth: "30%",
-              yAxisIndex: 1,
+              yAxisIndex: 0,
               stack: "总量",
               symbol: "circle",
               symbolSize: 8,
@@ -177,13 +177,13 @@ export default {
                   color: "#E46C0A"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues2
             },
             {
               name: this.chartsOption.legendName[2],
               type: "line",
               symbol: "circle",
-              yAxisIndex: 0,
+              yAxisIndex: 1,
               symbolSize: 8,
               itemStyle: {
                 normal: {
@@ -195,7 +195,7 @@ export default {
                   color: "#92D050"
                 }
               },
-              data: this.value.serverData[2]
+              data: this.value.xValues3
             }
           ]
         };

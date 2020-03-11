@@ -26,7 +26,7 @@ export default new Router({
       }
     },
     {
-      path: '/monthhome/:year/:zq',
+      path: '/monthhome/:year/:zq/:status',
       name: 'monthHome',
       component: monthHome,
       meta: {

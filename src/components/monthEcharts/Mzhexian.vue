@@ -89,7 +89,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 alignWithLabel: false
               },
@@ -113,7 +113,11 @@ export default {
               axisTick: {
                 //y轴刻度线
                 show: true
+              },
+              axisLabel:{
+                formatter:"{value}%"
               }
+              
             }
           ],
           series: [
@@ -127,12 +131,13 @@ export default {
                 normal: {
                   label: {
                     show: true,
-                    position: "top"
+                    position: "top",
+                    formatter:"{c}%"
                   },
                   color: this.chartsOption.color?this.chartsOption.color[0]:"#C0504D"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues || this.value.xValues1
             }
           ]
         };

@@ -114,7 +114,7 @@ export default {
                       if (e.name.length <= 6 && e.name.length > 4) {
                         str = e.name.slice(0,3)+'\n'+e.name.slice(3,6)
                       }else if(e.name.length > 6){
-                        str = e.name.slice(0,5)+'\n'+e.name.slice(5,10)+'\n'+e.name.slice(10,15)
+                        str = e.name.slice(0,5)+'\n'+e.name.slice(5,10)
                       }
                       else{
                           str = e.name

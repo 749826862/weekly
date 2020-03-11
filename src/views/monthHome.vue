@@ -1,12 +1,12 @@
 <template lang="pug">
   .monthhome
     MonthHeader(v-model="dataList")
-    div(v-if="$route.params.status === 1")
-      MonePage(v-model="dataList.zj")
-      MtwoPage(v-model="dataList.pdzdh")
-      MthreePage(v-model="dataList.dyhgl")
-      MfourPage(v-model="dataList.xsl")
-      MfivePage(v-model="dataList.khfw")
+    div(v-if="$route.params.status == 1")
+      MonePage(v-model="dataList.zj" :tbdata="dataList.tb")
+      MtwoPage(v-model="dataList.pdzdh" :tbdata="dataList.tb")
+      MthreePage(v-model="dataList.dyhgl" :tbdata="dataList.dyhgltb")
+      MfourPage(v-model="dataList.xsl" :tbdata="dataList.xsltb")
+      MfivePage(v-model="dataList.khfw" :tbdata="dataList.khfwtb")
     //- 煤改电
     CoalPage(v-else)
 </template>
@@ -23,6 +23,7 @@ export default {
   },
   created() {
     let params = this.$route.params
+    console.log(params,5566)
     this.getMonthReport(params)
     // console.log(params,9999)
     // if (params.year && params.zq) {

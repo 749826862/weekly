@@ -126,6 +126,13 @@
           span.word_title_4 （4）各单位严重不合格集中器¹¹数量及治理情况
         p 
           span.word_content 本周，没有出现严重不合格集中器，其中： 没有严重不合格集中器为重复发生（截至2019年10月至少发生过一次）。请各个单位继续保持。
+        //- 客户服务煤改电
+        div(v-if="value.mgdkhfw")
+          h4.word_title_2 五、煤改电专题监测分析
+          h4.word_title_3 （一）煤改电用户拨打95598热线情况
+          p 
+            span.word_content 截至12月12日0时，本周煤改电用户拨打95598热线{{ value.mgdkhfw1 }}通。
+          zhuzhaungtu.auto(v-model="tbData.tb20" :chartsOption="{className:'kefuzhongxinqushimeigaid',isRow:true,tableName: '图20  采暖季煤改电用户95598工单变化趋势',legendName: '',company:'单位:件'}")
         p 
           span.word_lingt 【相关建议】
         p 

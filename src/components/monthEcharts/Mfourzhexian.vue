@@ -92,7 +92,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 alignWithLabel: false
               },
@@ -135,7 +135,7 @@ export default {
                   color: this.chartsOption.color?this.chartsOption.color[0]:"#4F81BD"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
@@ -152,7 +152,7 @@ export default {
                   color: this.chartsOption.color?this.chartsOption.color[0]:"#C0504D"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.value.xValues2
             },
             {
               name: this.chartsOption.legendName[2],
@@ -169,7 +169,7 @@ export default {
                   color: this.chartsOption.color?this.chartsOption.color[0]:"#9BBB59"
                 }
               },
-              data: this.value.serverData[2]
+              data: this.value.xValues3
             },
             {
               name: this.chartsOption.legendName[3],
@@ -186,7 +186,7 @@ export default {
                   color: this.chartsOption.color?this.chartsOption.color[0]:"#8064A2"
                 }
               },
-              data: this.value.serverData[3]
+              data: this.value.xValues4
             }
           ]
         };

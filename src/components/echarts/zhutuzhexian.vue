@@ -12,12 +12,6 @@ export default {
       type: Object,
       default: () => {
         return {
-          xData:["周一", "周二", "周三", "周四", "周五", "周六", "周日"],
-          serverData:[
-            [120, 132, 101, 134, 90, 230, 210],
-            [220, 182, 191, 234, 290, 330, 310],
-            [10, 93, 26, 38, 51, 15, 48]
-          ]
         };
       }
     },
@@ -44,7 +38,8 @@ export default {
   data() {
     return {};
   },
-  created() {},
+  created() {
+  },
   mounted() {
     this.initChart();
   },
@@ -52,6 +47,7 @@ export default {
     initChart() {
       this.setChart().then(
         option => {
+          console.log(option,55544)
           let myChart = echarts.init(
             document.querySelector("." + this.className)
           );
@@ -242,6 +238,7 @@ export default {
         resolve(option);
       }).catch(err => {
         reject(err);
+        // console.log(err,422)
       });
     }
   }

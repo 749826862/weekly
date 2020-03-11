@@ -14,6 +14,7 @@
             Option(v-for="(item,key) in dateObj" :key="key" :label="key" :value="key")
           Select(v-model="days" placeholder="请选择期" style="width:50%" @change="seleMonth")
             Option(v-for="item in dateObj[year]" :key="item.name" :label="item.name+`(${item.time})`" :value="item.name")
+        FormItem(label="类型:" class="datalist" v-if="form.resource == 2 &&  isMonth.indexOf(isFlag) !== -1")
           Select(v-model="mtype" placeholder="选择月报类型" style="width:30%" v-if="form.resource == 2 &&  isMonth.indexOf(isFlag) !== -1")
             Option(v-for="item in MonthType" :key="item.name" :label="item.name" :value="item.type")
         FormItem

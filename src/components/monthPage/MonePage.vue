@@ -13,23 +13,23 @@
         .imgCharts
           .chart_1
             img(src="~@assets/charts2.png")
-            imgzhexian(:chartsOption="{className:'pdzdhl',legendName:[],tableName:'自愈实现率',isRow:true}")
+            imgzhexian(v-model="tbdata.tb1" :chartsOption="{className:'pdzdhl',legendName:[],tableName:'自愈实现率',isRow:true}")
           .chart_1
             img(src="~@assets/charts3.png")
-            imgzhutu(:chartsOption="{className:'dyhgl',legendName:[],tableName:'1-11月配变电压合格率(%)',isRow:true}")
+            imgzhutu(v-model="tbdata.tb2" :chartsOption="{className:'dyhgl',legendName:[],tableName:'1-11月配变电压合格率(%)',isRow:true}")
           .chart_1
             img(src="~@assets/charts1.png")
-            imgbinpaizhutu(:chartsOption="{className:'xsl',legendName:['统计线损率累计值(%)','月统计线损率(%)'],tableName:'',isRow:true}")
+            imgbinpaizhutu(v-model="tbdata.tb3" :chartsOption="{className:'xsl',legendName:['统计线损率累计值(%)','月统计线损率(%)'],tableName:'',isRow:true}")
           .chart_1
             img(src="~@assets/charts4.png")
             .charts_zhexian
-              imgtwozhexian(:chartsOption="{className:'khmyl',legendName:['2018','2019'],tableName:'95598话务量（万通）',isRow:true}")
-              imgtwozhexian(:chartsOption="{className:'khmylwanjian',legendName:['2018','2019'],tableName:'八类工单数量（万件）',isRow:true}")
+              imgtwozhexian(:Tvalue="{xNames:tbdata.tb4.xNames1,xValues1:tbdata.tb4.xValues1,xValues2:tbdata.tb4.xValues2}" :chartsOption="{className:'khmyl',legendName:['2018','2019'],tableName:'95598话务量（万通）',isRow:true}")
+              imgtwozhexian(:Tvalue="{xNames:tbdata.tb4.xNames2,xValues1:tbdata.tb4.xValues3,xValues2:tbdata.tb4.xValues4}" :chartsOption="{className:'khmylwanjian',legendName:['2018','2019'],tableName:'八类工单数量（万件）',isRow:true}")
 
 </template>
 <script>
 export default {
-  props:["value"],
+  props:["value","tbdata"],
   data() {
     return {};
   },

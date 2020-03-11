@@ -179,7 +179,7 @@ export default {
 <style lang='less' scoped>
 .chartMain {
   width: 100%;
-  height: 300px;
+  height: 303px;
   // flex: 1;
   // padding-bottom: 20px;
   // border: 1px solid #ccc;

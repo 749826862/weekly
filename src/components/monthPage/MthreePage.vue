@@ -17,41 +17,47 @@
           span.word_title_4 1．配变电压合格率总体情况
         p 
           span.word_content {{ value.dyhgl1 }}份，公司在运配变{{ value.dyhgl2 }}台，电压可监测配变{{ value.dyhgl3 }}台，可监测率{{ value.dyhgl4 }}，电压合格率{{ value.dyhgl5 }}。
-        zhutuzhexian.auto(:title="{legendName:['电压合格配变数(万台)','电压不合格配变数(万台)','配变电压合格率(%)'],tableName:'图1  公司配变电压合格率变化趋势',isRow:true}" :className="'pbdyhegelv'",)
+        zhutuzhexian.auto(v-model="tbdata.tb1" :title="{legendName:['电压合格配变数(万台)','电压不合格配变数(万台)','配变电压合格率(%)'],tableName:'图1  公司配变电压合格率变化趋势'}" :isRow="true" :className="'pbdyhegelv'")
         p 
           span.word_content {{ value.dyhgl6 }}份，公司发生电压异常的配变¹共计{{ value.dyhgl7 }}台，其中低电压¹{{ value.dyhgl8 }}台、过电压²{{ value.dyhgl9 }}台、数据异常³{{ value.dyhgl10 }}台。电压异常配变数量与负荷关联关系见下图。
         p 
           span.word_content.tip ¹电压不合格配变数=低电压台区数+过电压配变数+数据异常配变数;
           span.word_content.tip ²配变过电压：配变电压高于235.4V，在235.4V-308V之间，持续1小时;
           span.word_content.tip ³配变数据异常：配变电压低于正常电压40%（132V）或电压高于正常电压40%（308V），持续1小时。
-        danzhuzhexian.auto(:chartsOption="{className:'fhqkdb',legendName:['电压不合格配变数(台)','月最大负荷(万千瓦)'],tableName:'图2  公司配变电压异常台数与负荷情况对比',isRow:true}")
+        danzhuzhexian.auto(v-model="tbdata.tb2" :chartsOption="{className:'fhqkdb',baifenbi:true, legendName:['电压不合格配变数(台)','月最大负荷(万千瓦)'],tableName:'图2  公司配变电压异常台数与负荷情况对比',isRow:true}")
         p 
           span.word_content {{ value.dyhgl11 }}份，公司发生不可监测配变{{ value.dyhgl12 }}台，较{{ value.dyhgl13 }}份{{ value.dyhgl14 }}台，各月变化情况见下图。
-        zhuzhaungtu.auto(:chartsOption="{className:'bkjcpb',legendName:['不可监测配变数(台)'],tableName:'图3  公司不可监测配变数量变化趋势',isRow:true}")
+        zhuzhaungtu.auto(v-model="tbdata.tb3" :chartsOption="{className:'bkjcpb',legendName:['不可监测配变数(台)'],tableName:'图3  公司不可监测配变数量变化趋势',isRow:true}")
         p 
           span.word_content {{ value.dyhgl15 }}台不可监测配变中，投运日期在{{ value.dyhgl16 }}的{{ value.dyhgl17 }}台，占比{{ value.dyhgl18 }}，具体分布情况见下图。
+        //- -----------
+        //-关联饼图
+        .guanlain_chart3
+          guanlianbintu(class="tubiao_list" v-model="tbdata.tb4.tree")
+          span(v-for="item in 6" :key="item")
+        p(style="text-align:center") 图4  不可监测配变投运日期及不可监测原因分析
         p 
           span.word_title_4 2．各单位配变电压合格率情况
         p 
           span.word_content {{ value.dwdyhgl1 }}份，配变电压合格率较高的三家单位分别为{{ value.dwdyhgl2 }}公司，较低的三家单位分别为{{ value.dwdyhgl3 }}公司。
-        zhutuzhexian.auto(:title="{legendName:['电压合格配变数(万台)','电压不合格配变数(万台)','配变电压合格率(%)'],tableName:'图5  各单位配变电压合格率情况',isRow:true}" :className="'gedwdyheg'")
+        zhutuzhexian.auto(v-model="tbdata.tb5" :title="{legendName:['电压合格配变数(万台)','电压不合格配变数(万台)','配变电压合格率(%)'],tableName:'图5  各单位配变电压合格率情况',isRow:true}" :className="'gedwdyheg'")
         p 
           span.word_title_4 3．配变电压合格率治理情况
         p 
           span.word_content 截至{{ value.dyhglzl1 }}份，公司配变电压异常治理率{{ value.dyhglzl2 }}，不可监测治理率{{ value.dyhglzl3 }}。
         p 
           span.word_content 配变电压异常治理情况：自{{ value.dyhglzl4 }}，公司发生电压异常配变累计{{ value.dyhglzl5 }}台。截至{{ value.dyhglzl6 }}，已有{{ value.dyhglzl7 }}台完成治理，治理率{{ value.dyhglzl8 }}。各单位治理情况见下图。
-        zhutuzhexian.auto(:title="{legendName:['已治理配变数(台)','未治理配变数(台)','治理率(%)'],tableName:'图6  各单位电压异常配变治理情况',isRow:true}" :className="'dypbzlqk'")
+        zhutuzhexian.auto(v-model="tbdata.tb6" :title="{legendName:['已治理配变数(台)','未治理配变数(台)','治理率(%)'],tableName:'图6  各单位电压异常配变治理情况',isRow:true}" :className="'dypbzlqk'")
         p 
           span.word_content 不可监测配变治理情况：自{{ value.bkjcbpzl1 }}，公司发现不可监测配变累计{{ value.bkjcbpzl2 }}台。截至{{ value.bkjcbpzl3 }}，已有{{ value.bkjcbpzl4 }}台完成治理，治理率{{ value.bkjcbpzl5 }}。各单位治理情况见下图。
-        zhutuzhexian.auto(:title="{legendName:['已实现监测配变数(台)','仍不可监测配变数(台)','治理率(%)'],tableName:'图7  各单位不可监测配变治理情况',isRow:true}" :className="'dypbbkzlqk'")
+        zhutuzhexian.auto(v-model="tbdata.tb7" :title="{legendName:['已实现监测配变数(台)','仍不可监测配变数(台)','治理率(%)'],tableName:'图7  各单位不可监测配变治理情况',isRow:true}" :className="'dypbbkzlqk'")
         p 
           span.word_title_4 4．新投配变维护时长分析
         p 
           span.word_content {{ value.xtypbsc1 }}至{{ value.xtypbsc2 }}，公司新投运配变{{ value.xtypbsc3 }}台。已实现可监测{{ value.xtypbsc4 }}台，平均用时{{ value.xtypbsc5 }}天，其中PMS2.0侧维护平均用时{{ value.xtypbsc6 }}天，营销系统侧维护平均用时{{ value.xtypbsc7 }}天。仍不可监测的{{ value.xtypbsc8 }}台，其中PMS2.0侧维护平均用时{{ value.xtypbsc9 }}天，营销系统侧维护平均已用时{{ value.xtypbsc10 }}天。
         p 
           span.word_content 从各单位情况看，数据维护平均用时较短的三家单位分别为{{ value.xtypbsc11 }}公司，较长的三家单位分别为{{ value.xtypbsc12 }}公司。
-        Mdanzhuzhexian.auto(:chartsOption="{className:'gdwxty',legendName:['已实现监测配变数(台)','实现监测平均用时(天)'],tableName:'图8  各单位新投运配变实现监测用时情况',isRow:true}")
+        Mdanzhuzhexian.auto(v-model="tbdata.tb8" :chartsOption="{className:'gdwxty',legendName:['已实现监测配变数(台)','实现监测平均用时(天)'],tableName:'图8  各单位新投运配变实现监测用时情况',isRow:false}")
         p 
           span.word_lingt 【相关建议】
         p 
@@ -64,12 +70,34 @@
 </template>
 <script>
 export default {
-  props:["value"],
+  props:["value","tbdata"],
   data() {
-    return {};
+    return {
+      boxOffset:[
+        {left:"215px",top:"110px"},
+        {left:"-57px",top:"125px"},
+        {left:"405px",top:"-45px"},
+        {left:"405px",top:"272px"}
+      ]
+    };
   },
-  created() {},
-  methods: {}
+  created() {
+    
+  },
+  mounted(){
+    this.setOffset()
+  },
+  methods: {
+    // 设置饼图位置
+    setOffset(){
+      let box = document.querySelectorAll(".guanlain_chart3 .chartMain")
+      for (let i = 0; i < this.boxOffset.length; i++) {
+        const element = this.boxOffset[i];
+        box[i].style.left = element.left
+        box[i].style.top = element.top
+      }
+    }
+  }
 };
 </script>
 <style lang='less' scoped>
@@ -78,6 +106,60 @@ export default {
     color: #000;
     font-weight: bold;
     text-align: center;
+  }
+  .guanlain_chart3{
+    position: relative;
+    height: 530px;
+    // transform: rotate(-90deg);
+    /deep/.chartMain{
+      position: absolute;
+      transform: rotate(0deg);
+      left: 0;
+    }
+    span{
+      width: 100px;
+      height: 1px;
+      background: #000;
+      position: absolute;
+      opacity: 0.5;
+      transform-origin: top left;
+      &:nth-of-type(1){
+        width: 277px;
+        left: 87px;
+        top: 186px;
+        transform: rotate(-3deg);
+      }
+      &:nth-of-type(2){
+        width: 300px;
+        left: 83px;
+        top: 310px;
+        transform: rotate(-3deg);
+      }
+       &:nth-of-type(3){
+        width: 206px;
+        left: 371px;
+        top: 172px;
+        transform: rotate(-44deg);
+      }
+      &:nth-of-type(4){
+        width: 182px;
+        left: 404px;
+        top: 186px;
+        transform: rotate(-16deg);
+      }
+      &:nth-of-type(5){
+        width: 187px;
+        left: 426px;
+        top: 236px;
+        transform: rotate(34deg);
+      }
+      &:nth-of-type(6){
+        width: 182px;
+        left: 404px;
+        top: 282px;
+        transform: rotate(56deg);
+      }
+    }
   }
   .message{
     h4{

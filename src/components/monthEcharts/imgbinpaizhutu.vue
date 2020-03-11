@@ -89,7 +89,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 show:false,
                 alignWithLabel: false
@@ -145,7 +145,7 @@ export default {
                   }], false)
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
@@ -167,7 +167,7 @@ export default {
                   }], false)
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues2
             }
           ]
         };

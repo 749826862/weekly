@@ -125,6 +125,24 @@
         p 
           span.word_content 各单位新投运台区负损情况总体较好，{{ value.xtytqxs9 }}公司占本单位台区比例最高。
         danzhuzhexian.auto(v-model="tbData.tb23" :chartsOption="{className:'xintouyunbuhege',isRow:false,tableName: '图23 各单位新投运不合格台区情况',legendName: ['新投运台区负损数','新投运台区负损数占台区总数的比例']}")
+        //- 线损率煤改电
+        div(v-if="value.mgdxsl")
+          h4.word_title_3 （五）煤改电台区同期线损率负损监测情况
+          p 
+            span.word_title_4 1、各单位煤改电台区负损情况
+          p 
+            span.word_content 本周，煤改电负损台区占比较大的三家单位分别是{{ value.mgdxsl1 }}，占本单位煤改电台区总数比例分别达{{ value.mgdxsl2 }}。
+          danzhuzhexian.auto(v-model="tbData.tb24" :chartsOption="{className:'taiqushuliangzhanbimeigaidian',isRow:false,tableName: '图24 各单位煤改电负损台区情况',legendName: ['煤改电负损台区数','煤改电负损台区数占煤改电台区总数比例']}")
+          p 
+            span.word_title_4 2、煤改电台区负损区间分布情况
+          p 
+            span.word_content 从分布来看，线损率在{{ value.mgdxsl3 }}区间的煤改电小负损台区数最多，达{{ value.mgdxsl4 }}个，占比为{{ value.mgdxsl5 }}%，远高于其他区间。
+          qujianzhutu.auto(v-model="tbData.tb25" :chartsOption="{className:'xiaofusundianliangmeigaidian',tableName: '图25 煤改电台区负损区间分布',legendName: ['']}")
+          p 
+            span.word_title_4 3、煤改电台区小负损[-1,0）情况
+          p 
+            span.word_content 从各单位看，本周煤改电小负损台区占比较高的三家单位分别是{{ value.mgdxsl6[0] }}（{{ value.mgdxsl7[0] }}）、{{ value.mgdxsl6[1] }}（{{ value.mgdxsl7[1] }}）、{{ value.mgdxsl6[2] }}（{{ value.mgdxsl7[2] }}）。
+          danzhuzhexian.auto(v-model="tbData.tb26" :chartsOption="{className:'qushuliangzhanbimeigaidian',isRow:false,tableName: '图26 各单位煤改电小负损台区情况',legendName: ['煤改电台区同期线损率在[-1,0)区间的数量','煤改电台区小负损数占煤改电负损总数比例']}")
         p
           span.word_lingt 【结论】
         p 

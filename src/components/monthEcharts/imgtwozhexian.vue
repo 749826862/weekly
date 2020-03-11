@@ -8,28 +8,10 @@
 import echarts from "echarts";
 export default {
   props: {
-    value: {
+    Tvalue: {
       type: Object,
       default: () => {
         return {
-          xData: [
-            "1月",
-            "2月",
-            "3月",
-            "4月",
-            "5月",
-            "6月",
-            "7月",
-            "8月",
-            "9月",
-            "10月",
-            "11月",
-            "12月"
-          ],
-          serverData: [
-            [102, 52, 200, 334, 90, 100, 220,200, 334, 90, 100, 220],
-            [72, 22, 100, 34, 100, 70, 80,90, 100, 220,200, 334]
-          ]
         };
       }
     },
@@ -51,6 +33,7 @@ export default {
   created() {},
   mounted() {
     this.initChart();
+    console.log(this.value,55555)
   },
   methods: {
     initChart() {
@@ -95,7 +78,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.Tvalue.xNames,
               axisTick: {
                 show:true,
                 alignWithLabel: false
@@ -148,7 +131,7 @@ export default {
                   color: "#376092"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.Tvalue.xValues1
             },
             {
               name: this.chartsOption.legendName[1],
@@ -168,7 +151,7 @@ export default {
                   color: "#FFC000"
                 }
               },
-              data: this.value.serverData[1]
+              data: this.Tvalue.xValues2
             }
           ]
         };

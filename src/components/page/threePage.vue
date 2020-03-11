@@ -123,7 +123,7 @@
         p 
           span.word_content {{ value.pbddyysxbphcd1 }}-{{ value.pbddyysxbphcd2 }}，公司配变发生低电压异动{{ value.pbddyysxbphcd3 }}台，发生三相不平衡有{{ value.pbddyysxbphcd4 }}台。其中重叠发生的配变有{{ value.pbddyysxbphcd5 }}台，为{{ value.pbddyysxbphcd6 }}。
         bintu.auto(v-model="tbData.tb33" :chartsOption="{className:'pinghengchongdie',tableName:'图33 配变低电压与三相不平衡重叠发生情况'}")
-        wcoalPage(v-if="isMonth.indexOf(Month) !== -1")
+        wcoalPage(v-if="value.mgdpbdyhgl" v-model="value" :tbData="tbData")
         p 
           span.word_lingt 【总结建议】
         p 

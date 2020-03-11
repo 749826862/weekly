@@ -89,7 +89,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 show:false,
                 alignWithLabel: false
@@ -140,7 +140,7 @@ export default {
                   color: "#F79646"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues
             }
           ]
         };

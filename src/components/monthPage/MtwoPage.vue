@@ -17,12 +17,12 @@
           span.word_title_4 1．故障自愈实现率变化趋势
         p 
           span.word_content {{ value.jczq3 }}份, 公司配电自动化故障自愈实现率继续上升，达到{{ value.gzzysxl1 }}。
-        Mzhexian.auto(:chartsOption="{className:'gzzl',legendName:['故障自愈实现率(%)'],tableName:'图4  公司配电自动化故障自愈实现率变化趋势',isRow:true}")
+        Mzhexian.auto(v-model="tbdata.tb5" :chartsOption="{className:'gzzl',legendName:['故障自愈实现率(%)'],tableName:'图4  公司配电自动化故障自愈实现率变化趋势',isRow:true}")
         p 
           span.word_title_4 2．各单位故障自愈实现率情况
         p 
           span.word_content {{ value.dwgzzysxl1 }}份，配电自动化故障自愈实现率较高的三家单位分别为{{ value.dwgzzysxl3 }}公司，较低的单位为{{ value.dwgzzysxl4 }}公司。
-        zhuzhaungtu.auto(:chartsOption="{className:'gzzlsx',legendName:['故障自愈实现率'],tableName:'图5 各单位配电自动化故障自愈实现率情况',isRow:false}")
+        zhuzhaungtu.auto(v-model="tbdata.tb6" :chartsOption="{className:'gzzlsx',legendName:['故障自愈实现率'],tableName:'图5 各单位配电自动化故障自愈实现率情况',isRow:false}")
         p 
           span.word_lingt 【相关建议】
         p 
@@ -31,7 +31,7 @@
 </template>
 <script>
 export default {
-  props:["value"],
+  props:["value","tbdata"],
   data() {
     return {};
   },
