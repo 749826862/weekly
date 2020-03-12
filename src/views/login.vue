@@ -12,11 +12,11 @@
         FormItem(label="选择周期:" class="datalist")
           Select(v-model="year" placeholder="请选择年" style="width:30%")
             Option(v-for="(item,key) in dateObj" :key="key" :label="key" :value="key")
-          Select(v-model="days" placeholder="请选择期" style="width:50%" @change="seleMonth")
-            Option(v-for="item in dateObj[year]" :key="item.name" :label="item.name+`(${item.time})`" :value="item.name")
-        FormItem(label="类型:" class="datalist" v-if="form.resource == 2 &&  isMonth.indexOf(isFlag) !== -1")
-          Select(v-model="mtype" placeholder="选择月报类型" style="width:30%" v-if="form.resource == 2 &&  isMonth.indexOf(isFlag) !== -1")
-            Option(v-for="item in MonthType" :key="item.name" :label="item.name" :value="item.type")
+          Select(v-model="days" placeholder="请选择期" style="width:50%" @change="seleMonth" value-key="id")
+            Option(v-for="(item,i) in dateObj[year]" :key="item.id" :label="item.name+`(${item.time}) ${item.type === 2 ?'--煤改电':''}`" :value="item")
+        //- FormItem(label="类型:" class="datalist" v-if="form.resource == 2 &&  isMonth.indexOf(isFlag) !== -1")
+        //-   Select(v-model="mtype" placeholder="选择月报类型" style="width:30%" v-if="form.resource == 2 &&  isMonth.indexOf(isFlag) !== -1")
+        //-     Option(v-for="item in MonthType" :key="item.name" :label="item.name" :value="item.type")
         FormItem
           Button(type="primary" @click="onSubmit" :loading="disable") 生成
       //- .typesele
@@ -29,6 +29,7 @@
 <script>
 import ajaxData from "@api/index"
 import { Select,Option,Radio,RadioGroup,Form,FormItem,Button,Notification } from 'element-ui';
+import time from '../../static/weeklyCharts/time.json'
 export default {
   components:{
     Select,
@@ -42,38 +43,13 @@ export default {
   data() {
     return {
       dateObj:{},
-      allData:{
-      "week":
-        {
-          "2019":[
-            {"name":"24周","time":"2019-07-18"},
-            {"name":"40周","time":"2019-11-21"},
-            {"name":"41周","time":"2019-11-28"}
-          ],
-          "2018":[
-            {"name":"24周","time":"2018-07-18"},
-            {"name":"40周","time":"2018-11-21"},
-            {"name":"41周","time":"2018-11-28"}
-          ]
-      },
-      "month":
-        {
-          "2019":[
-            {"name":"8期","time":"2019-07-01"},
-            {"name":"11期","time":"2019-10-01"},
-            {"name":"12期","time":"2019-11-01"}
-          ]
-        }
-      },
+      allData:time,
       MonthType:[
         {type:1,name:"常规月报"},
         {type:2,name:'"煤改电"月报'},
       ],
-      isMonth:[11,12,1,2,3],
-      isFlag:null,              //月份
       year:null,
-      days:null,
-      mtype:1,    //月报类型
+      days:{},
       form:{
         resource:"1"
       },
@@ -82,13 +58,13 @@ export default {
   },
   created() {
     // this.getData()   //时间
-    this.dateObj = this.allData.week
+    // this.getMonth(this.allData)
+    this.dateObj = this.getMonth(this.allData).week
   },
   methods: {
     lableChage(){
-      this.days = null
+      this.days = {}
       this.year = null
-      this.isFlag = null
       if (!this.allData.week) return 
       if (this.form.resource == 1) {
         this.dateObj = this.allData.week
@@ -103,48 +79,48 @@ export default {
         message: '请选择报表周期!!!',
         duration: 2000
       });
-      if (this.form.resource == 2 &&  this.isMonth.indexOf(this.isFlag) !== -1 && !this.mtype) return Notification.warning({
-        title: '提示',
-        message: '请选择月报类型!!!',
-        duration: 2000
-      });
+      // if (this.form.resource == 2 &&  this.isMonth.indexOf(this.isFlag) !== -1 && !this.mtype) return Notification.warning({
+      //   title: '提示',
+      //   message: '请选择月报类型!!!',
+      //   duration: 2000
+      // });
       this.disable = true
-      this.getMonth()               //存储月份
       setTimeout(()=>{
         if (this.form.resource == 1) {
-        this.$router.push({name:"weeklyHome",params:{year:this.year,zq:this.days}})
+        this.$router.push({name:"weeklyHome",params:{year:this.year,zq:this.days.name}})
         }else{
-          this.$router.push({name:"monthHome",params:{year:this.year,zq:this.days,status:this.mtype}})
+          this.$router.push({name:"monthHome",params:{year:this.year,zq:this.days.name,status:this.days.type}})
         }
       },100)
       
     },
 
-    // 获取当前月份（判断煤改电）
-    getMonth(){
-      let Month = null
-      this.dateObj[this.year].forEach(item=>{
-        if(item.name == this.days){
-          Month = item.time
+    // 格式化日期列表
+    getMonth(data){
+      let obj = data
+      for (const key in data) {
+        let item = data[key]
+        for (const key in item) {
+          let ele = item[key]
+          for (let i = 0; i < ele.length; i++) {
+            const element = ele[i];
+            element['id'] = i
+          }
         }
-      })
-      localStorage.clear()
-      let str = ((new Date(Month)).getMonth())+1
-      localStorage.setItem("timeMonth",String(str))
-      return str
+      }
+     return obj
     },
 
     // 选择月份
-    seleMonth(){
-      console.log(this.mtype)
-      this.mtype = 1
-      this.isFlag = this.getMonth()
+    seleMonth(data){
+      console.log(data)
     },
+
     // 获取选择时间周期
     getData(){
       ajaxData("getData")().then(res=>{
         this.allData = res
-        this.dateObj = res.week
+        this.dateObj = this.getMonth(this.allData).week
       })
     }
   }

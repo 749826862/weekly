@@ -36,6 +36,7 @@
           span.word_lingt （1）从工单类别及客户诉求热点来看,
           span.word_content 故障报修{{ value.ycgdqk7 }}万件、咨询{{ value.ycgdqk8 }}万件。客户诉求热点主要集中在：客户误报、电费抄核收及电量电费查询⁵、基本档案信息三个方面。
         //- -----
+        .result
         //-关联饼图
         .guanlain_chart
           guanlianbintu(class="tubiao_list" v-model="tbdata.tb5.tree")

@@ -37,7 +37,7 @@
         zhexianone.auto(v-model="tbData.tb3" :chartsOption="{className:'dejindiqu10kv',isRow:true,legendName: ['北京地区10kv线路同期线损率(%)'],tableName: '图3 北京地区10kV线路同期线损率周趋势'}")
         p 
           span.word_content {{ value.bj10KVtqxslqk8 }}第{{ value.bj10KVtqxslqk9 }}，{{ value.bj10KVtqxslqk10 }}公司10kV线路同期线损率比上周{{ value.bj10KVtqxslqk11 }}个百分点，其他单位保持相对稳定。
-        binpaifuzhuline.auto(v-model="tbData.tb4" :chartsOption="{className:'Kv10wanchengqingku',legendName: ['上周10Kv线路线损率(%)','本周10Kv线路线损率(%)','本周北京地区10Kv线路线损率(%)'],isRow:false,isMarkline:true,tableName: '图4 各单位10kV线路同期线损率完成情况'}")
+        binpaifuzhuline.auto(v-model="tbData.tb4" :chartsOption="{className:'Kv10wanchengqingku',legendName: ['上周10Kv线路线损率(%)','本周10Kv线路线损率(%)','本周北京地区10Kv线路线损率(%)'],isRow:false,isMarkline:false,tableName: '图4 各单位10kV线路同期线损率完成情况'}")
         p 
           span.word_title_4 4、北京地区台区同期线损率完成情况
         p 

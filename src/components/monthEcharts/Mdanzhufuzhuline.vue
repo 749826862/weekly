@@ -92,7 +92,7 @@ export default {
           xAxis: [
             {
               type: "category",
-              data: this.value.xData,
+              data: this.value.xNames,
               axisTick: {
                 alignWithLabel: false
               },
@@ -134,7 +134,7 @@ export default {
                   color: "rgba(79,129,189,1)"
                 }
               },
-              data: this.value.serverData[0]
+              data: this.value.xValues1
             }
           ]
         };
@@ -155,7 +155,7 @@ export default {
             data: [
               {
                 name: "Y 轴值为 100 的水平线",
-                yAxis: 300,
+                yAxis: this.value.xValues2,
                 lineStyle: {
                   width: 3,
                   show: false,

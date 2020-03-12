@@ -32,8 +32,7 @@ export default {
   },
   created() {},
   mounted() {
-    this.initChart();
-    console.log(this.value,55555)
+    this.initChart()
   },
   methods: {
     initChart() {

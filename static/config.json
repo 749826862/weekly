@@ -2,13 +2,20 @@
   "server":"http://192.168.0.100:80",
   "api":{
     "getData":{
-      "url":"/getReportOption"
+      "url":"/getReportOption",
+      "name":"时间列表"
     },
     "getWeekReport":{
-      "url":"/getWeekReport"
+      "url":"/getWeekReport",
+      "name":"周报数据"
     },
     "getMonthReport":{
-      "url":"/getMonthReport"
+      "url":"/getMonthReport",
+      "name":"月报数据"
+    },
+    "getMonthReportMgd":{
+      "url":"/getMonthReportMgd",
+      "name":"煤改电月报数据"
     }
   }
 }

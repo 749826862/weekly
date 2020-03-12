@@ -31,6 +31,7 @@
         p 
           span.word_content {{ value.dyhgl15 }}台不可监测配变中，投运日期在{{ value.dyhgl16 }}的{{ value.dyhgl17 }}台，占比{{ value.dyhgl18 }}，具体分布情况见下图。
         //- -----------
+        .result
         //-关联饼图
         .guanlain_chart3
           guanlianbintu(class="tubiao_list" v-model="tbdata.tb4.tree")
@@ -110,6 +111,7 @@ export default {
   .guanlain_chart3{
     position: relative;
     height: 530px;
+    margin-top: 70px;
     // transform: rotate(-90deg);
     /deep/.chartMain{
       position: absolute;

@@ -8,38 +8,40 @@
       MfourPage(v-model="dataList.xsl" :tbdata="dataList.xsltb")
       MfivePage(v-model="dataList.khfw" :tbdata="dataList.khfwtb")
     //- 煤改电
-    CoalPage(v-else)
+    CoalPage(v-model="mgdData" :tbdata="mgdData.mgdtb"  v-else)
 </template>
 <script>
 import { Notification } from 'element-ui'
 import ajaxData from "@api/index"
 import MontData from '../../static/monthlyCharts/chartsOption.json'
+import MontMgdData from '../../static/monthlyCharts/mgdData.json'
 export default {
   name:"monthHome",
   data() {
     return {
-      dataList:MontData.data,
+      dataList:MontData.data,  // 常规月报数据
+      mgdData:MontMgdData.data   //煤改电月报数据
     };
   },
   created() {
     let params = this.$route.params
-    console.log(params,5566)
-    this.getMonthReport(params)
-    // console.log(params,9999)
-    // if (params.year && params.zq) {
-      
-    // }else{
-    //   Notification.error({
-    //     title: '错误',
-    //     message: '非法跳转！！！',
-    //     duration: 2000
-    //   });
-    //   this.$router.replace({name:"login"})
-    // }
+    if (params.status == 1) {
+      this.getMonthReport(params)
+    }else{
+      this.getMonthReportMgd(params)
+    }
+    
+  
   },
   methods: {
-    getMonthReport(params){
-      ajaxData("getMonthReport")(params).then(res=>{
+    getMonthReport({year,zq}){
+      ajaxData("getMonthReport")({year,zq}).then(res=>{
+        console.log(res)
+      })
+    },
+    // 月报煤改电数据
+    getMonthReportMgd({year,zq}){
+      ajaxData("getMonthReportMgd")({year,zq}).then(res=>{
         console.log(res)
       })
     }

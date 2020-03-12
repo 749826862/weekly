@@ -47,7 +47,6 @@ export default {
     initChart() {
       this.setChart().then(
         option => {
-          console.log(option,55544)
           let myChart = echarts.init(
             document.querySelector("." + this.className)
           );
